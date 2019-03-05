@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D30B083222BC9A300AEA049 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30B082222BC9A300AEA049 /* AppDelegate.swift */; };
 		0D30B085222BC9A300AEA049 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30B084222BC9A300AEA049 /* ViewController.swift */; };
 		0D30B088222BC9A300AEA049 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D30B086222BC9A300AEA049 /* Main.storyboard */; };
 		0D30B08B222BC9A300AEA049 /* Yima3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0D30B089222BC9A300AEA049 /* Yima3.xcdatamodeld */; };
@@ -15,6 +14,22 @@
 		0D30B090222BC9A300AEA049 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D30B08E222BC9A300AEA049 /* LaunchScreen.storyboard */; };
 		0D30B09B222BC9A300AEA049 /* Yima3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30B09A222BC9A300AEA049 /* Yima3Tests.swift */; };
 		0D30B0A6222BC9A300AEA049 /* Yima3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30B0A5222BC9A300AEA049 /* Yima3UITests.swift */; };
+		0D30B0B8222BCA4A00AEA049 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D30B0B7222BCA4A00AEA049 /* CoreLocation.framework */; };
+		0D30B0BA222BCA5300AEA049 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D30B0B9222BCA5300AEA049 /* CoreTelephony.framework */; };
+		0D30B0BC222BCA6400AEA049 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D30B0BB222BCA6400AEA049 /* MobileCoreServices.framework */; };
+		0D30B0BE222BCA7200AEA049 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D30B0BD222BCA7200AEA049 /* SystemConfiguration.framework */; };
+		0D30B0C3222BCAA700AEA049 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D30B0BF222BCAA700AEA049 /* libsqlite3.tbd */; };
+		0D30B0C4222BCAA700AEA049 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D30B0C0222BCAA700AEA049 /* libc++.tbd */; };
+		0D30B0C5222BCAA700AEA049 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D30B0C1222BCAA700AEA049 /* libz.tbd */; };
+		0D30B0C6222BCAA700AEA049 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D30B0C2222BCAA700AEA049 /* libicucore.tbd */; };
+		0D30B0CA222BE37B00AEA049 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D30B0C9222BE37B00AEA049 /* AVOSCloud.framework */; };
+		0D30B0CC222BE76F00AEA049 /* LeanCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D30B0CB222BE76F00AEA049 /* LeanCloud.framework */; };
+		0DD33CB3222CC06700D0BDA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30B082222BC9A300AEA049 /* AppDelegate.swift */; };
+		0DD33CBD222CFE7600D0BDA6 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD33CBA222CFE4400D0BDA6 /* SnapKit.framework */; };
+		0DD33CBE222CFE7600D0BDA6 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD33CBA222CFE4400D0BDA6 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0DD33CC3222CFEF200D0BDA6 /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD33CC2222CFEF200D0BDA6 /* SignViewController.swift */; };
+		0DD33CC5222D0DD900D0BDA6 /* SetMenstruationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD33CC4222D0DD900D0BDA6 /* SetMenstruationViewController.swift */; };
+		1A7B0D9EADF2E693668434C8 /* Pods_Yima3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C6C2B6E740686C2C02846F /* Pods_Yima3.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +47,42 @@
 			remoteGlobalIDString = 0D30B07E222BC9A300AEA049;
 			remoteInfo = Yima3;
 		};
+		0DD33CB9222CFE4400D0BDA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DD33CB4222CFE4400D0BDA6 /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEBCC9D819CC627D0083B827;
+			remoteInfo = SnapKit;
+		};
+		0DD33CBB222CFE4400D0BDA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DD33CB4222CFE4400D0BDA6 /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEBCC9E219CC627E0083B827;
+			remoteInfo = "SnapKit Tests";
+		};
+		0DD33CBF222CFE7600D0BDA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DD33CB4222CFE4400D0BDA6 /* SnapKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EEBCC9D719CC627D0083B827;
+			remoteInfo = SnapKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0DD33CC1222CFE7700D0BDA6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0DD33CBE222CFE7600D0BDA6 /* SnapKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0D30B07F222BC9A300AEA049 /* Yima3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yima3.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +99,23 @@
 		0D30B0A1222BC9A300AEA049 /* Yima3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Yima3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D30B0A5222BC9A300AEA049 /* Yima3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yima3UITests.swift; sourceTree = "<group>"; };
 		0D30B0A7222BC9A300AEA049 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D30B0B4222BCA2900AEA049 /* LeanCloud的副本.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "LeanCloud的副本.framework"; path = "../Yima1/Pods/LeanCloud的副本.framework"; sourceTree = "<group>"; };
+		0D30B0B7222BCA4A00AEA049 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0D30B0B9222BCA5300AEA049 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		0D30B0BB222BCA6400AEA049 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		0D30B0BD222BCA7200AEA049 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0D30B0BF222BCAA700AEA049 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		0D30B0C0222BCAA700AEA049 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		0D30B0C1222BCAA700AEA049 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		0D30B0C2222BCAA700AEA049 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		0D30B0C9222BE37B00AEA049 /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVOSCloud.framework; path = ../Yima2/Yima/Pods/AVOSCloud.framework; sourceTree = "<group>"; };
+		0D30B0CB222BE76F00AEA049 /* LeanCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeanCloud.framework; path = ../Yima2/Yima/Pods/LeanCloud.framework; sourceTree = "<group>"; };
+		0DD33CB4222CFE4400D0BDA6 /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = "../SnapKit-develop/SnapKit.xcodeproj"; sourceTree = "<group>"; };
+		0DD33CC2222CFEF200D0BDA6 /* SignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
+		0DD33CC4222D0DD900D0BDA6 /* SetMenstruationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMenstruationViewController.swift; sourceTree = "<group>"; };
+		2BCB2B6FEBA53B5C2BDF5D55 /* Pods-Yima3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yima3.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yima3/Pods-Yima3.release.xcconfig"; sourceTree = "<group>"; };
+		81C6C2B6E740686C2C02846F /* Pods_Yima3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yima3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF47C5997E7A6E18EE3D9C74 /* Pods-Yima3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yima3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yima3/Pods-Yima3.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +123,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D30B0C3222BCAA700AEA049 /* libsqlite3.tbd in Frameworks */,
+				0D30B0C4222BCAA700AEA049 /* libc++.tbd in Frameworks */,
+				0D30B0C5222BCAA700AEA049 /* libz.tbd in Frameworks */,
+				0DD33CBD222CFE7600D0BDA6 /* SnapKit.framework in Frameworks */,
+				0D30B0C6222BCAA700AEA049 /* libicucore.tbd in Frameworks */,
+				0D30B0BE222BCA7200AEA049 /* SystemConfiguration.framework in Frameworks */,
+				0D30B0BC222BCA6400AEA049 /* MobileCoreServices.framework in Frameworks */,
+				0D30B0BA222BCA5300AEA049 /* CoreTelephony.framework in Frameworks */,
+				0D30B0B8222BCA4A00AEA049 /* CoreLocation.framework in Frameworks */,
+				0D30B0CA222BE37B00AEA049 /* AVOSCloud.framework in Frameworks */,
+				0D30B0CC222BE76F00AEA049 /* LeanCloud.framework in Frameworks */,
+				1A7B0D9EADF2E693668434C8 /* Pods_Yima3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +158,13 @@
 		0D30B076222BC9A300AEA049 = {
 			isa = PBXGroup;
 			children = (
+				0DD33CB4222CFE4400D0BDA6 /* SnapKit.xcodeproj */,
 				0D30B081222BC9A300AEA049 /* Yima3 */,
 				0D30B099222BC9A300AEA049 /* Yima3Tests */,
 				0D30B0A4222BC9A300AEA049 /* Yima3UITests */,
 				0D30B080222BC9A300AEA049 /* Products */,
+				F8C73437BC7BC445C2AC8E01 /* Pods */,
+				5AE7AA6C70DDBF6022C8A854 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +183,8 @@
 			children = (
 				0D30B082222BC9A300AEA049 /* AppDelegate.swift */,
 				0D30B084222BC9A300AEA049 /* ViewController.swift */,
+				0DD33CC2222CFEF200D0BDA6 /* SignViewController.swift */,
+				0DD33CC4222D0DD900D0BDA6 /* SetMenstruationViewController.swift */,
 				0D30B086222BC9A300AEA049 /* Main.storyboard */,
 				0D30B08C222BC9A300AEA049 /* Assets.xcassets */,
 				0D30B08E222BC9A300AEA049 /* LaunchScreen.storyboard */,
@@ -128,6 +212,43 @@
 			path = Yima3UITests;
 			sourceTree = "<group>";
 		};
+		0DD33CB5222CFE4400D0BDA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0DD33CBA222CFE4400D0BDA6 /* SnapKit.framework */,
+				0DD33CBC222CFE4400D0BDA6 /* SnapKit Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5AE7AA6C70DDBF6022C8A854 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D30B0CB222BE76F00AEA049 /* LeanCloud.framework */,
+				0D30B0C9222BE37B00AEA049 /* AVOSCloud.framework */,
+				0D30B0C0222BCAA700AEA049 /* libc++.tbd */,
+				0D30B0C2222BCAA700AEA049 /* libicucore.tbd */,
+				0D30B0BF222BCAA700AEA049 /* libsqlite3.tbd */,
+				0D30B0C1222BCAA700AEA049 /* libz.tbd */,
+				0D30B0BD222BCA7200AEA049 /* SystemConfiguration.framework */,
+				0D30B0BB222BCA6400AEA049 /* MobileCoreServices.framework */,
+				0D30B0B9222BCA5300AEA049 /* CoreTelephony.framework */,
+				0D30B0B7222BCA4A00AEA049 /* CoreLocation.framework */,
+				0D30B0B4222BCA2900AEA049 /* LeanCloud的副本.framework */,
+				81C6C2B6E740686C2C02846F /* Pods_Yima3.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8C73437BC7BC445C2AC8E01 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF47C5997E7A6E18EE3D9C74 /* Pods-Yima3.debug.xcconfig */,
+				2BCB2B6FEBA53B5C2BDF5D55 /* Pods-Yima3.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,13 +256,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D30B0AA222BC9A300AEA049 /* Build configuration list for PBXNativeTarget "Yima3" */;
 			buildPhases = (
+				0E5714385DA5D5C383E82D8F /* [CP] Check Pods Manifest.lock */,
 				0D30B07B222BC9A300AEA049 /* Sources */,
 				0D30B07C222BC9A300AEA049 /* Frameworks */,
 				0D30B07D222BC9A300AEA049 /* Resources */,
+				B1E0D523A65B36A652F11E78 /* [CP] Embed Pods Frameworks */,
+				E90C05294E04EEE561B16105 /* [CP] Copy Pods Resources */,
+				0DD33CC1222CFE7700D0BDA6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0DD33CC0222CFE7600D0BDA6 /* PBXTargetDependency */,
 			);
 			name = Yima3;
 			productName = Yima3;
@@ -221,6 +347,12 @@
 			mainGroup = 0D30B076222BC9A300AEA049;
 			productRefGroup = 0D30B080222BC9A300AEA049 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0DD33CB5222CFE4400D0BDA6 /* Products */;
+					ProjectRef = 0DD33CB4222CFE4400D0BDA6 /* SnapKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				0D30B07E222BC9A300AEA049 /* Yima3 */,
@@ -229,6 +361,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0DD33CBA222CFE4400D0BDA6 /* SnapKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SnapKit.framework;
+			remoteRef = 0DD33CB9222CFE4400D0BDA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0DD33CBC222CFE4400D0BDA6 /* SnapKit Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SnapKit Tests.xctest";
+			remoteRef = 0DD33CBB222CFE4400D0BDA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0D30B07D222BC9A300AEA049 /* Resources */ = {
@@ -257,14 +406,76 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E5714385DA5D5C383E82D8F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Yima3-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1E0D523A65B36A652F11E78 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Yima3/Pods-Yima3-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AVOSCloud/AVOSCloud.framework",
+				"${BUILT_PRODUCTS_DIR}/AVOSCloudIM/AVOSCloudIM.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/LeanCloud/LeanCloud.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AVOSCloud.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AVOSCloudIM.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LeanCloud.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yima3/Pods-Yima3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E90C05294E04EEE561B16105 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yima3/Pods-Yima3-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0D30B07B222BC9A300AEA049 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DD33CB3222CC06700D0BDA6 /* AppDelegate.swift in Sources */,
 				0D30B085222BC9A300AEA049 /* ViewController.swift in Sources */,
 				0D30B08B222BC9A300AEA049 /* Yima3.xcdatamodeld in Sources */,
-				0D30B083222BC9A300AEA049 /* AppDelegate.swift in Sources */,
+				0DD33CC5222D0DD900D0BDA6 /* SetMenstruationViewController.swift in Sources */,
+				0DD33CC3222CFEF200D0BDA6 /* SignViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +507,11 @@
 			isa = PBXTargetDependency;
 			target = 0D30B07E222BC9A300AEA049 /* Yima3 */;
 			targetProxy = 0D30B0A2222BC9A300AEA049 /* PBXContainerItemProxy */;
+		};
+		0DD33CC0222CFE7600D0BDA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SnapKit;
+			targetProxy = 0DD33CBF222CFE7600D0BDA6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -428,7 +644,9 @@
 		};
 		0D30B0AB222BC9A300AEA049 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF47C5997E7A6E18EE3D9C74 /* Pods-Yima3.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YKQ4B36Z22;
@@ -443,7 +661,9 @@
 		};
 		0D30B0AC222BC9A300AEA049 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BCB2B6FEBA53B5C2BDF5D55 /* Pods-Yima3.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YKQ4B36Z22;

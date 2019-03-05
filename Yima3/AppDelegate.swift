@@ -8,7 +8,8 @@
 
 import UIKit
 import CoreData
-
+import LeanCloud
+import AVOSCloud
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        AVOSCloud.setApplicationId("QzGVOBAXDFKAlvtkFdkPOCQc-gzGzoHsz", clientKey: "LFflr8QCngaMJQiYtpj6AsiE")
+        LeanCloud.initialize(applicationID: "QzGVOBAXDFKAlvtkFdkPOCQc-gzGzoHsz", applicationKey: "LFflr8QCngaMJQiYtpj6AsiE")
+        
         // Override point for customization after application launch.
         return true
     }
