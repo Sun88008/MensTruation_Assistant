@@ -17,82 +17,7 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cho-Ya-cUl">
-                                <rect key="frame" x="107" y="455" width="161" height="41"/>
-                                <color key="backgroundColor" red="1" green="0.75294117650000003" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="161" id="BLL-rC-OAQ"/>
-                                    <constraint firstAttribute="height" constant="41" id="Qb2-yL-HUH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="登录">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" red="1" green="0.75294117650000003" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="Sign:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4dv-pi-9Hx"/>
-                                    <segue destination="h0g-09-tcA" kind="show" identifier="Sign" id="QHy-hd-CYR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8D-pc-jnn">
-                                <rect key="frame" x="107" y="381" width="161" height="41"/>
-                                <color key="backgroundColor" red="1" green="0.75294117650000003" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="OR9-pu-DS5"/>
-                                    <constraint firstAttribute="width" constant="161" id="dhs-Nw-HEq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="姨妈来了">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" red="1" green="0.75294117650000003" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="ConfirmMentruationDate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TwE-2k-I6a"/>
-                                    <action selector="Sign:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EfY-ou-NBL"/>
-                                    <segue destination="3gQ-sH-rSS" kind="show" identifier="AddRecord" id="Yd7-AK-Scx"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="avl-TW-ws3">
-                                <rect key="frame" x="107" y="107" width="161" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tbT-HX-f1c">
-                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem id="OwI-rZ-GA5"/>
-                                    <tabBarItem title="Item" id="ym6-LW-qZh"/>
-                                    <tabBarItem title="Item" id="URd-NA-KDs"/>
-                                    <tabBarItem title="Item" id="N7S-m3-hCO"/>
-                                    <tabBarItem systemItem="more" id="eHd-vm-cEG"/>
-                                </items>
-                            </tabBar>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="K8D-pc-jnn" firstAttribute="leading" secondItem="cho-Ya-cUl" secondAttribute="leading" id="Dhd-ty-LoR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cho-Ya-cUl" secondAttribute="trailing" constant="107" id="Sgq-gz-XBW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K8D-pc-jnn" secondAttribute="trailing" constant="107" id="kHh-3V-0qn"/>
-                            <constraint firstItem="cho-Ya-cUl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="107" id="ly1-uQ-fwa"/>
-                            <constraint firstItem="K8D-pc-jnn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="361" id="pc7-AO-1DG"/>
-                            <constraint firstItem="cho-Ya-cUl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="435" id="qt5-TW-SjF"/>
-                            <constraint firstItem="K8D-pc-jnn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="107" id="xOy-q0-WdS"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="H35-W0-HGs"/>
@@ -102,7 +27,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-538.39999999999998" y="-113.79310344827587"/>
+            <point key="canvasLocation" x="-798" y="-471"/>
         </scene>
         <!--百科-->
         <scene sceneID="qaj-Bq-l9k">
@@ -173,11 +98,75 @@
         <!--主页-->
         <scene sceneID="xwa-p6-6GL">
             <objects>
-                <viewController id="Hnf-af-nrq" sceneMemberID="viewController">
+                <viewController id="Hnf-af-nrq" customClass="ViewController" customModule="Yima3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ahg-SS-MAz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cho-Ya-cUl">
+                                <rect key="frame" x="107" y="430" width="161" height="41"/>
+                                <color key="backgroundColor" red="1" green="0.75294117650000003" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="161" id="BLL-rC-OAQ"/>
+                                    <constraint firstAttribute="height" constant="41" id="Qb2-yL-HUH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="1" green="0.75294117650000003" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="Sign:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4dv-pi-9Hx"/>
+                                    <segue destination="h0g-09-tcA" kind="show" identifier="Sign" id="QHy-hd-CYR"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="avl-TW-ws3">
+                                <rect key="frame" x="107" y="139" width="161" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8D-pc-jnn">
+                                <rect key="frame" x="107" y="361" width="161" height="41"/>
+                                <color key="backgroundColor" red="1" green="0.75294117650000003" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="OR9-pu-DS5"/>
+                                    <constraint firstAttribute="width" constant="161" id="dhs-Nw-HEq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="姨妈来了">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="1" green="0.75294117650000003" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="ConfirmMentruationDate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TwE-2k-I6a"/>
+                                    <action selector="Sign:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EfY-ou-NBL"/>
+                                    <segue destination="3gQ-sH-rSS" kind="show" identifier="AddRecord" id="Yd7-AK-Scx"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="51Z-3Z-YK4" firstAttribute="trailing" secondItem="cho-Ya-cUl" secondAttribute="trailing" constant="107" id="0kP-1G-LCI"/>
+                            <constraint firstItem="K8D-pc-jnn" firstAttribute="top" secondItem="avl-TW-ws3" secondAttribute="bottom" constant="192" id="5Z7-9L-dkI"/>
+                            <constraint firstItem="cho-Ya-cUl" firstAttribute="top" secondItem="K8D-pc-jnn" secondAttribute="bottom" constant="28" id="8Te-Fp-kcn"/>
+                            <constraint firstItem="avl-TW-ws3" firstAttribute="trailing" secondItem="K8D-pc-jnn" secondAttribute="trailing" id="AU0-yG-qot"/>
+                            <constraint firstItem="51Z-3Z-YK4" firstAttribute="bottom" secondItem="cho-Ya-cUl" secondAttribute="bottom" constant="147" id="BO2-xB-cYP"/>
+                            <constraint firstItem="51Z-3Z-YK4" firstAttribute="trailing" secondItem="K8D-pc-jnn" secondAttribute="trailing" constant="107" id="KzX-5x-8xH"/>
+                            <constraint firstItem="avl-TW-ws3" firstAttribute="leading" secondItem="K8D-pc-jnn" secondAttribute="leading" id="ZCy-Tk-Igf"/>
+                            <constraint firstItem="cho-Ya-cUl" firstAttribute="leading" secondItem="51Z-3Z-YK4" secondAttribute="leading" constant="107" id="rec-k8-K6k"/>
+                            <constraint firstItem="K8D-pc-jnn" firstAttribute="leading" secondItem="51Z-3Z-YK4" secondAttribute="leading" constant="107" id="zeQ-dN-fYy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="51Z-3Z-YK4"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="主页" image="xiangshui" id="ZoM-ms-5dU">
@@ -191,7 +180,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="m5T-au-Hzb">
             <objects>
-                <tabBarController id="pO5-2p-0cX" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TarBar" id="pO5-2p-0cX" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2gH-jT-zwQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -206,22 +195,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U30-or-LCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2480" y="323"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Y35-qw-CUr">
-            <objects>
-                <viewController id="PbT-OZ-7ea" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Giu-P4-TDB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="nA3-4y-HzB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5qg-PX-Nc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-763" y="640"/>
+            <point key="canvasLocation" x="-2374" y="239"/>
         </scene>
         <!--SetMenstruationView-->
         <scene sceneID="Ha0-h9-pYg">
