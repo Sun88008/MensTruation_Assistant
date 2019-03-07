@@ -11,8 +11,38 @@ import SnapKit
 
 class SetMenstruationViewController: UIViewController, UIActionSheetDelegate {
 
+    var Date = UIDatePicker()
+    var SetTime = UITextField()
+    @IBAction func ConfirmValueAndPass(_ sender: Any) {
+        //ViewController.text = MentruationTime
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 选择框样式
+        SetTime.frame = CGRect(x: self.view.frame.origin.x + 65, y: self.view.frame.origin.y + 100, width: self.view.frame.width * 2 / 3, height: 40)
+        SetTime.layer.cornerRadius = 5.0
+        SetTime.layer.borderWidth = 0.7
+        SetTime.layer.borderColor = UIColor.darkGray.cgColor
+        SetTime.textAlignment = .center
+        SetTime.placeholder = "还记得上一次来姨妈吗？"
+        SetTime.endEditing(false)
+        
+        // 日期选择器属性及样式
+        Date.locale = NSLocale(localeIdentifier: "zh_cn") as Locale
+        Date.timeZone = NSTimeZone.system
+        Date.datePickerMode = UIDatePickerMode.date
+        Date.addTarget(self, action: #selector(getDate), for: UIControlEvents.valueChanged)
+        Date.layer.backgroundColor = UIColor.white.cgColor
+        Date.layer.masksToBounds = true
+        
+        // 重点的一句
+        SetTime.inputView = Date
+        
+        self.view.addSubview(SetTime)
+
+        
         // Do any additional setup after loading the view.
         /*let datePicker = UIDatePicker()
         datePicker.center = CGPoint(x: 200, y: 250)
@@ -28,6 +58,25 @@ class SetMenstruationViewController: UIViewController, UIActionSheetDelegate {
         */
         
     }
+    
+    @objc func getDate(Date: UIDatePicker) {
+        let formatter = DateFormatter()
+        let date = Date.date
+        formatter.dateFormat = "YYYY年 MM月 dd日"
+        let dateStr = formatter.string(from: date)
+        self.SetTime.text = dateStr
+        
+        let MentruationTime = date+1*60*60*24
+        
+        /*let MentruationTime = Calendar(identifier: .chinese)
+        let year = MentruationTime.component(.year, from: date)
+        let month = MentruationTime.component(.month, from: date)
+        let day = MentruationTime.component(.day, from: date)
+        print("year:\(year) month:\(month) day:\(day)")*///输出年月日不正确
+        
+        //print(date+1*60*60*24) //对日期进行加减
+    }
+    
     /*@objc func getDate(){
         let datePicker = self.view.viewWithTag(1) as! UIDatePicker
         let date = datePicker.date
