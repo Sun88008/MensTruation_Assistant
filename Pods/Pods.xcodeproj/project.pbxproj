@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -57,6 +57,7 @@
 		1E14B64A1CA1C4744B797CBE4D4555F8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 060D0414CEAAABB6078DE4FD4107077F /* MobileCoreServices.framework */; };
 		1E16AF30F88049B4DD70C373A40E4847 /* LCIMUnknownFieldSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 745DBC0912F6D9A1E9E28BEC20930CE6 /* LCIMUnknownFieldSet.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		1E377DD6588B0901F6917051CB2A09BC /* AVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E03CA324B122359DB0015D6D113A40BE /* AVLocationManager.m */; };
+		1EA349AE34C77D7A4F75CC256A330F2C /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D2FBFCC930F7EDF093751059429F9D /* AVOSCloud.framework */; };
 		1F1414C9BFD250022FDCBF136B4CDEDE /* AVCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B4379E0C289042CA006C466158327E /* AVCommand.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		1F91661322260127D539555684BC9BF1 /* LCIMArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BD0EAC02257FE1DAD4F30292EA47BD /* LCIMArray.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		1FF4EECBA3FF8D21DC372F7AED7BE4D9 /* AVIMVideoMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 643206B2D4160501017C9CBF1C8CCC9E /* AVIMVideoMessage.m */; };
@@ -326,6 +327,7 @@
 		B0AAEC028F4885D6EBFFE4CB434F6C24 /* LCDatabaseCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABAD8B4C2DA5EA0B4728ECABD5C86C1 /* LCDatabaseCoordinator.m */; };
 		B10657650EAA88984B5A604FC5BFBEA3 /* AVAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 79B5B303188387EA564257DC370B958A /* AVAnalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1267CF74049013BD924AA9F4AE59D4A /* LCIMClientSessionTokenCacheStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 130E80BC998911A1D24525142D098467 /* LCIMClientSessionTokenCacheStore.m */; };
+		B13F3D041EDB56CF59AF570808D5998C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40039EDC872513AEA65A34EFF4DB2BCD /* Alamofire.framework */; };
 		B1C5B4925CAA022313016FCEEC638E9F /* AVSearchSortBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9079BC0B81EDDC455AD90D74AFB51AF0 /* AVSearchSortBuilder.m */; };
 		B33FD15EEDA50482E1253A0875E2E310 /* AVConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF33A8143F314B305E60DE709E42304 /* AVConfiguration.m */; };
 		B3872A3563CFAD238D90A4D9ACB8A93C /* AVSaveOption.h in Headers */ = {isa = PBXBuildFile; fileRef = 170D1275A4F613D3D3C0A6CCBC90C509 /* AVSaveOption.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -569,8 +571,8 @@
 		1BD58C42CE727EE0F4343A3A4D217C06 /* AVOSCloud.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVOSCloud.h; path = AVOS/AVOSCloud/AVOSCloud.h; sourceTree = "<group>"; };
 		1C2FC41B8DA23E7671136C9E2E899F15 /* AVCloud.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AVCloud.m; path = AVOS/AVOSCloud/CloudCode/AVCloud.m; sourceTree = "<group>"; };
 		1C7994B9744B7B6829B2FE704F839801 /* AVDirectInCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVDirectInCommand.h; path = AVOS/AVOSCloud/IM/Commands/AVDirectInCommand.h; sourceTree = "<group>"; };
-		1C9F9B37EC0C1C41A6AE6571979A1C03 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D6FBA4F67FF2FC70050B1FC3273088A /* AVOSCloud.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AVOSCloud.modulemap; sourceTree = "<group>"; };
+		1C9F9B37EC0C1C41A6AE6571979A1C03 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6FBA4F67FF2FC70050B1FC3273088A /* AVOSCloud.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AVOSCloud.modulemap; sourceTree = "<group>"; };
 		1DB057EEFE2E6243820B229093C8516A /* AVHTTPRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AVHTTPRequestOperation.m; path = AVOS/AVOSCloud/ThirdParty/AFNetworking/AVHTTPRequestOperation.m; sourceTree = "<group>"; };
 		1DC06E4CC15456E30E4032D491C5EB59 /* Operation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operation.swift; path = Sources/Storage/Operation.swift; sourceTree = "<group>"; };
 		1E268FB7048611D6B948E53B11204410 /* LCObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCObserver.h; path = AVOS/AVOSCloud/ThirdParty/COSObserver/LCObserver.h; sourceTree = "<group>"; };
@@ -581,7 +583,7 @@
 		2230F98B91DDC2860FEF8519BB7D6EDF /* LCIMDescriptor_PackagePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCIMDescriptor_PackagePrivate.h; path = AVOS/AVOSCloudIM/Protobuf/LCIMDescriptor_PackagePrivate.h; sourceTree = "<group>"; };
 		225B38C422F3FF405BA60342FEF41FF3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 		2330DFBE80395C5DAC99C236EE7415B2 /* AVOSCloudIM-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AVOSCloudIM-dummy.m"; sourceTree = "<group>"; };
-		23406358316D6F7AA844FFFE9CCE965F /* avmp.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = avmp.c; path = AVOS/AVOSCloudIM/AVMPMessagePack/avmp.c; sourceTree = "<group>"; };
+		23406358316D6F7AA844FFFE9CCE965F /* avmp.c */ = {isa = PBXFileReference; includeInIndex = 1; name = avmp.c; path = AVOS/AVOSCloudIM/AVMPMessagePack/avmp.c; sourceTree = "<group>"; };
 		240C929715844487C7993A68D5A3BB15 /* AVIMConversationQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AVIMConversationQuery.m; path = AVOS/AVOSCloudIM/AVIMConversationQuery.m; sourceTree = "<group>"; };
 		241823E22E9A4D3BB6B81077591E5B53 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2462D42E4E010EF86EF4BE1EAE8DC5A7 /* Null.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Null.swift; path = Sources/Storage/DataType/Null.swift; sourceTree = "<group>"; };
@@ -639,7 +641,8 @@
 		3E56C15665643150F88CBA4CF7A037F8 /* AVSignature.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AVSignature.m; path = AVOS/AVOSCloud/IM/AVSignature.m; sourceTree = "<group>"; };
 		3EA64ECC612941E23FD7F675813B8DA6 /* AVObjectUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVObjectUtils.h; path = AVOS/AVOSCloud/Object/AVObjectUtils.h; sourceTree = "<group>"; };
 		3EC570CC001BB571ADC4C5AB9DAAFC41 /* AVIMTypedMessage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AVIMTypedMessage.m; path = AVOS/AVOSCloudIM/TypedMessages/AVIMTypedMessage.m; sourceTree = "<group>"; };
-		3F00B2592145123994DBA5D9227517CC /* LeanCloud.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LeanCloud.modulemap; sourceTree = "<group>"; };
+		3F00B2592145123994DBA5D9227517CC /* LeanCloud.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = LeanCloud.modulemap; sourceTree = "<group>"; };
+		40039EDC872513AEA65A34EFF4DB2BCD /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4003F3F6ED69999D6D63F7EA95830641 /* LCIMCodedOutputStream.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCIMCodedOutputStream.h; path = AVOS/AVOSCloudIM/Protobuf/LCIMCodedOutputStream.h; sourceTree = "<group>"; };
 		40652030DF97E6FAA3E394FDE38D2618 /* AVHistoryMessageQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVHistoryMessageQuery.h; path = AVOS/AVOSCloud/IM/AVHistoryMessageQuery.h; sourceTree = "<group>"; };
 		409AA2D5DCDB865A17BD61FEF96D8E78 /* AVAnalyticsSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVAnalyticsSession.h; path = AVOS/AVOSCloud/Analytics/AVAnalyticsSession.h; sourceTree = "<group>"; };
@@ -704,7 +707,7 @@
 		5DDBCCECDF915D53DE9B7BBC49769C2C /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		5ECD9E0D98A47F163B61FE5F46144F00 /* LCIMProtocolBuffers_RuntimeSupport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCIMProtocolBuffers_RuntimeSupport.h; path = AVOS/AVOSCloudIM/Protobuf/LCIMProtocolBuffers_RuntimeSupport.h; sourceTree = "<group>"; };
 		5EF0D50CE1875D50049ADFFFEB57D8F3 /* AVIMConversationQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVIMConversationQuery.h; path = AVOS/AVOSCloudIM/AVIMConversationQuery.h; sourceTree = "<group>"; };
-		5F591A26DB2B92BCD2B5C10F74FA222A /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		5F591A26DB2B92BCD2B5C10F74FA222A /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		5F750F2F6B847222509D3178113D8554 /* LCIMWrappers.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCIMWrappers.pbobjc.h; path = AVOS/AVOSCloudIM/Protobuf/google/protobuf/LCIMWrappers.pbobjc.h; sourceTree = "<group>"; };
 		5FC6ABAAFF864B15A30E792CB5F450E5 /* SDMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDMacros.h; path = AVOS/AVOSCloudIM/Vendor/SDMacros/SDMacros.h; sourceTree = "<group>"; };
 		60F49F19D39D68AA28B97BA1A3764F83 /* LCIMMessageCacheStoreSQL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCIMMessageCacheStoreSQL.h; path = AVOS/AVOSCloudIM/MessageCache/CacheStore/LCIMMessageCacheStoreSQL.h; sourceTree = "<group>"; };
@@ -722,6 +725,7 @@
 		6459AA2A9F22AEEB29DAB0716418F9BE /* LCIMRootObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LCIMRootObject.m; path = AVOS/AVOSCloudIM/Protobuf/LCIMRootObject.m; sourceTree = "<group>"; };
 		647AEBB4CB2382F6E5A0FAD063DFC1CD /* AVCacheManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AVCacheManager.m; path = AVOS/AVOSCloud/Cache/AVCacheManager.m; sourceTree = "<group>"; };
 		65BCE9CD0E2C669E2C5A1E2F55696631 /* AVIMErrorUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVIMErrorUtil.h; path = AVOS/AVOSCloudIM/Utilities/AVIMErrorUtil.h; sourceTree = "<group>"; };
+		65D2FBFCC930F7EDF093751059429F9D /* AVOSCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AVOSCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6646A5F4557721226AAB647FC183E893 /* AVIMKeyedConversation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AVIMKeyedConversation.m; path = AVOS/AVOSCloudIM/AVIMKeyedConversation.m; sourceTree = "<group>"; };
 		66616F9B1E7688E9FE4F36A3F9886F61 /* AVSearchSortBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVSearchSortBuilder.h; path = AVOS/AVOSCloud/Search/AVSearchSortBuilder.h; sourceTree = "<group>"; };
 		670D20B0F19D03555C1CB4AB1A649C7D /* AVIMMessage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AVIMMessage.m; path = AVOS/AVOSCloudIM/AVIMMessage.m; sourceTree = "<group>"; };
@@ -818,9 +822,9 @@
 		90DD24703209C7D223AAF03D01251F51 /* AVRoomCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVRoomCommand.h; path = AVOS/AVOSCloud/IM/Commands/AVRoomCommand.h; sourceTree = "<group>"; };
 		91A39B5220B655385BFB9D71E3B2B33F /* LCIMMessageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCIMMessageCache.h; path = AVOS/AVOSCloudIM/MessageCache/LCIMMessageCache.h; sourceTree = "<group>"; };
 		924CF71C59BA35E858C015859006FCD4 /* LCIMDescriptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCIMDescriptor.h; path = AVOS/AVOSCloudIM/Protobuf/LCIMDescriptor.h; sourceTree = "<group>"; };
-		92E73C5B628C4D0E421FDB8AAD3374E2 /* Pods_Yima3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yima3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92E73C5B628C4D0E421FDB8AAD3374E2 /* Pods_Yima3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Yima3.framework; path = "Pods-Yima3.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9363F25DB619B4CE7DFBECC6569C108A /* AVSRWebSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVSRWebSocket.h; path = AVOS/AVOSCloud/ThirdParty/SocketRocket/AVSRWebSocket.h; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		949661B95470FEFD10A618E6C8EF67F7 /* AVIMTypedMessage_Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVIMTypedMessage_Internal.h; path = AVOS/AVOSCloudIM/TypedMessages/AVIMTypedMessage_Internal.h; sourceTree = "<group>"; };
 		94BD0EAC02257FE1DAD4F30292EA47BD /* LCIMArray.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCIMArray.h; path = AVOS/AVOSCloudIM/Protobuf/LCIMArray.h; sourceTree = "<group>"; };
 		94C1F4DCC9AA742083B96D1E7C970600 /* AVSession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AVSession.m; path = AVOS/AVOSCloud/IM/AVSession.m; sourceTree = "<group>"; };
@@ -862,7 +866,7 @@
 		AA9034290F6C5670BDD5EC9E9613438A /* MessagesProtoOrig.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MessagesProtoOrig.pbobjc.m; path = AVOS/AVOSCloudIM/Commands/MessagesProtoOrig.pbobjc.m; sourceTree = "<group>"; };
 		ABBC4AC7F10CA5B4E9858FFB031572E3 /* AVCommandDictionary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVCommandDictionary.h; path = AVOS/AVOSCloud/IM/AVCommandDictionary.h; sourceTree = "<group>"; };
 		ACAD3A4EB6C77258A0341424FA37184F /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
-		AD40FFA19B760159D9CDF06DA005E1E4 /* AVOSCloud_Art.inc */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.pascal; name = AVOSCloud_Art.inc; path = AVOS/AVOSCloud/AVOSCloud_Art.inc; sourceTree = "<group>"; };
+		AD40FFA19B760159D9CDF06DA005E1E4 /* AVOSCloud_Art.inc */ = {isa = PBXFileReference; includeInIndex = 1; name = AVOSCloud_Art.inc; path = AVOS/AVOSCloud/AVOSCloud_Art.inc; sourceTree = "<group>"; };
 		AE4B666CE30E0FC032183E3658E63B6A /* AVIMImageMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVIMImageMessage.h; path = AVOS/AVOSCloudIM/TypedMessages/AVIMImageMessage.h; sourceTree = "<group>"; };
 		AE51697B03F106507CFB7CBCDCA3A6E4 /* AVOSCloudIM-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AVOSCloudIM-umbrella.h"; sourceTree = "<group>"; };
 		B04A9D6A9C8732473AE901D50F8AB307 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/Storage/Result.swift; sourceTree = "<group>"; };
@@ -893,7 +897,7 @@
 		BC4FFC9BE3BCD733D1715F5899DFCC04 /* AVUploaderManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AVUploaderManager.m; path = AVOS/AVOSCloud/File/AVUploaderManager.m; sourceTree = "<group>"; };
 		BCB63F07B785F6D9EE54E93670E4145B /* AVIMSignature.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVIMSignature.h; path = AVOS/AVOSCloudIM/AVIMSignature.h; sourceTree = "<group>"; };
 		BCDC62EB6F279B9B3E42E1FAD22B91BC /* AVDynamicBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVDynamicBase.h; path = AVOS/AVOSCloud/IM/Commands/AVDynamicBase.h; sourceTree = "<group>"; };
-		BDA78B8BE1650564D981A53B57839945 /* AVOSCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AVOSCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDA78B8BE1650564D981A53B57839945 /* AVOSCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AVOSCloud.framework; path = AVOSCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDDCB6120555C516CBB60169FF80C895 /* LCKeyValueSQL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCKeyValueSQL.h; path = AVOS/AVOSCloud/Utils/LCKeyValueSQL.h; sourceTree = "<group>"; };
 		BE132BE4D9C9A9FB207BA72EC6DDBAA7 /* AVNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVNetworking.h; path = AVOS/AVOSCloud/ThirdParty/AFNetworking/AVNetworking.h; sourceTree = "<group>"; };
 		BE3926D79A5FB29F34F5C72B6E09F3AA /* LCIMArray_PackagePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCIMArray_PackagePrivate.h; path = AVOS/AVOSCloudIM/Protobuf/LCIMArray_PackagePrivate.h; sourceTree = "<group>"; };
@@ -903,7 +907,7 @@
 		C193D409B6DED8368739C050F4025B1F /* LCIMTimestamp.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LCIMTimestamp.pbobjc.m; path = AVOS/AVOSCloudIM/Protobuf/google/protobuf/LCIMTimestamp.pbobjc.m; sourceTree = "<group>"; };
 		C31B70FB1E521E21D50B886B0EED8DE6 /* AVIMClientOpenOption.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AVIMClientOpenOption.m; path = AVOS/AVOSCloudIM/AVIMClientOpenOption.m; sourceTree = "<group>"; };
 		C31FFB0B6E84F7D6F5BA8C7AE4549B4B /* AVOSCloud-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AVOSCloud-dummy.m"; sourceTree = "<group>"; };
-		C3D75C637337555CED999A2462E890C9 /* AVOSCloudIM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AVOSCloudIM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3D75C637337555CED999A2462E890C9 /* AVOSCloudIM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AVOSCloudIM.framework; path = AVOSCloudIM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E046B7C33F3D7294FA227002786E85 /* AVAnonymousUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AVAnonymousUtils.m; path = AVOS/AVOSCloud/User/AVAnonymousUtils.m; sourceTree = "<group>"; };
 		C5C96338C182258E2D0D6FCEE00CA8EC /* LCIMWireFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCIMWireFormat.h; path = AVOS/AVOSCloudIM/Protobuf/LCIMWireFormat.h; sourceTree = "<group>"; };
 		C76348E03F80EC805F135E2E5304E8F9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -914,7 +918,7 @@
 		CA822B8BB25A50D72ABF097A37C4D53B /* AVPartialInputStream.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVPartialInputStream.h; path = AVOS/AVOSCloud/File/AVPartialInputStream.h; sourceTree = "<group>"; };
 		CA8A0F88A88972821C3DAA24C95F6CF6 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
 		CAB2D73678E086D6E94C8CCF57C34237 /* LeanCloud.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LeanCloud.swift; path = Sources/Storage/LeanCloud.swift; sourceTree = "<group>"; };
-		CB526F0B238205E864FD57081CD94C19 /* AVOSCloudIM.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AVOSCloudIM.modulemap; sourceTree = "<group>"; };
+		CB526F0B238205E864FD57081CD94C19 /* AVOSCloudIM.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AVOSCloudIM.modulemap; sourceTree = "<group>"; };
 		CC1DF470D0BF4A7FE31F5F86B4A744AC /* AVIMBlockHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVIMBlockHelper.h; path = AVOS/AVOSCloudIM/Utilities/AVIMBlockHelper.h; sourceTree = "<group>"; };
 		CC43CB99B6880F6051D7F86835183145 /* LCIMProtocolBuffers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCIMProtocolBuffers.h; path = AVOS/AVOSCloudIM/Protobuf/LCIMProtocolBuffers.h; sourceTree = "<group>"; };
 		CC7EF3A228CFED92438759A2F4B6B900 /* LeanCloud-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LeanCloud-dummy.m"; sourceTree = "<group>"; };
@@ -978,7 +982,7 @@
 		E95767EBD24957182EB4132B65502C13 /* LCNetworkStatistics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCNetworkStatistics.h; path = AVOS/AVOSCloud/Statistics/LCNetworkStatistics.h; sourceTree = "<group>"; };
 		E9FE1BAEE2152D605C702A8221755FB1 /* AVIMWebSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AVIMWebSocket.m; path = AVOS/AVOSCloudIM/Vendor/SocketRocket/AVIMWebSocket.m; sourceTree = "<group>"; };
 		EAE0B5DF9938BE56565A877F879C209B /* AVSearchQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVSearchQuery.h; path = AVOS/AVOSCloud/Search/AVSearchQuery.h; sourceTree = "<group>"; };
-		EAF1B1415F1AC0CF9EEA09D36FD35A82 /* Pods-Yima3.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Yima3.modulemap"; sourceTree = "<group>"; };
+		EAF1B1415F1AC0CF9EEA09D36FD35A82 /* Pods-Yima3.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Yima3.modulemap"; sourceTree = "<group>"; };
 		EB07042C749B8B8A7C545005F8862C38 /* AVFileQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVFileQuery.h; path = AVOS/AVOSCloud/File/AVFileQuery.h; sourceTree = "<group>"; };
 		EB49EA69D99930F434F63B2F1DEBDF8D /* LCIMMessage_PackagePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCIMMessage_PackagePrivate.h; path = AVOS/AVOSCloudIM/Protobuf/LCIMMessage_PackagePrivate.h; sourceTree = "<group>"; };
 		EC62EE39913D3570EBD41776F89813A2 /* LCIMDictionary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LCIMDictionary.m; path = AVOS/AVOSCloudIM/Protobuf/LCIMDictionary.m; sourceTree = "<group>"; };
@@ -989,7 +993,7 @@
 		EDF616661C7BBDFBDEAFD184F3433162 /* LCDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LCDatabase.m; path = AVOS/AVOSCloud/ThirdParty/LCDB/LCDatabase.m; sourceTree = "<group>"; };
 		EE1E1F74510DED693D91B503E1AC2DDC /* AVIMCommandFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVIMCommandFormatter.h; path = AVOS/AVOSCloudIM/Commands/AVIMCommandFormatter.h; sourceTree = "<group>"; };
 		EE91A32C6BA54E7D35A8E1F475CB86D7 /* AVUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVUtils.h; path = AVOS/AVOSCloud/Utils/AVUtils.h; sourceTree = "<group>"; };
-		EF2232F16A56A5AE989A0058BF0DA3E9 /* LeanCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LeanCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF2232F16A56A5AE989A0058BF0DA3E9 /* LeanCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LeanCloud.framework; path = LeanCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF83B71D741F3E209B5A91FDC3FC08AA /* AVAvailability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AVAvailability.h; path = AVOS/AVOSCloud/AVAvailability.h; sourceTree = "<group>"; };
 		EFB188DF60A629E1D3043B1A894A7798 /* Role.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Role.swift; path = Sources/Storage/DataType/Role.swift; sourceTree = "<group>"; };
 		F0300D8CE67395FB35A1430017AF792E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1020,6 +1024,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EA349AE34C77D7A4F75CC256A330F2C /* AVOSCloud.framework in Frameworks */,
 				596C9A810941DB0A56BE22E11011DCDC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1060,6 +1065,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B13F3D041EDB56CF59AF570808D5998C /* Alamofire.framework in Frameworks */,
 				53E138FDF3D92A2232BBBDBF70DCCEB5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1221,6 +1227,7 @@
 				AAC2306A78197A3F8CC5E76054E45D3A /* _NOARC */,
 				1336786663F15F074462CFD7D0B1C31B /* Support Files */,
 			);
+			name = AVOSCloudIM;
 			path = AVOSCloudIM;
 			sourceTree = "<group>";
 		};
@@ -1465,6 +1472,7 @@
 				0C221508F736124F191EFAD23FF07485 /* Resources */,
 				807029A1F728F5354A4A497693CD7F45 /* Support Files */,
 			);
+			name = AVOSCloud;
 			path = AVOSCloud;
 			sourceTree = "<group>";
 		};
@@ -1633,6 +1641,8 @@
 		E4E6CA9A3B9F84EA6EF06D77FAE901CC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				40039EDC872513AEA65A34EFF4DB2BCD /* Alamofire.framework */,
+				65D2FBFCC930F7EDF093751059429F9D /* AVOSCloud.framework */,
 				0758640E14831D0E3C456DE02B0283FA /* iOS */,
 			);
 			name = Frameworks;
@@ -1702,6 +1712,7 @@
 				952370997831253A014921DF80F79AD7 /* Validation.swift */,
 				A2435E12EBD6B85DEEAD20718E7C1F7A /* Support Files */,
 			);
+			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1711,6 +1722,7 @@
 				E5A39E595208A557A4C81965F7CE50BD /* Storage */,
 				8EBF44C0FF89109892DFB74FE7D671DE /* Support Files */,
 			);
+			name = LeanCloud;
 			path = LeanCloud;
 			sourceTree = "<group>";
 		};
