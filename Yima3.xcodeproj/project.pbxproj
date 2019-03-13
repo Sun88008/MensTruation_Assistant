@@ -24,6 +24,7 @@
 		0D30B0C6222BCAA700AEA049 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D30B0C2222BCAA700AEA049 /* libicucore.tbd */; };
 		0D30B0CA222BE37B00AEA049 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D30B0C9222BE37B00AEA049 /* AVOSCloud.framework */; };
 		0D30B0CC222BE76F00AEA049 /* LeanCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D30B0CB222BE76F00AEA049 /* LeanCloud.framework */; };
+		0D78B9782238E74E002C5C35 /* SearchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B9772238E74E002C5C35 /* SearchTableView.swift */; };
 		0DD33CB3222CC06700D0BDA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30B082222BC9A300AEA049 /* AppDelegate.swift */; };
 		0DD33CBD222CFE7600D0BDA6 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD33CBA222CFE4400D0BDA6 /* SnapKit.framework */; };
 		0DD33CBE222CFE7600D0BDA6 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD33CBA222CFE4400D0BDA6 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -110,6 +111,7 @@
 		0D30B0C2222BCAA700AEA049 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		0D30B0C9222BE37B00AEA049 /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVOSCloud.framework; path = ../Yima2/Yima/Pods/AVOSCloud.framework; sourceTree = "<group>"; };
 		0D30B0CB222BE76F00AEA049 /* LeanCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeanCloud.framework; path = ../Yima2/Yima/Pods/LeanCloud.framework; sourceTree = "<group>"; };
+		0D78B9772238E74E002C5C35 /* SearchTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableView.swift; sourceTree = "<group>"; };
 		0DD33CB4222CFE4400D0BDA6 /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = "../SnapKit-develop/SnapKit.xcodeproj"; sourceTree = "<group>"; };
 		0DD33CC2222CFEF200D0BDA6 /* SignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
 		0DD33CC4222D0DD900D0BDA6 /* SetMenstruationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMenstruationViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				0D30B08E222BC9A300AEA049 /* LaunchScreen.storyboard */,
 				0D30B091222BC9A300AEA049 /* Info.plist */,
 				0D30B089222BC9A300AEA049 /* Yima3.xcdatamodeld */,
+				0D78B9772238E74E002C5C35 /* SearchTableView.swift */,
 			);
 			path = Yima3;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				0D30B08B222BC9A300AEA049 /* Yima3.xcdatamodeld in Sources */,
 				0DD33CC5222D0DD900D0BDA6 /* SetMenstruationViewController.swift in Sources */,
 				0DD33CC3222CFEF200D0BDA6 /* SignViewController.swift in Sources */,
+				0D78B9782238E74E002C5C35 /* SearchTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

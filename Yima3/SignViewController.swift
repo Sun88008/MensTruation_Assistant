@@ -12,7 +12,13 @@ import AVOSCloud
 import SnapKit
 import Alamofire
 
-class SignViewController: UIViewController, UITextFieldDelegate {
+class SignViewController: UIViewController, UITextFieldDelegate, SearchTableViewDelegate {
+    //收起键盘
+    func hideKeyBoard() {
+        self.txtUser.resignFirstResponder()
+        self.txtPwd.resignFirstResponder()
+    }
+    
     
     var txtUser: UITextField! //用户名输入框
     var txtPwd: UITextField! //密码输入款
@@ -27,6 +33,10 @@ class SignViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
+        tap.numberOfTapsRequired = 1
+        tap.numberOfTouchesRequired = 1
+        self.view.addGestureRecognizer(tap)
         //视图背景色
         self.view.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,
                                             alpha: 1)
@@ -188,6 +198,7 @@ class SignViewController: UIViewController, UITextFieldDelegate {
         //用户名框
         txtUser = UITextField(frame:CGRect(x:30, y:30, width:vLogin.frame.size.width - 60, height:44))
         txtUser.delegate = self
+        txtUser.placeholder = "用户名"
         txtUser.layer.cornerRadius = 5
         txtUser.layer.borderColor = UIColor.lightGray.cgColor
         txtUser.layer.borderWidth = 0.5
@@ -202,6 +213,7 @@ class SignViewController: UIViewController, UITextFieldDelegate {
         //密码输入框
         txtPwd = UITextField(frame:CGRect(x:30, y:90, width:vLogin.frame.size.width - 60, height:44))
         txtPwd.delegate = self
+        txtPwd.placeholder = "密码"
         txtPwd.layer.cornerRadius = 5
         txtPwd.layer.borderColor = UIColor.lightGray.cgColor
         txtPwd.layer.borderWidth = 0.5
@@ -311,6 +323,11 @@ class SignViewController: UIViewController, UITextFieldDelegate {
             print(textField.text!)
         }
         return true
+    }
+    
+    
+    @objc func closeKeyboard(){
+        self.view.endEditing(true)
     }
     
     //登录按钮点击
