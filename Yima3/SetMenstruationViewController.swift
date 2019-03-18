@@ -20,10 +20,15 @@ class SetMenstruationViewController: UIViewController, UIActionSheetDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //视图背景色
+        self.view.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,
+                                            alpha: 1)
+        
         // 选择框样式
         SetTime.frame = CGRect(x: self.view.frame.origin.x + 65, y: self.view.frame.origin.y + 100, width: self.view.frame.width * 2 / 3, height: 40)
         SetTime.layer.cornerRadius = 5.0
         SetTime.layer.borderWidth = 0.7
+        SetTime.layer.backgroundColor = UIColor.white.cgColor
         SetTime.layer.borderColor = UIColor.darkGray.cgColor
         SetTime.textAlignment = .center
         SetTime.placeholder = "还记得上一次来姨妈吗？"

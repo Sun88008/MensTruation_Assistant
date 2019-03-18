@@ -27,6 +27,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        //视图背景色
+        self.view.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,
+                                            alpha: 1)
+        
         //启动界面延时
         navigationController?.interactivePopGestureRecognizer?.delegate = self
         Thread.sleep(forTimeInterval: 2)
