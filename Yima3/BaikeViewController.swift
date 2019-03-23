@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import LeanCloud
+import AVOSCloud
+import SnapKit
+import Alamofire
 
 class BaikeViewController: UIViewController {
 

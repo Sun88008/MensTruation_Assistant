@@ -8,6 +8,9 @@
 
 import UIKit
 import SnapKit
+import LeanCloud
+import AVOSCloud
+import Alamofire
 
 class SetMenstruationViewController: UIViewController, UIActionSheetDelegate {
 

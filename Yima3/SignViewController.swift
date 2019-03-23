@@ -334,6 +334,17 @@ class SignViewController: UIViewController, UITextFieldDelegate, SearchTableView
     @objc func loginConfrim(){
         //收起键盘
         self.view.endEditing(true)
+        
+        LCUser.logIn(username: txtUser.text!, password: txtPwd.text!) { result in
+            switch result {
+            case .success(let user):
+                print("Login succeed")
+                break
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
         //视图约束恢复初始设置
         UIView.animate(withDuration: 0.5, animations: { () -> Void in
             self.topConstraint?.update(offset: 0)
@@ -341,6 +352,8 @@ class SignViewController: UIViewController, UITextFieldDelegate, SearchTableView
         })
         //self.present(TabBarController!, animated: true, completion: nil)
     }
+    
+    
     
     //左手离脑袋的距离
     var offsetLeftHand:CGFloat = 60
