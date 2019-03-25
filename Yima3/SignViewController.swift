@@ -24,9 +24,12 @@ class SignViewController: UIViewController, UITextFieldDelegate, SearchTableView
     var txtPwd: UITextField! //密码输入款
     var formView: UIView! //登陆框视图
     var horizontalLine: UIView! //分隔线
-    var confirmButton:UIButton! //登录按钮
+    var confirmButton: UIButton! //登录按钮
+    var register: UIButton! //注册按钮
     var titleLabel: UILabel! //标题标签
-    var imgLogin:UIImageView!
+    var imgLogin: UIImageView!
+    var alert: UIAlertController! //密码错误提示框
+    
     
     var topConstraint: Constraint? //登录框距顶部距离约束
 
@@ -38,8 +41,7 @@ class SignViewController: UIViewController, UITextFieldDelegate, SearchTableView
         tap.numberOfTouchesRequired = 1
         self.view.addGestureRecognizer(tap)
         //视图背景色
-        self.view.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,
-                                            alpha: 1)
+        self.view.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1)
         
         /*//登录框高度
         let formViewHeight = 90
@@ -153,7 +155,6 @@ class SignViewController: UIViewController, UITextFieldDelegate, SearchTableView
         
         //猫头鹰头部
         self.imgLogin = UIImageView(frame: CGRect(x: mainSize.width/2-211/2, y: 100, width: 211, height: 109))
-            //UIImageView(frame:CGRectMake(, 100, 211, 109))
         imgLogin.image = UIImage(named:"owl-login")
         imgLogin.layer.masksToBounds = true
         self.view.addSubview(imgLogin)
@@ -195,6 +196,22 @@ class SignViewController: UIViewController, UITextFieldDelegate, SearchTableView
             make.height.equalTo(44)
         }
         
+        //注册按钮
+        self.register = UIButton()
+        self.register.setTitle("注册", for: UIControlState())
+        self.register.setTitleColor(UIColor.black,
+                                         for: UIControlState())
+        self.register.layer.cornerRadius = 5
+        self.register.backgroundColor = UIColor(red: 1, green: 1, blue: 1,alpha: 0.5)
+        self.register.addTarget(self, action: #selector(loginConfrim),for: .touchUpInside)
+        self.view.addSubview(self.register)
+        self.register.snp.makeConstraints { (make) -> Void in
+            make.left.equalTo(15)
+            make.top.equalTo(confirmButton.snp.bottom).offset(20)
+            make.right.equalTo(-15)
+            make.height.equalTo(44)
+        }
+        
         //用户名框
         txtUser = UITextField(frame:CGRect(x:30, y:30, width:vLogin.frame.size.width - 60, height:44))
         txtUser.delegate = self
@@ -220,6 +237,7 @@ class SignViewController: UIViewController, UITextFieldDelegate, SearchTableView
         //txtPwd.secureTextEntry = true
         txtPwd.leftView = UIView(frame:CGRect(x:0, y:0, width:44, height:44))
         txtPwd.leftViewMode = UITextFieldViewMode.always
+        txtPwd.isSecureTextEntry = true //密码栏遮挡
         
         //密码输入框左侧图标
         let imgPwd =  UIImageView(frame:CGRect(x:11, y:11, width:22, height:22))
@@ -227,6 +245,10 @@ class SignViewController: UIViewController, UITextFieldDelegate, SearchTableView
         txtPwd.leftView!.addSubview(imgPwd)
         vLogin.addSubview(txtPwd)
         
+        //密码错误提示框
+        alert = UIAlertController(title: "提示", message: "用户名或密码错误，请重新输入", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "确定", style: UIAlertActionStyle.default, handler: nil)
+        alert.addAction(okAction)
         
         //猫头鹰左手(圆形的)
         let rectLeftHandGone = CGRect(x:mainSize.width / 2 - 100,
@@ -319,6 +341,8 @@ class SignViewController: UIViewController, UITextFieldDelegate, SearchTableView
             self.txtPwd.becomeFirstResponder()
         case 101:
             loginConfrim()
+        case 102:
+            registerbtm()
         default:
             print(textField.text!)
         }
@@ -339,8 +363,14 @@ class SignViewController: UIViewController, UITextFieldDelegate, SearchTableView
             switch result {
             case .success(let user):
                 print("Login succeed")
+                //成功则跳转到TabBar处
+                let first = self.storyboard
+                let secondView:UIViewController = first?.instantiateViewController(withIdentifier: "TarBar") as! UIViewController
+                self.present(secondView, animated: true, completion: nil)
+                
                 break
             case .failure(let error):
+                self.present(self.alert, animated: true, completion: nil)//登录失败弹出提示框
                 print(error)
             }
         }
@@ -350,7 +380,15 @@ class SignViewController: UIViewController, UITextFieldDelegate, SearchTableView
             self.topConstraint?.update(offset: 0)
             self.view.layoutIfNeeded()
         })
-        //self.present(TabBarController!, animated: true, completion: nil)
+    }
+    
+    //注册按钮
+    @objc func registerbtm(){
+        //收起键盘
+        self.view.endEditing(true)
+        let first = self.storyboard
+        let secondView:UIViewController = first?.instantiateViewController(withIdentifier: "ZhuceView") as! UIViewController
+        self.present(secondView, animated: true, completion: nil)
     }
     
     

@@ -110,6 +110,7 @@ class ZhuCeViewController: UIViewController, UITextFieldDelegate,SearchTableView
         //txtPwd.secureTextEntry = true
         txtPwd.leftView = UIView(frame:CGRect(x:0, y:0, width:44, height:44))
         txtPwd.leftViewMode = UITextFieldViewMode.always
+        txtPwd.isSecureTextEntry = true //密码栏遮挡
         
         //密码输入框左侧图标
         let imgPwd =  UIImageView(frame:CGRect(x:11, y:11, width:22, height:22))

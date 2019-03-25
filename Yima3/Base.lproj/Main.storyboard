@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pO5-2p-0cX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h0g-09-tcA">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--ZhuCeView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="ZhuCeView" id="BYZ-38-t0r" customClass="ZhuCeViewController" customModule="Yima3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ZhuceView" title="ZhuCeView" id="BYZ-38-t0r" customClass="ZhuCeViewController" customModule="Yima3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -292,35 +292,14 @@
             </objects>
             <point key="canvasLocation" x="-2288.4057971014495" y="1013.3152173913044"/>
         </scene>
-        <!--主页-->
+        <!--ZhuyeView-->
         <scene sceneID="xwa-p6-6GL">
             <objects>
-                <viewController id="Hnf-af-nrq" customClass="ViewController" customModule="Yima3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ZhuyeView" title="ZhuyeView" id="Hnf-af-nrq" customClass="ViewController" customModule="Yima3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ahg-SS-MAz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cho-Ya-cUl">
-                                <rect key="frame" x="107" y="506" width="200" height="41"/>
-                                <color key="backgroundColor" red="1" green="0.75294117650000003" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="Qb2-yL-HUH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="登录">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" red="1" green="0.75294117650000003" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="Sign:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4dv-pi-9Hx"/>
-                                    <segue destination="h0g-09-tcA" kind="show" identifier="Sign" id="QHy-hd-CYR"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8D-pc-jnn">
                                 <rect key="frame" x="107" y="430" width="200" height="48"/>
                                 <color key="backgroundColor" red="1" green="0.75294117650000003" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -345,7 +324,7 @@
                                 <items>
                                     <navigationItem id="AHn-FB-sqx">
                                         <nil key="title"/>
-                                        <pageControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="oNg-yR-I7j">
+                                        <pageControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="oNg-yR-I7j">
                                             <rect key="frame" x="207" y="3.6666666666666679" width="0.0" height="37"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </pageControl>
@@ -358,45 +337,18 @@
                                     <constraint firstAttribute="height" constant="203" id="1sF-8M-L0Q"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbW-pc-FPO">
-                                <rect key="frame" x="107" y="577" width="200" height="41"/>
-                                <color key="backgroundColor" red="1" green="0.75294117650000003" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="CWd-dU-iMd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="注册">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" red="1" green="0.75294117650000003" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="y39-iP-qVn"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bGD-KH-zoX" firstAttribute="leading" secondItem="Ahg-SS-MAz" secondAttribute="leading" id="7qI-tY-8C1"/>
-                            <constraint firstItem="CbW-pc-FPO" firstAttribute="centerX" secondItem="PBL-xx-7XY" secondAttribute="centerX" id="7wc-od-Qo1"/>
-                            <constraint firstItem="cho-Ya-cUl" firstAttribute="leading" secondItem="51Z-3Z-YK4" secondAttribute="leading" constant="107" id="8Ct-Mz-eU1"/>
-                            <constraint firstItem="cho-Ya-cUl" firstAttribute="centerX" secondItem="Ahg-SS-MAz" secondAttribute="centerX" id="FUU-9k-HgB"/>
                             <constraint firstItem="PBL-xx-7XY" firstAttribute="leading" secondItem="51Z-3Z-YK4" secondAttribute="leading" constant="87" id="G5S-ti-dRu"/>
-                            <constraint firstItem="cho-Ya-cUl" firstAttribute="top" secondItem="K8D-pc-jnn" secondAttribute="bottom" constant="28" id="Idy-uV-UIM"/>
-                            <constraint firstItem="cho-Ya-cUl" firstAttribute="trailing" secondItem="K8D-pc-jnn" secondAttribute="trailing" id="VZT-3e-bSV"/>
-                            <constraint firstItem="CbW-pc-FPO" firstAttribute="centerX" secondItem="bGD-KH-zoX" secondAttribute="centerX" id="Vkq-PE-On8"/>
-                            <constraint firstItem="51Z-3Z-YK4" firstAttribute="bottom" secondItem="cho-Ya-cUl" secondAttribute="bottom" constant="140" id="eOu-Gf-0sn"/>
-                            <constraint firstItem="CbW-pc-FPO" firstAttribute="top" secondItem="cho-Ya-cUl" secondAttribute="bottom" constant="30" id="f03-hJ-vZ0"/>
-                            <constraint firstItem="CbW-pc-FPO" firstAttribute="trailing" secondItem="cho-Ya-cUl" secondAttribute="trailing" id="hyS-j9-JfO"/>
+                            <constraint firstAttribute="trailing" secondItem="bGD-KH-zoX" secondAttribute="trailing" id="NN4-0L-k8w"/>
+                            <constraint firstItem="PBL-xx-7XY" firstAttribute="centerX" secondItem="K8D-pc-jnn" secondAttribute="centerX" id="dDv-OF-Vgh"/>
                             <constraint firstItem="bGD-KH-zoX" firstAttribute="centerX" secondItem="PBL-xx-7XY" secondAttribute="centerX" id="q4N-Uv-y9r"/>
-                            <constraint firstItem="CbW-pc-FPO" firstAttribute="leading" secondItem="cho-Ya-cUl" secondAttribute="leading" id="qr2-kr-mcC"/>
                             <constraint firstItem="bGD-KH-zoX" firstAttribute="top" secondItem="51Z-3Z-YK4" secondAttribute="top" id="t7E-wO-k1P"/>
                             <constraint firstItem="PBL-xx-7XY" firstAttribute="top" secondItem="bGD-KH-zoX" secondAttribute="bottom" constant="53" id="thR-QZ-osY"/>
-                            <constraint firstItem="cho-Ya-cUl" firstAttribute="leading" secondItem="K8D-pc-jnn" secondAttribute="leading" id="x5M-qa-cgn"/>
+                            <constraint firstItem="K8D-pc-jnn" firstAttribute="leading" secondItem="51Z-3Z-YK4" secondAttribute="leading" constant="107" id="wf8-Dh-qbu"/>
+                            <constraint firstItem="51Z-3Z-YK4" firstAttribute="bottom" secondItem="K8D-pc-jnn" secondAttribute="bottom" constant="209" id="zUy-Hd-crc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="51Z-3Z-YK4"/>
                     </view>
@@ -480,14 +432,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="barTintColor" red="1" green="0.75294117647058822" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <navigationItem title="姨妈助手" id="F8J-Nn-RbQ">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="D9S-54-EC3">
-                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <connections>
-                                                <segue destination="gl1-HH-c2I" kind="unwind" unwindAction="backWithSegue:" id="3p7-Og-PhT"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="姨妈助手" id="F8J-Nn-RbQ"/>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -497,7 +442,6 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3E7-uq-Gta" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="gl1-HH-c2I" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-564" y="-68"/>
         </scene>
