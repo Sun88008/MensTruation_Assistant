@@ -345,7 +345,7 @@
                                 <items>
                                     <navigationItem id="AHn-FB-sqx">
                                         <nil key="title"/>
-                                        <pageControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="oNg-yR-I7j">
+                                        <pageControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="oNg-yR-I7j">
                                             <rect key="frame" x="207" y="3.6666666666666679" width="0.0" height="37"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </pageControl>
