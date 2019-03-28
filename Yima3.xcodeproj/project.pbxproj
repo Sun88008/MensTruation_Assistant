@@ -29,9 +29,14 @@
 		0D51BD50223CE09F00B1E020 /* WodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D51BD4F223CE09F00B1E020 /* WodeViewController.swift */; };
 		0D72F9BE224620FB00C7B57F /* ZhuCeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D72F9BD224620FB00C7B57F /* ZhuCeViewController.swift */; };
 		0D78B9782238E74E002C5C35 /* SearchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B9772238E74E002C5C35 /* SearchTableView.swift */; };
+		0DC9C535224CA3B8008B0985 /* changeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9C534224CA3B8008B0985 /* changeInfoViewController.swift */; };
+		0DC9C537224CA42F008B0985 /* myMenstrualStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9C536224CA42F008B0985 /* myMenstrualStatusViewController.swift */; };
+		0DC9C539224CA45C008B0985 /* addTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9C538224CA45C008B0985 /* addTipsViewController.swift */; };
+		0DC9C53B224CA476008B0985 /* installTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9C53A224CA476008B0985 /* installTableViewController.swift */; };
+		0DC9C559224CA9FA008B0985 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC9C556224CA9EC008B0985 /* SnapKit.framework */; };
+		0DC9C55A224CA9FA008B0985 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC9C556224CA9EC008B0985 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0DC9C55E224CAF69008B0985 /* photoInCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9C55D224CAF69008B0985 /* photoInCellTableViewCell.swift */; };
 		0DD33CB3222CC06700D0BDA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30B082222BC9A300AEA049 /* AppDelegate.swift */; };
-		0DD33CBD222CFE7600D0BDA6 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD33CBA222CFE4400D0BDA6 /* SnapKit.framework */; };
-		0DD33CBE222CFE7600D0BDA6 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD33CBA222CFE4400D0BDA6 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0DD33CC3222CFEF200D0BDA6 /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD33CC2222CFEF200D0BDA6 /* SignViewController.swift */; };
 		0DD33CC5222D0DD900D0BDA6 /* SetMenstruationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD33CC4222D0DD900D0BDA6 /* SetMenstruationViewController.swift */; };
 		1A7B0D9EADF2E693668434C8 /* Pods_Yima3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C6C2B6E740686C2C02846F /* Pods_Yima3.framework */; };
@@ -52,23 +57,23 @@
 			remoteGlobalIDString = 0D30B07E222BC9A300AEA049;
 			remoteInfo = Yima3;
 		};
-		0DD33CB9222CFE4400D0BDA6 /* PBXContainerItemProxy */ = {
+		0DC9C555224CA9EC008B0985 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0DD33CB4222CFE4400D0BDA6 /* SnapKit.xcodeproj */;
+			containerPortal = 0DC9C550224CA9EB008B0985 /* SnapKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = EEBCC9D819CC627D0083B827;
 			remoteInfo = SnapKit;
 		};
-		0DD33CBB222CFE4400D0BDA6 /* PBXContainerItemProxy */ = {
+		0DC9C557224CA9EC008B0985 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0DD33CB4222CFE4400D0BDA6 /* SnapKit.xcodeproj */;
+			containerPortal = 0DC9C550224CA9EB008B0985 /* SnapKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = EEBCC9E219CC627E0083B827;
 			remoteInfo = "SnapKit Tests";
 		};
-		0DD33CBF222CFE7600D0BDA6 /* PBXContainerItemProxy */ = {
+		0DC9C55B224CA9FA008B0985 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0DD33CB4222CFE4400D0BDA6 /* SnapKit.xcodeproj */;
+			containerPortal = 0DC9C550224CA9EB008B0985 /* SnapKit.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = EEBCC9D719CC627D0083B827;
 			remoteInfo = SnapKit;
@@ -76,13 +81,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0DD33CC1222CFE7700D0BDA6 /* Embed Frameworks */ = {
+		0DC9C54F224CA94F008B0985 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0DD33CBE222CFE7600D0BDA6 /* SnapKit.framework in Embed Frameworks */,
+				0DC9C55A224CA9FA008B0985 /* SnapKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,7 +125,12 @@
 		0D51BD4F223CE09F00B1E020 /* WodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WodeViewController.swift; sourceTree = "<group>"; };
 		0D72F9BD224620FB00C7B57F /* ZhuCeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhuCeViewController.swift; sourceTree = "<group>"; };
 		0D78B9772238E74E002C5C35 /* SearchTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableView.swift; sourceTree = "<group>"; };
-		0DD33CB4222CFE4400D0BDA6 /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = "../SnapKit-develop/SnapKit.xcodeproj"; sourceTree = "<group>"; };
+		0DC9C534224CA3B8008B0985 /* changeInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeInfoViewController.swift; sourceTree = "<group>"; };
+		0DC9C536224CA42F008B0985 /* myMenstrualStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myMenstrualStatusViewController.swift; sourceTree = "<group>"; };
+		0DC9C538224CA45C008B0985 /* addTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTipsViewController.swift; sourceTree = "<group>"; };
+		0DC9C53A224CA476008B0985 /* installTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = installTableViewController.swift; sourceTree = "<group>"; };
+		0DC9C550224CA9EB008B0985 /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = "../../Downloads/SnapKit-develop/SnapKit.xcodeproj"; sourceTree = "<group>"; };
+		0DC9C55D224CAF69008B0985 /* photoInCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoInCellTableViewCell.swift; sourceTree = "<group>"; };
 		0DD33CC2222CFEF200D0BDA6 /* SignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
 		0DD33CC4222D0DD900D0BDA6 /* SetMenstruationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMenstruationViewController.swift; sourceTree = "<group>"; };
 		2BCB2B6FEBA53B5C2BDF5D55 /* Pods-Yima3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yima3.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yima3/Pods-Yima3.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,7 +146,7 @@
 				0D30B0C3222BCAA700AEA049 /* libsqlite3.tbd in Frameworks */,
 				0D30B0C4222BCAA700AEA049 /* libc++.tbd in Frameworks */,
 				0D30B0C5222BCAA700AEA049 /* libz.tbd in Frameworks */,
-				0DD33CBD222CFE7600D0BDA6 /* SnapKit.framework in Frameworks */,
+				0DC9C559224CA9FA008B0985 /* SnapKit.framework in Frameworks */,
 				0D30B0C6222BCAA700AEA049 /* libicucore.tbd in Frameworks */,
 				0D30B0BE222BCA7200AEA049 /* SystemConfiguration.framework in Frameworks */,
 				0D30B0BC222BCA6400AEA049 /* MobileCoreServices.framework in Frameworks */,
@@ -168,8 +178,9 @@
 		0D30B076222BC9A300AEA049 = {
 			isa = PBXGroup;
 			children = (
-				0DD33CB4222CFE4400D0BDA6 /* SnapKit.xcodeproj */,
+				0DC9C550224CA9EB008B0985 /* SnapKit.xcodeproj */,
 				0D30B081222BC9A300AEA049 /* Yima3 */,
+				0DC9C532224CA348008B0985 /* Wode */,
 				0D30B099222BC9A300AEA049 /* Yima3Tests */,
 				0D30B0A4222BC9A300AEA049 /* Yima3UITests */,
 				0D30B080222BC9A300AEA049 /* Products */,
@@ -227,11 +238,23 @@
 			path = Yima3UITests;
 			sourceTree = "<group>";
 		};
-		0DD33CB5222CFE4400D0BDA6 /* Products */ = {
+		0DC9C532224CA348008B0985 /* Wode */ = {
 			isa = PBXGroup;
 			children = (
-				0DD33CBA222CFE4400D0BDA6 /* SnapKit.framework */,
-				0DD33CBC222CFE4400D0BDA6 /* SnapKit Tests.xctest */,
+				0DC9C534224CA3B8008B0985 /* changeInfoViewController.swift */,
+				0DC9C536224CA42F008B0985 /* myMenstrualStatusViewController.swift */,
+				0DC9C538224CA45C008B0985 /* addTipsViewController.swift */,
+				0DC9C53A224CA476008B0985 /* installTableViewController.swift */,
+				0DC9C55D224CAF69008B0985 /* photoInCellTableViewCell.swift */,
+			);
+			name = Wode;
+			sourceTree = "<group>";
+		};
+		0DC9C551224CA9EB008B0985 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0DC9C556224CA9EC008B0985 /* SnapKit.framework */,
+				0DC9C558224CA9EC008B0985 /* SnapKit Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -277,12 +300,12 @@
 				0D30B07D222BC9A300AEA049 /* Resources */,
 				B1E0D523A65B36A652F11E78 /* [CP] Embed Pods Frameworks */,
 				E90C05294E04EEE561B16105 /* [CP] Copy Pods Resources */,
-				0DD33CC1222CFE7700D0BDA6 /* Embed Frameworks */,
+				0DC9C54F224CA94F008B0985 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0DD33CC0222CFE7600D0BDA6 /* PBXTargetDependency */,
+				0DC9C55C224CA9FA008B0985 /* PBXTargetDependency */,
 			);
 			name = Yima3;
 			productName = Yima3;
@@ -365,8 +388,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 0DD33CB5222CFE4400D0BDA6 /* Products */;
-					ProjectRef = 0DD33CB4222CFE4400D0BDA6 /* SnapKit.xcodeproj */;
+					ProductGroup = 0DC9C551224CA9EB008B0985 /* Products */;
+					ProjectRef = 0DC9C550224CA9EB008B0985 /* SnapKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -379,18 +402,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		0DD33CBA222CFE4400D0BDA6 /* SnapKit.framework */ = {
+		0DC9C556224CA9EC008B0985 /* SnapKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SnapKit.framework;
-			remoteRef = 0DD33CB9222CFE4400D0BDA6 /* PBXContainerItemProxy */;
+			remoteRef = 0DC9C555224CA9EC008B0985 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0DD33CBC222CFE4400D0BDA6 /* SnapKit Tests.xctest */ = {
+		0DC9C558224CA9EC008B0985 /* SnapKit Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "SnapKit Tests.xctest";
-			remoteRef = 0DD33CBB222CFE4400D0BDA6 /* PBXContainerItemProxy */;
+			remoteRef = 0DC9C557224CA9EC008B0985 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -487,15 +510,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DC9C537224CA42F008B0985 /* myMenstrualStatusViewController.swift in Sources */,
 				0DD33CB3222CC06700D0BDA6 /* AppDelegate.swift in Sources */,
+				0DC9C539224CA45C008B0985 /* addTipsViewController.swift in Sources */,
 				0D30B085222BC9A300AEA049 /* ViewController.swift in Sources */,
+				0DC9C53B224CA476008B0985 /* installTableViewController.swift in Sources */,
 				0D51BD4C223CE06A00B1E020 /* BaikeViewController.swift in Sources */,
 				0D30B08B222BC9A300AEA049 /* Yima3.xcdatamodeld in Sources */,
 				0D72F9BE224620FB00C7B57F /* ZhuCeViewController.swift in Sources */,
 				0D51BD4E223CE09100B1E020 /* QuanziViewController.swift in Sources */,
 				0DD33CC5222D0DD900D0BDA6 /* SetMenstruationViewController.swift in Sources */,
+				0DC9C535224CA3B8008B0985 /* changeInfoViewController.swift in Sources */,
 				0D51BD50223CE09F00B1E020 /* WodeViewController.swift in Sources */,
 				0DD33CC3222CFEF200D0BDA6 /* SignViewController.swift in Sources */,
+				0DC9C55E224CAF69008B0985 /* photoInCellTableViewCell.swift in Sources */,
 				0D78B9782238E74E002C5C35 /* SearchTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,10 +557,10 @@
 			target = 0D30B07E222BC9A300AEA049 /* Yima3 */;
 			targetProxy = 0D30B0A2222BC9A300AEA049 /* PBXContainerItemProxy */;
 		};
-		0DD33CC0222CFE7600D0BDA6 /* PBXTargetDependency */ = {
+		0DC9C55C224CA9FA008B0985 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SnapKit;
-			targetProxy = 0DD33CBF222CFE7600D0BDA6 /* PBXContainerItemProxy */;
+			targetProxy = 0DC9C55B224CA9FA008B0985 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

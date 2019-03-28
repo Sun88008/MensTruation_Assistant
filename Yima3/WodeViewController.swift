@@ -15,9 +15,9 @@ import Alamofire
 class WodeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var Touxiang: UIImageView!
-    @IBOutlet weak var tbView: UITableView!
-    @IBOutlet weak var tbView2: UITableView!
-    @IBOutlet weak var tbView3: UITableView!
+//    @IBOutlet weak var tbView: UITableView!
+//    @IBOutlet weak var tbView2: UITableView!
+//    @IBOutlet weak var tbView3: UITableView!
 //    var part1 = ["修改信息"]
 //    var part2 = ["添加状态", "添加提醒", "清除缓存"]
 //    var part3 = ["设置"]
@@ -25,8 +25,7 @@ class WodeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,
-                                            alpha: 1)
+        self.view.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1)
         
         Touxiang.layer.masksToBounds = true
         Touxiang.layer.cornerRadius = Touxiang.frame.size.width/2
@@ -64,6 +63,9 @@ class WodeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)//点击cell后消除选中效果
+    }
+    @IBAction func backToWode(segue: UIStoryboardSegue) {
+        print("closed for Wode")
     }
     /*
     // MARK: - Table view data source
