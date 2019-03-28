@@ -14,7 +14,7 @@ class photoInCellTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         Touxiang1.layer.masksToBounds = true
-                Touxiang1.layer.cornerRadius = Touxiang1.frame.size.width/2
+        Touxiang1.layer.cornerRadius = Touxiang1.frame.size.width/2
         // Initialization code
     }
 

@@ -203,7 +203,7 @@ class SignViewController: UIViewController, UITextFieldDelegate, SearchTableView
                                          for: UIControlState())
         self.register.layer.cornerRadius = 5
         self.register.backgroundColor = UIColor(red: 1, green: 1, blue: 1,alpha: 0.5)
-        self.register.addTarget(self, action: #selector(loginConfrim),for: .touchUpInside)
+        self.register.addTarget(self, action: #selector(registerbtm),for: .touchUpInside)
         self.view.addSubview(self.register)
         self.register.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(15)
@@ -341,8 +341,6 @@ class SignViewController: UIViewController, UITextFieldDelegate, SearchTableView
             self.txtPwd.becomeFirstResponder()
         case 101:
             loginConfrim()
-        case 102:
-            registerbtm()
         default:
             print(textField.text!)
         }

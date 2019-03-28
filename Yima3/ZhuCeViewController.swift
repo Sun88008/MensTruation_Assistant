@@ -28,6 +28,7 @@ class ZhuCeViewController: UIViewController, UITextFieldDelegate,SearchTableView
     var confirmButton:UIButton! //登录按钮
     var titleLabel: UILabel! //标题标签
     var imgLogin:UIImageView!
+    var alert: UIAlertController! //注册失败提示框
     
     var topConstraint: Constraint? //登录框距顶部距离约束
     
@@ -69,7 +70,7 @@ class ZhuCeViewController: UIViewController, UITextFieldDelegate,SearchTableView
         vLogin.backgroundColor = UIColor.white
         self.view.addSubview(vLogin)
         
-        //登录按钮
+        //注册按钮
         self.confirmButton = UIButton()
         self.confirmButton.setTitle("注册", for: UIControlState())
         self.confirmButton.setTitleColor(UIColor.black,
@@ -118,6 +119,11 @@ class ZhuCeViewController: UIViewController, UITextFieldDelegate,SearchTableView
         txtPwd.leftView!.addSubview(imgPwd)
         vLogin.addSubview(txtPwd)
         
+        //密码错误提示框
+        alert = UIAlertController(title: "提示", message: "注册失败，请检测网络是否正常", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "确定", style: UIAlertActionStyle.default, handler: nil)
+        alert.addAction(okAction)
+        
         //猫头鹰左手(圆形的)
         let rectLeftHandGone = CGRect(x:mainSize.width / 2 - 100,
                                       y:vLogin.frame.origin.y - 22, width:40, height:40)
@@ -134,7 +140,7 @@ class ZhuCeViewController: UIViewController, UITextFieldDelegate,SearchTableView
         
         // Do any additional setup after loading the view.
     }
-    
+
     //输入框获取焦点开始编辑
     func textFieldDidBeginEditing(_ textField:UITextField)
     {
@@ -234,10 +240,15 @@ class ZhuCeViewController: UIViewController, UITextFieldDelegate,SearchTableView
         user.signUp { (x) in
             if let error=x.error
             {
+                self.present(self.alert, animated: true, completion: nil)//登录失败弹出提示框
                 print(error.code)
             }
             else{
                 print("sucess")
+                //成功则跳转到TabBar处
+                let first = self.storyboard
+                let secondView:UIViewController = first?.instantiateViewController(withIdentifier: "TarBar") as! UIViewController
+                self.present(secondView, animated: true, completion: nil)
             }
         }
         //视图约束恢复初始设置
