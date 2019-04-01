@@ -9,12 +9,16 @@
 import UIKit
 
 class photoInCellTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var txtAge: UITextField!
+    
     @IBOutlet weak var Touxiang1: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         Touxiang1.layer.masksToBounds = true
         Touxiang1.layer.cornerRadius = Touxiang1.frame.size.width/2
+        
+        
+        
         // Initialization code
     }
 

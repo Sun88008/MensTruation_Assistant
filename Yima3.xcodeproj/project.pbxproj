@@ -204,12 +204,12 @@
 			children = (
 				0D30B082222BC9A300AEA049 /* AppDelegate.swift */,
 				0D30B084222BC9A300AEA049 /* ViewController.swift */,
-				0D72F9BD224620FB00C7B57F /* ZhuCeViewController.swift */,
 				0DD33CC2222CFEF200D0BDA6 /* SignViewController.swift */,
 				0DD33CC4222D0DD900D0BDA6 /* SetMenstruationViewController.swift */,
 				0D51BD4B223CE06A00B1E020 /* BaikeViewController.swift */,
 				0D51BD4D223CE09100B1E020 /* QuanziViewController.swift */,
 				0D51BD4F223CE09F00B1E020 /* WodeViewController.swift */,
+				0D72F9BD224620FB00C7B57F /* ZhuCeViewController.swift */,
 				0D30B086222BC9A300AEA049 /* Main.storyboard */,
 				0D30B08C222BC9A300AEA049 /* Assets.xcassets */,
 				0D30B08E222BC9A300AEA049 /* LaunchScreen.storyboard */,
