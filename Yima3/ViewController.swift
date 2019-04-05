@@ -23,7 +23,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate{
         self.view.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1)
         //启动界面延时
         navigationController?.interactivePopGestureRecognizer?.delegate = self
-        Thread.sleep(forTimeInterval: 0)
+        Thread.sleep(forTimeInterval: 1)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

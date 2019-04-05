@@ -51,9 +51,6 @@ class myMenstrualStatusViewController: UIViewController,UIPickerViewDelegate,UIP
         SetTime1.tintColor = UIColor.lightGray
         SetTime2.tintColor = UIColor.lightGray
         
-        
-        //let actionSheet = UIActionSheet.init(title: "", delegate: self as! UIActionSheetDelegate, cancelButtonTitle: nil, destructiveButtonTitle: nil)
-        
         pickerDateToolbar1 = UIToolbar.init(frame: CGRect(x: 0,y: 0,width: 320, height: 44))
         pickerDateToolbar1.barStyle = UIBarStyle.blackOpaque
         pickerDateToolbar1.sizeToFit()
@@ -65,18 +62,19 @@ class myMenstrualStatusViewController: UIViewController,UIPickerViewDelegate,UIP
         let barItems1 = NSMutableArray.init()
         let barItems2 = NSMutableArray.init()
         
-        let cancelBtn = UIBarButtonItem.init(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(toolBarCancelClick))
-        barItems1.add(cancelBtn)
-        barItems2.add(cancelBtn)
+        let cancelBtn1 = UIBarButtonItem.init(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(toolBarCancelClick))
+        barItems1.add(cancelBtn1)
+        let cancelBtn2 = UIBarButtonItem.init(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(toolBarCancelClick))
+        barItems2.add(cancelBtn2)
         
         let flexSpace = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         barItems1.add(flexSpace)
         barItems2.add(flexSpace)
         
-        let doneBtn1 = UIBarButtonItem.init(title: "完成", style: UIBarButtonItemStyle.done, target: self, action: #selector(toolBarDoneClick1))
+        let doneBtn1 = UIBarButtonItem.init(title: "完成", style: UIBarButtonItemStyle.plain, target: self, action: #selector(toolBarDoneClick1))
         barItems1.add(doneBtn1)
         
-        let doneBtn2 = UIBarButtonItem.init(title: "完成", style: UIBarButtonItemStyle.done, target: self, action: #selector(toolBarDoneClick2))
+        let doneBtn2 = UIBarButtonItem.init(title: "完成", style: UIBarButtonItemStyle.plain, target: self, action: #selector(toolBarDoneClick2))
         barItems2.add(doneBtn2)
 
         pickerDateToolbar1.setItems(barItems1 as? [UIBarButtonItem], animated: true)
