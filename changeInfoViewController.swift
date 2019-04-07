@@ -69,6 +69,7 @@ class changeInfoViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.deselectRow(at: indexPath, animated: false)//点击cell后消除选中效果
     }
     
+    //注销用户
     @IBAction func logOutBtm(_ sender: UIButton) {
         AVUser.logOut()
         let currentUser: AVUser

@@ -1,8 +1,8 @@
 //
-//  SetNameViewController.swift
+//  SetTelNumViewController.swift
 //  Yima3
 //
-//  Created by Dsssss on 2019/4/5.
+//  Created by Dsssss on 2019/4/7.
 //  Copyright © 2019年 Doubles. All rights reserved.
 //
 
@@ -10,29 +10,25 @@ import UIKit
 import LeanCloud
 import AVOSCloud
 
-class SetNameViewController: UIViewController {
-    @IBOutlet weak var setNameTextField: UITextField!
+class SetTelNumViewController: UIViewController {
+    @IBOutlet weak var txtTelNum: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1)
-        //点击空白处收起键盘
-        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
-        tap.numberOfTapsRequired = 1
-        tap.numberOfTouchesRequired = 1
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func finishNameUpdate(_ sender: UIBarButtonItem) {
+    @IBAction func finishtelNumUpdate(_ sender: UIBarButtonItem) {
         let currentUser = LCUser.current!
         
-        // 修改当前用户的昵称
-        currentUser.set("name", value: setNameTextField.text)
+        // 修改当前用户的电话号码
+        currentUser.set("telNum", value: txtTelNum.text)
         
         currentUser.save { result in
             switch result {
             case .success:
-                print("name setted!")
+                print("telNum setted!")
                 //成功则跳转到changeInfoView处
                 let first = self.storyboard
                 let secondView:UIViewController = first?.instantiateViewController(withIdentifier: "changeInfoView") as! UIViewController
@@ -43,20 +39,12 @@ class SetNameViewController: UIViewController {
             }
         }
     }
-    
-    @objc func closeKeyboard(){
-        self.view.endEditing(true)
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let viewController: UIViewController = segue.destination
-//        (viewController as! ViewController).gender = (sender as! UITableViewCell).textLabel?.text
-//    }
 
     /*
     // MARK: - Navigation
