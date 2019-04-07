@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D2F62D422574C1100D4ECC8 /* cellLableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F62D322574C1100D4ECC8 /* cellLableTableViewCell.swift */; };
 		0D30B085222BC9A300AEA049 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30B084222BC9A300AEA049 /* ViewController.swift */; };
 		0D30B088222BC9A300AEA049 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D30B086222BC9A300AEA049 /* Main.storyboard */; };
 		0D30B08B222BC9A300AEA049 /* Yima3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0D30B089222BC9A300AEA049 /* Yima3.xcdatamodeld */; };
@@ -96,6 +97,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D2F62D322574C1100D4ECC8 /* cellLableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellLableTableViewCell.swift; sourceTree = "<group>"; };
 		0D30B07F222BC9A300AEA049 /* Yima3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yima3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D30B082222BC9A300AEA049 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D30B084222BC9A300AEA049 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +179,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D2F62D622574C2000D4ECC8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0DC9C55D224CAF69008B0985 /* photoInCellTableViewCell.swift */,
+				0D2F62D322574C1100D4ECC8 /* cellLableTableViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		0D30B076222BC9A300AEA049 = {
 			isa = PBXGroup;
 			children = (
@@ -251,12 +262,12 @@
 		0DC9C532224CA348008B0985 /* Wode */ = {
 			isa = PBXGroup;
 			children = (
+				0D2F62D622574C2000D4ECC8 /* Cell */,
 				0DAE68D72256FA5D009BA120 /* PersonalInfo */,
 				0DC9C534224CA3B8008B0985 /* changeInfoViewController.swift */,
 				0DC9C536224CA42F008B0985 /* myMenstrualStatusViewController.swift */,
 				0DC9C538224CA45C008B0985 /* addTipsViewController.swift */,
 				0DC9C53A224CA476008B0985 /* installTableViewController.swift */,
-				0DC9C55D224CAF69008B0985 /* photoInCellTableViewCell.swift */,
 			);
 			name = Wode;
 			sourceTree = "<group>";
@@ -525,6 +536,7 @@
 				0DD33CB3222CC06700D0BDA6 /* AppDelegate.swift in Sources */,
 				0DAE68D92256FA95009BA120 /* SetNameViewController.swift in Sources */,
 				0DC9C539224CA45C008B0985 /* addTipsViewController.swift in Sources */,
+				0D2F62D422574C1100D4ECC8 /* cellLableTableViewCell.swift in Sources */,
 				0D30B085222BC9A300AEA049 /* ViewController.swift in Sources */,
 				0DC9C53B224CA476008B0985 /* installTableViewController.swift in Sources */,
 				0D51BD4C223CE06A00B1E020 /* BaikeViewController.swift in Sources */,

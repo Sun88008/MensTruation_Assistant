@@ -7,16 +7,15 @@
 //
 
 import UIKit
+import LeanCloud
+import AVOSCloud
 
 class changeInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var txtAge = UITextView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1)
-        
-        txtAge.frame = CGRect(x:280,y:6,width:50,height:30)
-        
+                
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -69,6 +68,18 @@ class changeInfoViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)//点击cell后消除选中效果
     }
+    
+    @IBAction func logOutBtm(_ sender: UIButton) {
+        AVUser.logOut()
+        let currentUser: AVUser
+        //跳转到TabBar处
+        let first = self.storyboard
+        let secondView:UIViewController = first?.instantiateViewController(withIdentifier: "FirstView") as! UIViewController
+        self.present(secondView, animated: true, completion: nil)
+
+    }
+    
+    
     @IBAction func backToInfo(segue: UIStoryboardSegue) {
         print("closed for Info")
     }

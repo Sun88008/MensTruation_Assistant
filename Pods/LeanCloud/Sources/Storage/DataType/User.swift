@@ -50,6 +50,7 @@ open class LCUser: LCObject {
 
     /// Session token of user authenticated by server.
     @objc open fileprivate(set) dynamic var sessionToken: LCString?
+    @objc open dynamic var name: LCString?
 
     /// Current authenticated user.
     open static var current: LCUser? = nil

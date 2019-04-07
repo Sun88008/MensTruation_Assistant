@@ -14,12 +14,24 @@ import AVOSCloud
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         AVOSCloud.setApplicationId("QzGVOBAXDFKAlvtkFdkPOCQc-gzGzoHsz", clientKey: "LFflr8QCngaMJQiYtpj6AsiE")
         LeanCloud.initialize(applicationID: "QzGVOBAXDFKAlvtkFdkPOCQc-gzGzoHsz", applicationKey: "LFflr8QCngaMJQiYtpj6AsiE")
+        
+//        let currentUser: AVUser = AVUser.current()!
+//        if (currentUser != nil) {
+//            // 跳转到首页
+//            let storyboard = UIStoryboard(name: "TarBar", bundle: nil)
+//            let loginView = storyboard.instantiateViewController(withIdentifier: "TarBar")
+//            window?.rootViewController = loginView
+//        } else {
+//            //缓存用户对象为空时，可打开用户注册界面…
+//            let storyboard = UIStoryboard(name: "FirstView", bundle: nil)
+//            let loginView = storyboard.instantiateViewController(withIdentifier: "FirstView")
+//            window?.rootViewController = loginView
+//        }
         
         // Override point for customization after application launch.
         return true

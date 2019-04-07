@@ -30,11 +30,20 @@ class SignViewController: UIViewController, UITextFieldDelegate, SearchTableView
     var imgLogin: UIImageView!
     var alert: UIAlertController! //密码错误提示框
     
-    
     var topConstraint: Constraint? //登录框距顶部距离约束
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let currentUser: AVUser! = AVUser.current()
+        if (currentUser != nil) {
+            // 跳转到首页
+            let first = self.storyboard
+            let secondView:UIViewController = first?.instantiateViewController(withIdentifier: "TarBar") as! UIViewController
+            self.present(secondView, animated: true, completion: nil)
+        } else {
+            //缓存用户对象为空时，可打开用户注册界面…
+        }
+                
         
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
         tap.numberOfTapsRequired = 1
@@ -389,7 +398,9 @@ class SignViewController: UIViewController, UITextFieldDelegate, SearchTableView
         self.present(secondView, animated: true, completion: nil)
     }
     
-    
+    @IBAction func back(segue: UIStoryboardSegue) {
+        print("closed")
+    }
     
     //左手离脑袋的距离
     var offsetLeftHand:CGFloat = 60

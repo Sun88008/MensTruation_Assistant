@@ -29,11 +29,5 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func back(segue: UIStoryboardSegue) {
-        print("closed")
-    }
-    
-
 }
 
