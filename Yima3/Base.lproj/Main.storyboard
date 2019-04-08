@@ -52,16 +52,39 @@
                     <view key="view" contentMode="scaleToFill" id="hB3-9H-6rF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="有问题就来这里搜索吧" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fOh-NT-Wsk">
+                                <rect key="frame" x="20" y="20" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="JcF-R8-3ii">
+                                <rect key="frame" x="197" y="362" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qgr-uO-MoE">
+                                <rect key="frame" x="0.0" y="58" width="414" height="629"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Dg8-Un-yRe"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="百科" image="jiemao" id="Tns-hp-Q6S" userLabel="Item3">
                         <inset key="imageInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="baikeWebview" destination="Qgr-uO-MoE" id="rxS-9K-YNa"/>
+                        <outlet property="loading" destination="JcF-R8-3ii" id="kxo-6m-zoC"/>
+                        <outlet property="txtSearch" destination="fOh-NT-Wsk" id="OGS-7v-YnW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xyk-1u-muu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3033.3333333333335" y="1013.3152173913044"/>
+            <point key="canvasLocation" x="-3278.2608695652175" y="617.93478260869574"/>
         </scene>
         <!--圈子-->
         <scene sceneID="Jop-Ed-c2P">
