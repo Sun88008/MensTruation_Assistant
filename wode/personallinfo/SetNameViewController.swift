@@ -16,10 +16,36 @@ class SetNameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1)
-        //点击空白处收起键盘
+        //点击空白处收起键盘(暂时无效)
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
         tap.numberOfTapsRequired = 1
         tap.numberOfTouchesRequired = 1
+        
+        let currentUser = LCUser.current!//初始化当前用户信息
+        let ID = currentUser.objectId?.stringValue//获取objectId
+        let query = LCQuery(className: "_User")//选择所在类
+        let _ = query.get(ID!) { (result) in
+            switch result {
+            case .success(object: let object):
+                
+                print("get name succeed!")
+                
+                // get value by string key
+                let name = object.get("name")?.stringValue
+                
+                if(name == "" || name == nil){
+                    self.setNameTextField.text = "起一个响亮的名字吧"
+                }else{
+                    self.setNameTextField.text = String(describing: name!)
+                }
+                print("昵称为："+"\(String(describing: name))")
+                
+            case .failure(error: let error):
+                // handle error
+                print(error)
+                break
+            }
+        }
         // Do any additional setup after loading the view.
     }
     

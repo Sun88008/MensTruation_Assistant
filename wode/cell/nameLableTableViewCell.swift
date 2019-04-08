@@ -10,23 +10,24 @@ import UIKit
 import LeanCloud
 import AVOSCloud
 
-class cellLableTableViewCell: UITableViewCell {
+class nameLableTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLable: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //let currentUser = LCUser.current!
-        let query = LCQuery(className: "_User")
-        let _ = query.get("5c95f5c0fe88c2006f319988") { (result) in
+        let currentUser = LCUser.current!//初始化当前用户信息
+        let ID = currentUser.objectId?.stringValue//获取objectId
+        let query = LCQuery(className: "_User")//选择所在类
+        let _ = query.get(ID!) { (result) in
             switch result {
             case .success(object: let object):
                 
-                print("get succeed!")
+                print("get name succeed!")
                 
                 // get value by string key
                 let name = object.get("name")?.stringValue
                 
-                if(name == nil){
+                if(name == "" || name == nil){
                     self.nameLable.text = "起一个响亮的名字吧"
                 }else{
                     self.nameLable.text = String(describing: name!)
@@ -39,9 +40,6 @@ class cellLableTableViewCell: UITableViewCell {
                 break
             }
         }
-//        print(nameLable.text)
-//        print(currentUser.name!)
-//        print(currentUser.username!)
         // Initialization code
     }
 

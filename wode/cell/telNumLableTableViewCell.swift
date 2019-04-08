@@ -15,17 +15,18 @@ class telNumLableTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //let currentUser = LCUser.current!
-        let query = LCQuery(className: "_User")
-        let _ = query.get("5c95f5c0fe88c2006f319988") { (result) in
+        let currentUser = LCUser.current!//初始化当前用户信息
+        let ID = currentUser.objectId?.stringValue//获取objectId
+        let query = LCQuery(className: "_User")//选择所在类
+        let _ = query.get(ID!) { (result) in
             switch result {
             case .success(object: let object):
                 
-                print("get succeed!")
+                print("telNum get succeed!")
                 
                 // get value by string key
                 let telNum = object.get("telNum")?.stringValue
-                if(telNum == nil){
+                if(telNum == "" || telNum == nil){
                     self.telNumLable.text = "请输入您的电话号码"
                 }else{
                     self.telNumLable.text = String(describing: telNum!)

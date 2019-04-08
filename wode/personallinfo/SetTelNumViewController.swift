@@ -16,12 +16,35 @@ class SetTelNumViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1)
+        let currentUser = LCUser.current!//初始化当前用户信息
+        let ID = currentUser.objectId?.stringValue//获取objectId
+        let query = LCQuery(className: "_User")//选择所在类
+        let _ = query.get(ID!) { (result) in
+            switch result {
+            case .success(object: let object):
+                
+                print("telNum get succeed!")
+                
+                // get value by string key
+                let telNum = object.get("telNum")?.stringValue
+                if(telNum == "" || telNum == nil){
+                    self.txtTelNum.text = "请输入您的电话号码"
+                }else{
+                    self.txtTelNum.text = String(describing: telNum!)
+                }
+                print("电话号码为："+"\(String(describing: telNum))")
+                
+            case .failure(error: let error):
+                // handle error
+                print(error)
+                break
+            }
+        }
         // Do any additional setup after loading the view.
     }
     
     @IBAction func finishtelNumUpdate(_ sender: UIBarButtonItem) {
-        let currentUser = LCUser.current!
-        
+        let currentUser = LCUser.current!//初始化当前用户信息
         // 修改当前用户的电话号码
         currentUser.set("telNum", value: txtTelNum.text)
         

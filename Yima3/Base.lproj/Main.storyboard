@@ -100,7 +100,7 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="sHE-ow-uJu"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="烁烁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yC-x5-BsC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yC-x5-BsC">
                                 <rect key="frame" x="166" y="82" width="216" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="8W3-1a-zjG"/>
@@ -308,6 +308,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="Touxiang" destination="aCE-yO-bTi" id="czg-r8-KKi"/>
+                        <outlet property="myName" destination="6yC-x5-BsC" id="HUE-bu-Heg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZv-Gj-jvb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -363,7 +364,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell2" id="TfP-hh-Dh1" customClass="cellLableTableViewCell" customModule="Yima3" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell2" id="TfP-hh-Dh1" customClass="nameLableTableViewCell" customModule="Yima3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TfP-hh-Dh1" id="KXl-1S-w7u">
@@ -974,7 +975,7 @@
                                 <items>
                                     <navigationItem id="AHn-FB-sqx">
                                         <nil key="title"/>
-                                        <pageControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="oNg-yR-I7j">
+                                        <pageControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="oNg-yR-I7j">
                                             <rect key="frame" x="207" y="3.6666666666666679" width="0.0" height="37"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </pageControl>

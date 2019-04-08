@@ -1,5 +1,5 @@
 //
-//  SetAgeViewController.swift
+//  SetGenderViewController.swift
 //  Yima3
 //
 //  Created by Dsssss on 2019/4/7.
@@ -10,16 +10,43 @@ import UIKit
 import LeanCloud
 import AVOSCloud
 
-class SetAgeViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
+class SetGenderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
 
-    @IBOutlet weak var txtAge: UITextField!
+    @IBOutlet weak var txtGender: UITextField!
     var pickView = UIPickerView()
     var pickerDateToolbar = UIToolbar()
-    let Age = NSArray(objects:"12岁","13岁","14岁","15岁","16岁","17岁","18岁","19岁","20岁","21岁","22岁","23岁","24岁","25岁","26岁","27岁","28岁","29岁","30岁","31岁","32岁","33岁","34岁","35岁","36岁","37岁","38岁","39岁","40岁")
+    let Gender = NSArray(objects:"女","男")
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1)
+        
+        let currentUser = LCUser.current!//初始化当前用户信息
+        let ID = currentUser.objectId?.stringValue//获取objectId
+        let query = LCQuery(className: "_User")//选择所在类
+        let _ = query.get(ID!) { (result) in
+            switch result {
+            case .success(object: let object):
+                
+                print("get gender succeed!")
+                
+                // get value by string key
+                let gender = object.get("gender")?.stringValue
+                //let telNum = object.get("telNum")?.stringValue
+                
+                if(gender == "" || gender == nil){
+                    self.txtGender.text = "小姐姐还是小哥哥鸭"
+                }else{
+                    self.txtGender.text = String(describing: gender!)
+                }
+                print("性别为："+"\(String(describing: gender))")
+                
+            case .failure(error: let error):
+                // handle error
+                print(error)
+                break
+            }
+        }
         
         pickView.delegate = self
         pickView.dataSource = self
@@ -48,9 +75,9 @@ class SetAgeViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDa
         pickerDateToolbar.barTintColor = UIColor.white
         
         // 重点的一句
-        txtAge.inputView = pickView
-        self.txtAge.inputAccessoryView = pickerDateToolbar
-        
+        txtGender.inputView = pickView
+        self.txtGender.inputAccessoryView = pickerDateToolbar
+
         // Do any additional setup after loading the view.
     }
     
@@ -59,11 +86,11 @@ class SetAgeViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDa
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Age.count
+        return Gender.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String{
-        return (Age.object(at: row) as? String)!
+        return (Gender.object(at: row) as? String)!
     }
     
     @objc func toolBarCancelClick(){
@@ -72,21 +99,21 @@ class SetAgeViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDa
     
     @objc func toolBarDoneClick(){
         let row = pickView.selectedRow(inComponent: 0) //获取当前行
-        let value = Age.object(at: row) as! String //获取行内数据
-        self.txtAge.text = value
+        let value = Gender.object(at: row) as! String //获取行内数据
+        self.txtGender.text = value
         self.view.endEditing(true)
     }
     
-    @IBAction func finishAgeUpdate(_ sender: UIBarButtonItem) {
+    @IBAction func finishGenderUpdate(_ sender: UIBarButtonItem) {
         let currentUser = LCUser.current!
         
-        // 修改当前用户的年龄
-        currentUser.set("age", value: txtAge.text)
+        // 修改当前用户的性别
+        currentUser.set("gender", value: txtGender.text)
         
         currentUser.save { result in
             switch result {
             case .success:
-                print("age setted!")
+                print("gender setted!")
                 //成功则跳转到changeInfoView处
                 let first = self.storyboard
                 let secondView:UIViewController = first?.instantiateViewController(withIdentifier: "changeInfoView") as! UIViewController
@@ -98,22 +125,21 @@ class SetAgeViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDa
         }
     }
     
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-}
 
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
