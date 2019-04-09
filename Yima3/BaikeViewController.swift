@@ -24,6 +24,13 @@ class BaikeViewController: UIViewController, UIWebViewDelegate, UITextFieldDeleg
         txtSearch.delegate = self
         baikeWebview.delegate = self
         
+        //载入输入的请求
+        let aUrl = NSURL(string: ("https://www.women-health.cn"))
+        let urlRequest = NSURLRequest(url: aUrl! as URL)
+        baikeWebview.loadRequest(urlRequest as URLRequest)
+        
+//        var rect = txtSearch.leftViewRect(forBounds: CGRect(x:0,y:0,width:20,height:20))
+//        rect.origin.x = 16 //向右偏移
         txtSearch.leftView = UIImageView.init(image: #imageLiteral(resourceName: "sousuo"))
         txtSearch.contentMode = UIViewContentMode.center
         txtSearch.leftViewMode = UITextFieldViewMode.always
@@ -35,10 +42,13 @@ class BaikeViewController: UIViewController, UIWebViewDelegate, UITextFieldDeleg
     func loadUrl(url: String, web: UIWebView) {
         
         //载入输入的请求
-        let aUrl = NSURL(string: ("https://" + url))
-        let urlRequest = NSURLRequest(url: aUrl! as URL)
-        web.loadRequest(urlRequest as URLRequest)
-        
+        if(url == ""){
+            //什么都不做
+        }else{
+            let aUrl = NSURL(string: ("https://" + url))
+            let urlRequest = NSURLRequest(url: aUrl! as URL)
+            web.loadRequest(urlRequest as URLRequest)
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -58,6 +68,7 @@ class BaikeViewController: UIViewController, UIWebViewDelegate, UITextFieldDeleg
     
     //网页加载结束
     func webViewDidFinishLoad(_ webView: UIWebView) {
+        loading.hidesWhenStopped = true
         loading.stopAnimating()
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }

@@ -16,6 +16,7 @@ class QuanziViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1)
 
         // Do any additional setup after loading the view.
     }
