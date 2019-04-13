@@ -245,10 +245,21 @@ class ZhuCeViewController: UIViewController, UITextFieldDelegate,SearchTableView
             }
             else{
                 print("sucess")
-                //成功则跳转到TabBar处
-                let first = self.storyboard
-                let secondView:UIViewController = first?.instantiateViewController(withIdentifier: "TarBar") as! UIViewController
-                self.present(secondView, animated: true, completion: nil)
+                LCUser.logIn(username: self.txtUser.text!, password: self.txtPwd.text!) { result in
+                    switch result {
+                    case .success(let user):
+                        print("Login succeed")
+                        //成功则跳转到TabBar处
+                        let first = self.storyboard
+                        let secondView:UIViewController = first?.instantiateViewController(withIdentifier: "TarBar") as! UIViewController
+                        self.present(secondView, animated: true, completion: nil)
+                        
+                        break
+                    case .failure(let error):
+                        self.present(self.alert, animated: true, completion: nil)//登录失败弹出提示框
+                        print(error)
+                    }
+                }
             }
         }
         //视图约束恢复初始设置

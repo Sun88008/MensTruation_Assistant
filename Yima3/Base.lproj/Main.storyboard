@@ -43,7 +43,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="B08-9O-y0Z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1530" y="-735"/>
+            <point key="canvasLocation" x="-3033" y="-798"/>
         </scene>
         <!--百科-->
         <scene sceneID="qaj-Bq-l9k">
@@ -84,25 +84,56 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xyk-1u-muu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3278.2608695652175" y="617.93478260869574"/>
+            <point key="canvasLocation" x="-3310" y="204"/>
         </scene>
-        <!--圈子-->
-        <scene sceneID="Jop-Ed-c2P">
+        <!--朋友圈-->
+        <scene sceneID="VGU-bR-LMv">
             <objects>
-                <viewController id="J9Q-ZB-8UF" customClass="QuanziViewController" customModule="Yima3" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Bcl-wI-tiR">
+                <tableViewController id="hW4-5a-Kd4" customClass="SDTimeLineTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yIn-OI-kTj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="bYo-se-ipg"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="圈子" image="mianmo" id="I4S-Fk-2ZM">
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Mnl-Jp-D4b">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mnl-Jp-D4b" id="rR6-SI-QVf">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hW4-5a-Kd4" id="xgT-Do-Lvh"/>
+                            <outlet property="delegate" destination="hW4-5a-Kd4" id="Mbi-xc-kFg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="朋友圈" id="18t-xb-5d4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="61G-My-bfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-746" y="461"/>
+        </scene>
+        <!--圈子-->
+        <scene sceneID="f2g-u0-B86">
+            <objects>
+                <navigationController id="L1p-mH-UBp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="圈子" image="mianmo" id="GEp-IP-uK8">
                         <inset key="imageInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
                     </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rck-b0-3qP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E7U-ee-S0O">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hW4-5a-Kd4" kind="relationship" relationship="rootViewController" id="Bs6-fG-aE1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RIx-2e-URn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1530.4347826086957" y="741.84782608695662"/>
+            <point key="canvasLocation" x="-1558" y="461"/>
         </scene>
         <!--我的-->
         <scene sceneID="whD-2W-fFg">
@@ -336,7 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZv-Gj-jvb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3033" y="1723"/>
+            <point key="canvasLocation" x="-3310" y="961"/>
         </scene>
         <!--changeInfoView-->
         <scene sceneID="bBq-UF-cMQ">
@@ -540,7 +571,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a21-JM-w4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="eyj-8Q-fjh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1813.0434782608697" y="1492.663043478261"/>
+            <point key="canvasLocation" x="-1751" y="1250"/>
         </scene>
         <!--Set Name View Controller-->
         <scene sceneID="vbK-CK-XKg">
@@ -596,7 +627,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilX-Mr-hMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="dzn-4v-qwS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-620" y="1382"/>
+            <point key="canvasLocation" x="-975" y="1250"/>
         </scene>
         <!--Set Gender View Controller-->
         <scene sceneID="YS3-x7-7eG">
@@ -652,7 +683,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qv2-mT-QWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="nez-KG-AZw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-207" y="1788"/>
+            <point key="canvasLocation" x="-112" y="1250"/>
         </scene>
         <!--Set Tel Num View Controller-->
         <scene sceneID="8Lw-Dh-6no">
@@ -708,7 +739,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLW-Zl-Lwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="9NG-SU-Mmd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-620" y="2535"/>
+            <point key="canvasLocation" x="-113" y="2112"/>
         </scene>
         <!--Set Age View Controller-->
         <scene sceneID="VB4-he-dHb">
@@ -764,7 +795,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acT-5M-ueN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Qfa-f1-Xwn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="201" y="2284"/>
+            <point key="canvasLocation" x="-975" y="2113"/>
         </scene>
         <!--installVIew-->
         <scene sceneID="qZb-Ge-aDd">
@@ -797,7 +828,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V99-8a-uIn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="xnP-0Q-P46" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-3310" y="2593"/>
+            <point key="canvasLocation" x="-3961" y="1783"/>
         </scene>
         <!--addTipsView-->
         <scene sceneID="WZn-oZ-lHQ">
@@ -830,7 +861,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="li1-10-0Kp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="qi5-QM-8TD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2485" y="2594"/>
+            <point key="canvasLocation" x="-3222" y="1783"/>
         </scene>
         <!--myMenstrualStatusView-->
         <scene sceneID="dd0-Ud-Zab">
@@ -964,7 +995,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y9e-a5-NzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ESS-aR-sGd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1813" y="2336"/>
+            <point key="canvasLocation" x="-2487" y="1783"/>
         </scene>
         <!--ZhuyeView-->
         <scene sceneID="xwa-p6-6GL">
@@ -1032,7 +1063,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNu-Tu-C8T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1530.4000000000001" y="-10.344827586206897"/>
+            <point key="canvasLocation" x="-1557" y="-259"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="m5T-au-Hzb">
@@ -1045,7 +1076,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Hnf-af-nrq" kind="relationship" relationship="viewControllers" id="lXP-9v-l8J"/>
-                        <segue destination="J9Q-ZB-8UF" kind="relationship" relationship="viewControllers" id="r9y-a3-vpa"/>
+                        <segue destination="L1p-mH-UBp" kind="relationship" relationship="viewControllers" id="KrM-ll-EPg"/>
                         <segue destination="rQp-wa-Z74" kind="relationship" relationship="viewControllers" id="dye-GK-Ijk"/>
                         <segue destination="XJ0-Ep-26A" kind="relationship" relationship="viewControllers" id="PpV-jY-akz"/>
                     </connections>
@@ -1091,7 +1122,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6X-eU-3gZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Qjf-Kv-IOu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-564" y="678"/>
+            <point key="canvasLocation" x="-745" y="-259"/>
         </scene>
         <!--FirstView-->
         <scene sceneID="LdH-k4-DBT">
@@ -1117,7 +1148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3E7-uq-Gta" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-564" y="-68"/>
+            <point key="canvasLocation" x="-2225" y="-798"/>
         </scene>
     </scenes>
     <resources>
