@@ -29,6 +29,7 @@ class ZhuCeViewController: UIViewController, UITextFieldDelegate,SearchTableView
     var titleLabel: UILabel! //标题标签
     var imgLogin:UIImageView!
     var alert: UIAlertController! //注册失败提示框
+    var alertSucceed: UIAlertController!
     
     var topConstraint: Constraint? //登录框距顶部距离约束
     
@@ -119,10 +120,12 @@ class ZhuCeViewController: UIViewController, UITextFieldDelegate,SearchTableView
         txtPwd.leftView!.addSubview(imgPwd)
         vLogin.addSubview(txtPwd)
         
-        //密码错误提示框
-        alert = UIAlertController(title: "提示", message: "注册失败，请检测网络是否正常", preferredStyle: UIAlertControllerStyle.alert)
+        //注册失败提示框
+        alert = UIAlertController(title: "提示", message: "❌注册失败，用户名已被使用！", preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title: "确定", style: UIAlertActionStyle.default, handler: nil)
         alert.addAction(okAction)
+        //注册成功提示框
+        alertSucceed = UIAlertController(title: "提示", message: "注册成功啦！💗", preferredStyle: UIAlertControllerStyle.alert)
         
         //猫头鹰左手(圆形的)
         let rectLeftHandGone = CGRect(x:mainSize.width / 2 - 100,
@@ -227,6 +230,12 @@ class ZhuCeViewController: UIViewController, UITextFieldDelegate,SearchTableView
         self.view.endEditing(true)
     }
     
+    @objc func dismissAlert(){
+        if((alertSucceed) != nil){
+            self.alertSucceed.dismiss(animated: false, completion: nil)
+        }
+    }
+    
     //注册按钮点击
     @objc func loginConfrim(){
         //收起键盘
@@ -244,30 +253,32 @@ class ZhuCeViewController: UIViewController, UITextFieldDelegate,SearchTableView
                 print(error.code)
             }
             else{
-                print("sucess")
-                LCUser.logIn(username: self.txtUser.text!, password: self.txtPwd.text!) { result in
-                    switch result {
-                    case .success(let user):
-                        print("Login succeed")
-                        //成功则跳转到TabBar处
-                        let first = self.storyboard
-                        let secondView:UIViewController = first?.instantiateViewController(withIdentifier: "TarBar") as! UIViewController
-                        self.present(secondView, animated: true, completion: nil)
-                        
-                        break
-                    case .failure(let error):
-                        self.present(self.alert, animated: true, completion: nil)//登录失败弹出提示框
-                        print(error)
+                print("signUp sucess")
+                self.present(self.alertSucceed, animated: true, completion: nil)//登录成功弹出提示框
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {//延迟函数
+                    LCUser.logIn(username: self.txtUser.text!, password: self.txtPwd.text!) { result in
+                        switch result {
+                        case .success(let user):
+                            print("Login succeed")
+                            //成功则跳转到TabBar处
+                            let first = self.storyboard
+                            let secondView:UIViewController = (first?.instantiateViewController(withIdentifier: "TarBar"))!
+                            self.alertSucceed.present(secondView, animated: true, completion: nil)
+                            secondView.presentedViewController?.dismiss(animated: false, completion: nil)
+                            break
+                        case .failure(let error):
+                            self.present(self.alert, animated: true, completion: nil)//登录失败弹出提示框
+                            print(error)
+                        }
                     }
                 }
             }
         }
         //视图约束恢复初始设置
-        UIView.animate(withDuration: 0.5, animations: { () -> Void in
-            self.topConstraint?.update(offset: 0)
-            self.view.layoutIfNeeded()
-        })
-        //self.present(TabBarController!, animated: true, completion: nil)
+//        UIView.animate(withDuration: 0.5, animations: { () -> Void in
+//            self.topConstraint?.update(offset: 0)
+//            self.view.layoutIfNeeded()
+//        })
     }
     
     //左手离脑袋的距离

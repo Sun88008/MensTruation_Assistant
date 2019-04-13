@@ -383,10 +383,10 @@ class SignViewController: UIViewController, UITextFieldDelegate, SearchTableView
         }
         
         //视图约束恢复初始设置
-        UIView.animate(withDuration: 0.5, animations: { () -> Void in
-            self.topConstraint?.update(offset: 0)
-            self.view.layoutIfNeeded()
-        })
+//        UIView.animate(withDuration: 0.5, animations: { () -> Void in
+//            self.topConstraint?.update(offset: 0)
+//            self.view.layoutIfNeeded()
+//        })
     }
     
     //注册按钮
