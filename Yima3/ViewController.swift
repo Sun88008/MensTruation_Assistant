@@ -11,8 +11,12 @@ import LeanCloud
 import AVOSCloud
 import SnapKit
 
-class ViewController: UIViewController, UIGestureRecognizerDelegate{
+
+class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDelegate, UITextFieldDelegate{
     
+//    @IBOutlet weak var zhuYeWeb: UIWebView!
+//    @IBOutlet weak var myScrollView: UIScrollView!
+    @IBOutlet weak var tipsView: UIView!
     
     var text : String?
 
@@ -20,7 +24,20 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //视图背景色
-        self.view.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1)
+        self.view.backgroundColor = UIColor.white
+        tipsView.layer.cornerRadius = 15
+        
+//        self.myScrollView.frame = CGRect(x:0, y:0, width:self.view.frame.width, height:1000)
+//        self.myScrollView.contentSize = CGSize(width:self.view.frame.width, height:2000)
+//        
+//        self.myScrollView.isUserInteractionEnabled = true
+//        zhuYeWeb.delegate = self
+//
+//        //载入输入的请求
+//        let aUrl = NSURL(string: ("https://nv.99.com.cn"))
+//        let urlRequest = NSURLRequest(url: aUrl! as URL)
+//        zhuYeWeb.loadRequest(urlRequest as URLRequest)
+        
         //启动界面延时
         navigationController?.interactivePopGestureRecognizer?.delegate = self
         Thread.sleep(forTimeInterval: 1)

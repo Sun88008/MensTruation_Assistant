@@ -43,7 +43,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="B08-9O-y0Z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-3033" y="-798"/>
+            <point key="canvasLocation" x="-3310" y="-550"/>
         </scene>
         <!--百科-->
         <scene sceneID="qaj-Bq-l9k">
@@ -417,6 +417,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="eZk-Nj-ejc" kind="show" id="nYL-cX-itI"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell2" id="TfP-hh-Dh1" customClass="nameLableTableViewCell" customModule="Yima3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="414" height="44"/>
@@ -741,6 +744,52 @@
             </objects>
             <point key="canvasLocation" x="-113" y="2112"/>
         </scene>
+        <!--Set Tou Xiang View Controller-->
+        <scene sceneID="meX-H5-hI4">
+            <objects>
+                <viewController id="eZk-Nj-ejc" customClass="SetTouXiangViewController" customModule="Yima3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v1f-lz-tGw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mIJ-Xd-fyh">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="1" green="0.75294117650000003" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="头像" id="8Gp-vj-ne9">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="zuo" id="rW4-TQ-1ld">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <segue destination="Ex3-O0-RG5" kind="unwind" unwindAction="backToInfoWithSegue:" id="1GL-uQ-7Zf"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="···" id="e5Y-rW-tND">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="changeTouXiangbtm:" destination="eZk-Nj-ejc" id="grw-Ct-5KB"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Rh-W2-58e">
+                                <rect key="frame" x="0.0" y="161" width="414" height="414"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="JyK-vp-F43"/>
+                    </view>
+                    <connections>
+                        <outlet property="touXiang" destination="4Rh-W2-58e" id="O3E-Zr-eIo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nbI-mG-4Kd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ex3-O0-RG5" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-1752.1739130434785" y="2110.5978260869565"/>
+        </scene>
         <!--Set Age View Controller-->
         <scene sceneID="VB4-he-dHb">
             <objects>
@@ -1001,13 +1050,17 @@
         <scene sceneID="xwa-p6-6GL">
             <objects>
                 <viewController storyboardIdentifier="ZhuyeView" title="ZhuyeView" id="Hnf-af-nrq" customClass="ViewController" customModule="Yima3" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ahg-SS-MAz">
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" id="siF-jq-dEo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8D-pc-jnn">
-                                <rect key="frame" x="107" y="430" width="200" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XY7-Zq-KYi">
+                                <rect key="frame" x="107" y="419" width="200" height="48"/>
                                 <color key="backgroundColor" red="1" green="0.75294117650000003" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="d2d-I9-KeH"/>
+                                    <constraint firstAttribute="width" constant="200" id="nBx-fB-icX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="姨妈来了">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1018,52 +1071,99 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="3gQ-sH-rSS" kind="show" identifier="AddRecord" id="Yd7-AK-Scx"/>
-                                </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGD-KH-zoX">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                                <color key="backgroundColor" red="1" green="0.75294117650000003" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="barTintColor" red="1" green="0.75294117650000003" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5lv-7P-cqe">
+                                <rect key="frame" x="36" y="475" width="342" height="377"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月经小贴士" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqp-zN-LUP">
+                                        <rect key="frame" x="128" y="8" width="87" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="cD1-HM-beV"/>
+                                            <constraint firstAttribute="width" constant="87" id="ejn-Bh-jID"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.50196081400000003" alpha="0.54845355308219179" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXf-0m-MN0">
+                                        <rect key="frame" x="8" y="29" width="326" height="348"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="348" id="UQ3-7v-nuL"/>
+                                            <constraint firstAttribute="width" constant="326" id="woL-fH-NlR"/>
+                                        </constraints>
+                                        <string key="text">1.月经生理期间，身体体质相对平时要虚弱一些，所以保证足够的睡眠和休息，有一定的必要性，应该减少疲劳，避免耐力运动，比如拉力跑等这些运动。                  
+
+2.由于受月经生理活动的影响，月经期间女性的情绪会比较焦躁，可以喝一些有安神作用的清茶或者纯牛奶这些，促进睡眠和休息，另外减少紧张和压抑情绪产生，学会转移不良情绪和心理，积极面对。
+
+3.月经生理期间，各项机体免疫活动会比较弱，所以不宜熬夜，长时间看书等，因为生理期免疫代谢减慢，容易造成眼疲劳，眼睛充血等症状，另外少吃一些油腻的东西，以免长痘痘。                             
+
+4.痛经是月经生理期常见的一种生理反应，所以痛经的时候不要害怕和紧张，可以找一些厚点的被褥或者热水瓶，暖手宝这些，敷在肚子上，另外喝点生姜红糖水，暖身驱寒，促进月经生理正常进行。                                  
+
+5.因为在月经期皮肤光泽稍微暗淡一些，所以可以补一些淡妆，使皮肤显得有光泽，增加工作和生活中的自信感，保持自己的风采，但是切记不要太浓了，皮肤免疫机理代谢比较慢。                                 
+
+6.因为食用的盐、糖这些浓度高的话会导致血压升高，所以饮食上面宜清淡，富纤维和微量元素，比如大豆类、菠菜等这些富含调节血液渗透压的钾元素的食物，以及大枣这些等。                                          
+
+7.由于子宫在来月经的时候会微微张开，以促使脱落的子宫壁和白带等免疫物排出体外，所以为了避免受体外干扰因子的入侵和感染，避免盆浴，防止细菌随着水倒流进子宫，影响月经生理，导致妇科疾病的发生，尽量采用淋雨的方式清洁身体。                                                        
+
+8.天冷的时候，注意防寒保暖，一方面经期免疫力比较弱，容易感冒或者受凉，另一方面寒冷刺激也会导致月经生理不能正常进行，也可能引发痛经，所以同时也要注意避免坐冰凉的地方，以及洗凉水澡这些等。                                           
+
+9.勤换内裤和卫生巾，月经期间因为会有经血排出，所以避免难闻的气味产生，勤换内裤和卫生巾，内裤有条件的最好一天一换，卫生巾根据经血量大小和吸收量适可而定，比如像高洁丝(Kotex)及丽尔莱思(Lil-lets)日用、加长或其他类别白天用的卫生巾保持3到5小时一换，夜用的睡觉前换上，第二天早上起来及时更换，避免时间太长滋生细菌 。              
+
+10.穿戴的衣服尽量透气，宽松一些，太紧身和束缚容易增加压抑感和紧迫情绪，而透气可以防止阴部环境闷潮，减少细菌滋生的可能性，另外也减轻月经期间卫生巾带来的不适感。                                       
+
+11.因为像茶叶以及咖啡这些东西，含有茶多酚和咖啡因这些促进神经组织过度活跃紧张的物质，所以避免因为神经紧张导致阴道逼收缩，影响月经生理，经期减少浓茶和咖啡的饮用。</string>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.75294117650000003" blue="0.81176471709999998" alpha="0.25516374143835618" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="bXf-0m-MN0" secondAttribute="bottom" id="98e-30-EBW"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lqp-zN-LUP" secondAttribute="trailing" constant="127" id="9g0-va-tPo"/>
+                                    <constraint firstAttribute="height" constant="377" id="HXo-IJ-gBL"/>
+                                    <constraint firstAttribute="trailing" secondItem="bXf-0m-MN0" secondAttribute="trailing" constant="8" id="KBS-Ab-LW8"/>
+                                    <constraint firstAttribute="width" constant="342" id="P2f-Qf-I9s"/>
+                                    <constraint firstItem="Lqp-zN-LUP" firstAttribute="leading" secondItem="5lv-7P-cqe" secondAttribute="leading" constant="128" id="UGu-nU-Tvi"/>
+                                    <constraint firstItem="bXf-0m-MN0" firstAttribute="leading" secondItem="5lv-7P-cqe" secondAttribute="leading" constant="8" id="eay-S0-rDc"/>
+                                    <constraint firstItem="bXf-0m-MN0" firstAttribute="top" secondItem="Lqp-zN-LUP" secondAttribute="bottom" id="hCV-HM-xbI"/>
+                                    <constraint firstItem="Lqp-zN-LUP" firstAttribute="top" secondItem="5lv-7P-cqe" secondAttribute="top" constant="8" id="jz8-Ga-Jwg"/>
+                                </constraints>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yma-te-xgS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="1" green="0.75294117650000003" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <navigationItem id="AHn-FB-sqx">
-                                        <nil key="title"/>
-                                        <pageControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="oNg-yR-I7j">
-                                            <rect key="frame" x="207" y="3.6666666666666679" width="0.0" height="37"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </pageControl>
-                                    </navigationItem>
+                                    <navigationItem title="姨妈助手" id="9cb-46-Z5B"/>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PBL-xx-7XY">
-                                <rect key="frame" x="87" y="117" width="240" height="203"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="203" id="1sF-8M-L0Q"/>
-                                </constraints>
-                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="otT-Pk-FQH">
+                                <rect key="frame" x="0.0" y="-20" width="414" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.75294117650000003" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bGD-KH-zoX" firstAttribute="leading" secondItem="Ahg-SS-MAz" secondAttribute="leading" id="7qI-tY-8C1"/>
-                            <constraint firstItem="PBL-xx-7XY" firstAttribute="leading" secondItem="51Z-3Z-YK4" secondAttribute="leading" constant="87" id="G5S-ti-dRu"/>
-                            <constraint firstAttribute="trailing" secondItem="bGD-KH-zoX" secondAttribute="trailing" id="NN4-0L-k8w"/>
-                            <constraint firstItem="PBL-xx-7XY" firstAttribute="centerX" secondItem="K8D-pc-jnn" secondAttribute="centerX" id="dDv-OF-Vgh"/>
-                            <constraint firstItem="bGD-KH-zoX" firstAttribute="centerX" secondItem="PBL-xx-7XY" secondAttribute="centerX" id="q4N-Uv-y9r"/>
-                            <constraint firstItem="bGD-KH-zoX" firstAttribute="top" secondItem="51Z-3Z-YK4" secondAttribute="top" id="t7E-wO-k1P"/>
-                            <constraint firstItem="PBL-xx-7XY" firstAttribute="top" secondItem="bGD-KH-zoX" secondAttribute="bottom" constant="53" id="thR-QZ-osY"/>
-                            <constraint firstItem="K8D-pc-jnn" firstAttribute="leading" secondItem="51Z-3Z-YK4" secondAttribute="leading" constant="107" id="wf8-Dh-qbu"/>
-                            <constraint firstItem="51Z-3Z-YK4" firstAttribute="bottom" secondItem="K8D-pc-jnn" secondAttribute="bottom" constant="209" id="zUy-Hd-crc"/>
+                            <constraint firstAttribute="bottom" secondItem="XY7-Zq-KYi" secondAttribute="bottom" constant="269" id="5pc-hT-Uao"/>
+                            <constraint firstItem="XY7-Zq-KYi" firstAttribute="centerY" secondItem="siF-jq-dEo" secondAttribute="centerY" constant="75" id="8ID-De-RDb"/>
+                            <constraint firstAttribute="trailing" secondItem="XY7-Zq-KYi" secondAttribute="trailing" constant="107" id="A57-fw-xkS"/>
+                            <constraint firstItem="XY7-Zq-KYi" firstAttribute="centerX" secondItem="5lv-7P-cqe" secondAttribute="centerX" id="Fyp-Kw-52c"/>
+                            <constraint firstItem="XY7-Zq-KYi" firstAttribute="centerY" secondItem="5lv-7P-cqe" secondAttribute="centerY" constant="-234.5" id="ZE0-vD-CeH"/>
+                            <constraint firstItem="XY7-Zq-KYi" firstAttribute="centerX" secondItem="siF-jq-dEo" secondAttribute="centerX" id="q7C-wS-psg"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="51Z-3Z-YK4"/>
-                    </view>
+                        <viewLayoutGuide key="safeArea" id="9Tb-BF-PVL"/>
+                    </scrollView>
                     <tabBarItem key="tabBarItem" title="主页" image="xiangshui" id="ZoM-ms-5dU">
                         <inset key="imageInsets" minX="0.0" minY="20" maxX="0.0" maxY="23"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="tipsView" destination="5lv-7P-cqe" id="fmK-bM-aUr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNu-Tu-C8T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1557" y="-259"/>
+            <point key="canvasLocation" x="-1557.9710144927537" y="-259.23913043478262"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="m5T-au-Hzb">
@@ -1148,7 +1248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3E7-uq-Gta" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2225" y="-798"/>
+            <point key="canvasLocation" x="-2487" y="-550"/>
         </scene>
     </scenes>
     <resources>

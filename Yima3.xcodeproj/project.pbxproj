@@ -125,6 +125,7 @@
 		0D284D9A2261BD6000A55464 /* pic8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D284D172261BD6000A55464 /* pic8.jpg */; };
 		0D284D9B2261BD6000A55464 /* picon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D284D182261BD6000A55464 /* picon.jpg */; };
 		0D284D9C2261BD6000A55464 /* tx.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0D284D192261BD6000A55464 /* tx.jpeg */; };
+		0D284D9F22630DCB00A55464 /* SetTouXiangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D284D9E22630DCB00A55464 /* SetTouXiangViewController.swift */; };
 		0D2F62D422574C1100D4ECC8 /* nameLableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F62D322574C1100D4ECC8 /* nameLableTableViewCell.swift */; };
 		0D30B085222BC9A300AEA049 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30B084222BC9A300AEA049 /* ViewController.swift */; };
 		0D30B088222BC9A300AEA049 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D30B086222BC9A300AEA049 /* Main.storyboard */; };
@@ -404,6 +405,7 @@
 		0D284D172261BD6000A55464 /* pic8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic8.jpg; sourceTree = "<group>"; };
 		0D284D182261BD6000A55464 /* picon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = picon.jpg; sourceTree = "<group>"; };
 		0D284D192261BD6000A55464 /* tx.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tx.jpeg; sourceTree = "<group>"; };
+		0D284D9E22630DCB00A55464 /* SetTouXiangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SetTouXiangViewController.swift; path = wode/personallinfo/SetTouXiangViewController.swift; sourceTree = "<group>"; };
 		0D2F62D322574C1100D4ECC8 /* nameLableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = nameLableTableViewCell.swift; path = wode/cell/nameLableTableViewCell.swift; sourceTree = "<group>"; };
 		0D30B07F222BC9A300AEA049 /* Yima3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yima3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D30B082222BC9A300AEA049 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -1105,6 +1107,7 @@
 		0DAE68D72256FA5D009BA120 /* PersonalInfo */ = {
 			isa = PBXGroup;
 			children = (
+				0D284D9E22630DCB00A55464 /* SetTouXiangViewController.swift */,
 				0DAE68D82256FA95009BA120 /* SetNameViewController.swift */,
 				0D86748F225A31DA0072E4AD /* SetGenderViewController.swift */,
 				0D867492225A31EF0072E4AD /* SetAgeViewController.swift */,
@@ -1520,6 +1523,7 @@
 				0D284D3F2261BD6000A55464 /* UIButton+WebCache.m in Sources */,
 				0D284D5C2261BD6000A55464 /* SDBaseNavigationController.m in Sources */,
 				0D284D212261BD6000A55464 /* NSString+MLLabel.m in Sources */,
+				0D284D9F22630DCB00A55464 /* SetTouXiangViewController.swift in Sources */,
 				0DC9C55E224CAF69008B0985 /* photoInCellTableViewCell.swift in Sources */,
 				0D284D3B2261BD6000A55464 /* SDWebImageDownloader.m in Sources */,
 				0D284D4C2261BD6000A55464 /* SDTimeLineTableViewController.m in Sources */,
