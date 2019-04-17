@@ -18,6 +18,23 @@ class SetMenstruationViewController: UIViewController, UIActionSheetDelegate {
     var SetTime = UITextField()
     @IBAction func ConfirmValueAndPass(_ sender: Any) {
         //ViewController.text = MentruationTime
+        
+        let date = Date.date
+        let currentUser = LCUser.current!
+        
+        // 修改当前用户的周期
+        currentUser.set("Menstrual_Day", value: date)
+        
+        currentUser.save { result in
+            switch result {
+            case .success:
+                print("Menstrual_Day setted!")
+                break
+            case .failure(let error):
+                print(error)
+            }
+        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

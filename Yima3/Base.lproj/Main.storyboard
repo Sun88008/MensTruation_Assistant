@@ -504,7 +504,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="方便透露一下吗" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRJ-HC-86k">
-                                                    <rect key="frame" x="238" y="12" width="138" height="21"/>
+                                                    <rect key="frame" x="207" y="12" width="169" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -570,11 +570,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="AUp-8K-f0b"/>
                     </view>
+                    <connections>
+                        <outlet property="mytbView" destination="yma-r5-Hgk" id="5rU-JE-x2w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a21-JM-w4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="eyj-8Q-fjh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1751" y="1250"/>
+            <point key="canvasLocation" x="-1752.1739130434785" y="1249.7282608695652"/>
         </scene>
         <!--Set Name View Controller-->
         <scene sceneID="vbK-CK-XKg">
@@ -1071,6 +1074,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="3gQ-sH-rSS" kind="show" id="Mni-AA-N9o"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5lv-7P-cqe">
                                 <rect key="frame" x="36" y="475" width="342" height="377"/>
@@ -1208,7 +1214,6 @@
                                         <barButtonItem key="rightBarButtonItem" title="确定" id="iHg-Wp-s3O">
                                             <connections>
                                                 <action selector="ConfirmValueAndPass:" destination="3gQ-sH-rSS" id="tNV-Mr-djA"/>
-                                                <segue destination="Qjf-Kv-IOu" kind="unwind" unwindAction="backWithSegue:" id="ztD-j3-k1u"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

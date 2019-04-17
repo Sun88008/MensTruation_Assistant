@@ -19,6 +19,7 @@ class SetGenderViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        txtGender.clearButtonMode = UITextFieldViewMode.always
         self.view.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1)
         
         let currentUser = LCUser.current!//初始化当前用户信息
@@ -115,9 +116,7 @@ class SetGenderViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
             case .success:
                 print("gender setted!")
                 //成功则跳转到changeInfoView处
-                let first = self.storyboard
-                let secondView:UIViewController = first?.instantiateViewController(withIdentifier: "changeInfoView") as! UIViewController
-                self.present(secondView, animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
                 break
             case .failure(let error):
                 print(error)

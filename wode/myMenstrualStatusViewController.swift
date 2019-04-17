@@ -124,12 +124,41 @@ class myMenstrualStatusViewController: UIViewController,UIPickerViewDelegate,UIP
         let row = pickView1.selectedRow(inComponent: 0) //获取当前行
         let value = Date1.object(at: row) as! String //获取行内数据
         self.SetTime1.text = value
+        let currentUser = LCUser.current!
+        
+        // 修改当前用户的周期
+        currentUser.set("Cycle", value: value)
+        
+        currentUser.save { result in
+            switch result {
+            case .success:
+                print("cycle setted!")
+                break
+            case .failure(let error):
+                print(error)
+            }
+        }
         self.view.endEditing(true)
     }
     @objc func toolBarDoneClick2(){
         let row = pickView2.selectedRow(inComponent: 0) //获取当前行
         let value = Date2.object(at: row) as! String //获取行内数据
+//        let days = LCDate()
         self.SetTime2.text = value
+        
+        let currentUser = LCUser.current!
+        // 修改当前用户的周期
+        currentUser.set("Days", value: value)
+        
+        currentUser.save { result in
+            switch result {
+            case .success:
+                print("Days setted!")
+                break
+            case .failure(let error):
+                print(error)
+            }
+        }
         self.view.endEditing(true)
     }
 

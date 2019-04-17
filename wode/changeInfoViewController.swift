@@ -11,6 +11,7 @@ import LeanCloud
 import AVOSCloud
 
 class changeInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var mytbView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,10 @@ class changeInfoViewController: UIViewController, UITableViewDelegate, UITableVi
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.mytbView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

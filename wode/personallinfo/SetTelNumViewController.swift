@@ -15,6 +15,7 @@ class SetTelNumViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        txtTelNum.clearButtonMode = UITextFieldViewMode.always
         self.view.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1)
         let currentUser = LCUser.current!//初始化当前用户信息
         let ID = currentUser.objectId?.stringValue//获取objectId
@@ -53,9 +54,7 @@ class SetTelNumViewController: UIViewController {
             case .success:
                 print("telNum setted!")
                 //成功则跳转到changeInfoView处
-                let first = self.storyboard
-                let secondView:UIViewController = first?.instantiateViewController(withIdentifier: "changeInfoView") as! UIViewController
-                self.present(secondView, animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
                 break
             case .failure(let error):
                 print(error)

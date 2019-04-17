@@ -16,6 +16,9 @@ class SetNameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1)
+        
+        
+        setNameTextField.clearButtonMode = UITextFieldViewMode.always
         //点击空白处收起键盘(暂时无效)
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
         tap.numberOfTapsRequired = 1
@@ -60,9 +63,7 @@ class SetNameViewController: UIViewController {
             case .success:
                 print("name setted!")
                 //成功则跳转到changeInfoView处
-                let first = self.storyboard
-                let secondView:UIViewController = first?.instantiateViewController(withIdentifier: "changeInfoView") as! UIViewController
-                self.present(secondView, animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
                 break
             case .failure(let error):
                 print(error)
