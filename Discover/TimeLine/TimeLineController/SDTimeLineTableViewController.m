@@ -15,7 +15,7 @@
  * QQ交流群: 362419100(2群) 459274049（1群已满）
  * Email : gsdios@126.com
  * GitHub: https://github.com/gsdios/GSD_WeiXin
- * 新浪微博:GSD_iOS
+ * 新浪微博:烁烁
  *
  * 此“高仿微信”用到了很高效方便的自动布局库SDAutoLayout（一行代码搞定自动布局）
  * SDAutoLayout地址：https://github.com/gsdios/SDAutoLayout
@@ -236,10 +236,10 @@ static CGFloat textFieldH = 40;
                                      @"icon4.jpg",
                                      ];
     
-    NSArray *namesArray = @[@"GSD_iOS",
+    NSArray *namesArray = @[@"可乐",
                             @"风口上的猪",
                             @"当今世界网名都不好起了",
-                            @"我叫郭德纲",
+                            @"我叫郭小纲",
                             @"Hello Kitty"];
     
     NSArray *textArray = @[@"当你的 app 没有提供 3x 的 LaunchImage 时，系统默认进入兼容模式，https://github.com/gsdios/SDAutoLayout大屏幕一切按照 320 宽度渲染，屏幕宽度返回 320；然后等比例拉伸到大屏。这种情况下对界面不会产生任何影响，等于把小屏完全拉伸。",
@@ -249,7 +249,7 @@ static CGFloat textFieldH = 40;
                            @"屏幕宽度返回 320；https://github.com/gsdios/SDAutoLayout然后等比例拉伸到大屏。这种情况下对界面不会产生任何影响，等于把小屏完全拉伸。但是建议不要长期处于这种模式下。"
                            ];
     
-    NSArray *commentsArray = @[@"社会主义好！👌👌👌👌",
+    NSArray *commentsArray = @[@"今天早上天气好好啊！👌👌👌👌",
                                @"正宗好凉茶，正宗好声音。。。",
                                @"你好，我好，大家好才是真的好",
                                @"有意思",
@@ -425,7 +425,7 @@ static CGFloat textFieldH = 40;
     
     if (!model.isLiked) {
         SDTimeLineCellLikeItemModel *likeModel = [SDTimeLineCellLikeItemModel new];
-        likeModel.userName = @"GSD_iOS";
+        likeModel.userName = @"烁烁";
         likeModel.userId = @"gsdios";
         [temp addObject:likeModel];
         model.liked = YES;
@@ -483,17 +483,17 @@ static CGFloat textFieldH = 40;
         SDTimeLineCellCommentItemModel *commentItemModel = [SDTimeLineCellCommentItemModel new];
         
         if (self.isReplayingComment) {
-            commentItemModel.firstUserName = @"GSD_iOS";
-            commentItemModel.firstUserId = @"GSD_iOS";
+            commentItemModel.firstUserName = @"烁烁";
+            commentItemModel.firstUserId = @"烁烁";
             commentItemModel.secondUserName = self.commentToUser;
             commentItemModel.secondUserId = self.commentToUser;
             commentItemModel.commentString = textField.text;
             
             self.isReplayingComment = NO;
         } else {
-            commentItemModel.firstUserName = @"GSD_iOS";
+            commentItemModel.firstUserName = @"烁烁";
             commentItemModel.commentString = textField.text;
-            commentItemModel.firstUserId = @"GSD_iOS";
+            commentItemModel.firstUserId = @"烁烁";
         }
         [temp addObject:commentItemModel];
         model.commentItemsArray = [temp copy];

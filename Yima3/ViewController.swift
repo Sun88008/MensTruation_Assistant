@@ -14,9 +14,10 @@ import SnapKit
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDelegate, UITextFieldDelegate{
     
-//    @IBOutlet weak var zhuYeWeb: UIWebView!
-//    @IBOutlet weak var myScrollView: UIScrollView!
     @IBOutlet weak var tipsView: UIView!
+    @IBOutlet weak var titleView: DNSPageTitleView!
+    
+    @IBOutlet weak var contentView: DNSPageContentView!
     
     var text : String?
 
@@ -27,16 +28,68 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
         self.view.backgroundColor = UIColor.white
         tipsView.layer.cornerRadius = 15
         
-//        self.myScrollView.frame = CGRect(x:0, y:0, width:self.view.frame.width, height:1000)
-//        self.myScrollView.contentSize = CGSize(width:self.view.frame.width, height:2000)
-//        
-//        self.myScrollView.isUserInteractionEnabled = true
-//        zhuYeWeb.delegate = self
-//
-//        //载入输入的请求
-//        let aUrl = NSURL(string: ("https://nv.99.com.cn"))
-//        let urlRequest = NSURLRequest(url: aUrl! as URL)
-//        zhuYeWeb.loadRequest(urlRequest as URLRequest)
+        //加阴影
+        contentView.layer.shadowColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1).cgColor//shadowColor阴影颜色
+        contentView.layer.shadowOffset = CGSize.init(width: 0, height: 3)//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使用
+        contentView.layer.shadowOpacity = 0.8//阴影透明度，默认0
+
+        
+        // 创建DNSPageStyle，设置样式
+        let style = DNSPageStyle()
+        style.titleViewBackgroundColor = UIColor.red
+        style.isShowCoverView = true
+        
+        // 设置标题内容
+        let titles = ["状态", "图表", "数据"]
+        
+        // 设置默认的起始位置
+        let startIndex = 0
+        
+        // 对titleView进行设置
+        titleView.titles = titles
+        titleView.style = style
+        titleView.currentIndex = startIndex
+        
+        // 最后要调用setupUI方法
+        titleView.setupUI()
+        
+        
+        // 创建每一页对应的controller
+        let childViewControllers: [UIViewController] = titles.map { _ -> UIViewController in
+            
+            
+            if(contentView.currentIndex == 0        ){
+                let controller = UIViewController()
+                controller.view.backgroundColor = UIColor.white
+                controller.view.layer.cornerRadius = 15
+                addChildViewController(controller)
+                return controller
+            }else if(contentView.currentIndex == 1){
+                let controller = UIViewController()
+                controller.view.backgroundColor = UIColor.black
+                controller.view.layer.cornerRadius = 15
+                addChildViewController(controller)
+                return controller
+            }else{
+                let controller = UIViewController()
+                controller.view.backgroundColor = UIColor.blue
+                controller.view.layer.cornerRadius = 15
+                addChildViewController(controller)
+                return controller
+            }
+        }
+        
+        // 对contentView进行设置
+        contentView.childViewControllers = childViewControllers
+        contentView.currentIndex = startIndex
+        contentView.style = style
+        
+        // 最后要调用setupUI方法
+        contentView.setupUI()
+        
+        // 让titleView和contentView进行联系起来
+        titleView.delegate = contentView
+        contentView.delegate = titleView
         
         //启动界面延时
         navigationController?.interactivePopGestureRecognizer?.delegate = self

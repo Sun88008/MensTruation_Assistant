@@ -27,7 +27,8 @@ class myMenstrualStatusViewController: UIViewController,UIPickerViewDelegate,UIP
     var pickerDateToolbar2 = UIToolbar()
     let Date1 = NSArray(objects:"15天","16天","17天","18天","19天","20天","21天","22天","23天","24天","25天","26天","27天","28天","29天","30天","31天","32天","33天","34天","35天","36天","37天","38天","39天","40天","41天","42天","43天","44天","45天","46天","47天","48天","49天","50天")
     let Date2 = NSArray(objects:"1天","2天","3天","4天","5天","6天","7天","8天","9天","10天","11天","12天","13天","14天","15天")
-    var btnOK = UIButton()
+    var num1 = 0
+    var num2 = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,10 +125,32 @@ class myMenstrualStatusViewController: UIViewController,UIPickerViewDelegate,UIP
         let row = pickView1.selectedRow(inComponent: 0) //获取当前行
         let value = Date1.object(at: row) as! String //获取行内数据
         self.SetTime1.text = value
+        
+        let scanner1 = Scanner(string: SetTime1.text!)
+        scanner1.scanUpToCharacters(from: CharacterSet.decimalDigits, into: nil)
+        scanner1.scanInt(&num1)
+        print(num1)
+        
+        self.view.endEditing(true)
+    }
+    @objc func toolBarDoneClick2(){
+        let row = pickView2.selectedRow(inComponent: 0) //获取当前行
+        let value = Date2.object(at: row) as! String //获取行内数据
+        self.SetTime2.text = value
+        
+        let scanner2 = Scanner(string: SetTime2.text!)
+        scanner2.scanUpToCharacters(from: CharacterSet.decimalDigits, into: nil)
+        scanner2.scanInt(&num2)
+        print(num2)
+        
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func finishSetMenstrual(_ sender: UIButton) {
         let currentUser = LCUser.current!
         
         // 修改当前用户的周期
-        currentUser.set("Cycle", value: value)
+        currentUser.set("Cycle", value: num1)
         
         currentUser.save { result in
             switch result {
@@ -138,17 +161,9 @@ class myMenstrualStatusViewController: UIViewController,UIPickerViewDelegate,UIP
                 print(error)
             }
         }
-        self.view.endEditing(true)
-    }
-    @objc func toolBarDoneClick2(){
-        let row = pickView2.selectedRow(inComponent: 0) //获取当前行
-        let value = Date2.object(at: row) as! String //获取行内数据
-//        let days = LCDate()
-        self.SetTime2.text = value
         
-        let currentUser = LCUser.current!
         // 修改当前用户的周期
-        currentUser.set("Days", value: value)
+        currentUser.set("Days", value: num2)
         
         currentUser.save { result in
             switch result {
@@ -159,8 +174,10 @@ class myMenstrualStatusViewController: UIViewController,UIPickerViewDelegate,UIP
                 print(error)
             }
         }
-        self.view.endEditing(true)
+        
+        self.dismiss(animated: true, completion: nil)
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

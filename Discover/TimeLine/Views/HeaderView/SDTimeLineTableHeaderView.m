@@ -59,7 +59,7 @@
     [self addSubview:_iconView];
     
     _nameLabel = [UILabel new];
-    _nameLabel.text = @"GSD_iOS";
+    _nameLabel.text = @"烁烁";
     _nameLabel.textColor = [UIColor whiteColor];
     _nameLabel.textAlignment = NSTextAlignmentRight;
     _nameLabel.font = [UIFont boldSystemFontOfSize:15];
