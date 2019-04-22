@@ -147,20 +147,83 @@ class myMenstrualStatusViewController: UIViewController,UIPickerViewDelegate,UIP
     }
     
     @IBAction func finishSetMenstrual(_ sender: UIButton) {
-        let currentUser = LCUser.current!
-        
-        // 修改当前用户的周期
-        currentUser.set("Cycle", value: num1)
-        
-        currentUser.save { result in
+        let currentUser = LCUser.current!//初始化当前用户信息
+        let ID = currentUser.objectId?.stringValue//获取objectId
+        let query = LCQuery(className: "_User")//选择所在类
+        let _ = query.get(ID!) { (result) in
             switch result {
-            case .success:
-                print("cycle setted!")
-                break
-            case .failure(let error):
+            case .success(object: let object):
+                
+                // get value by string key
+                var getCycle = object.get("Cycle")?.arrayValue
+                let cycle = [self.num1]
+                var getDays = object.get("Days")?.arrayValue
+                let days = [self.num2]
+                
+                print("get succeed!")
+                
+                if(getCycle == nil){
+                    // 修改当前用户的周期
+                    currentUser.set("Cycle", value: cycle)
+                    
+                    currentUser.save { result in
+                        switch result {
+                        case .success:
+                            print("cycle setted!")
+                            break
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
+                }else{
+                    getCycle?.append(self.num1)
+                    currentUser.set("Cycle", value: getCycle)
+                    currentUser.save { result in
+                        switch result {
+                        case .success:
+                            print("cycle update setted!")
+                            break
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
+
+                }
+                
+                if(getDays == nil){
+                    // 修改当前用户的周期
+                    currentUser.set("Days", value: days)
+                    
+                    currentUser.save { result in
+                        switch result {
+                        case .success:
+                            print("days setted!")
+                            break
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
+                }else{
+                    getDays?.append(self.num2)
+                    currentUser.set("Days", value: getDays)
+                    currentUser.save { result in
+                        switch result {
+                        case .success:
+                            print("days update setted!")
+                            break
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
+                }
+                
+            case .failure(error: let error):
+                // handle error
                 print(error)
+                break
             }
         }
+        
         
         // 修改当前用户的周期
         currentUser.set("Days", value: num2)

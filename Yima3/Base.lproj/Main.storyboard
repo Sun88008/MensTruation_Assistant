@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hnf-af-nrq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h0g-09-tcA">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1144,13 +1144,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.75294117650000003" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MEr-VI-0yH" customClass="DNSPageTitleView" customModule="Yima3" customModuleProvider="target">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MEr-VI-0yH" customClass="DNSPageTitleView" customModule="Yima3" customModuleProvider="target">
                                 <rect key="frame" x="94" y="0.0" width="227" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.75294117650000003" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="0oi-8p-Car"/>
-                                    <constraint firstAttribute="width" constant="227" id="Ufh-we-eTN"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="15"/>
@@ -1173,11 +1170,8 @@
                             <constraint firstItem="XY7-Zq-KYi" firstAttribute="centerY" secondItem="siF-jq-dEo" secondAttribute="centerY" constant="75" id="8ID-De-RDb"/>
                             <constraint firstAttribute="trailing" secondItem="XY7-Zq-KYi" secondAttribute="trailing" constant="107" id="A57-fw-xkS"/>
                             <constraint firstItem="XY7-Zq-KYi" firstAttribute="centerX" secondItem="5lv-7P-cqe" secondAttribute="centerX" id="Fyp-Kw-52c"/>
-                            <constraint firstItem="9Tb-BF-PVL" firstAttribute="trailing" secondItem="MEr-VI-0yH" secondAttribute="trailing" constant="93" id="NaK-gS-WeN"/>
                             <constraint firstItem="XY7-Zq-KYi" firstAttribute="centerY" secondItem="5lv-7P-cqe" secondAttribute="centerY" constant="-234.5" id="ZE0-vD-CeH"/>
-                            <constraint firstItem="MEr-VI-0yH" firstAttribute="top" secondItem="9Tb-BF-PVL" secondAttribute="top" id="ff1-gC-yN9"/>
                             <constraint firstItem="XY7-Zq-KYi" firstAttribute="centerX" secondItem="siF-jq-dEo" secondAttribute="centerX" id="q7C-wS-psg"/>
-                            <constraint firstItem="MEr-VI-0yH" firstAttribute="leading" secondItem="9Tb-BF-PVL" secondAttribute="leading" constant="94" id="rUb-hq-c1h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Tb-BF-PVL"/>
                     </scrollView>

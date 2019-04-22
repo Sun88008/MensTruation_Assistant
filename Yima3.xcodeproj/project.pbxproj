@@ -174,6 +174,16 @@
 		0DD33CB3222CC06700D0BDA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30B082222BC9A300AEA049 /* AppDelegate.swift */; };
 		0DD33CC3222CFEF200D0BDA6 /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD33CC2222CFEF200D0BDA6 /* SignViewController.swift */; };
 		0DD33CC5222D0DD900D0BDA6 /* SetMenstruationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD33CC4222D0DD900D0BDA6 /* SetMenstruationViewController.swift */; };
+		0DF72687226DA31600BC07D4 /* AAChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7267B226DA31600BC07D4 /* AAChartModel.swift */; };
+		0DF72688226DA31600BC07D4 /* AAChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7267C226DA31600BC07D4 /* AAChartView.swift */; };
+		0DF72689226DA31600BC07D4 /* AAColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7267D226DA31600BC07D4 /* AAColor.swift */; };
+		0DF7268A226DA31600BC07D4 /* AAGradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7267E226DA31600BC07D4 /* AAGradientColor.swift */; };
+		0DF7268B226DA31600BC07D4 /* AAOptionsConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7267F226DA31600BC07D4 /* AAOptionsConstructor.swift */; };
+		0DF7268C226DA31600BC07D4 /* AASerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF72680226DA31600BC07D4 /* AASerializable.swift */; };
+		0DF7268D226DA31600BC07D4 /* AASeriesElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF72681226DA31600BC07D4 /* AASeriesElement.swift */; };
+		0DF7268E226DA31600BC07D4 /* AAJSFiles.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0DF72682226DA31600BC07D4 /* AAJSFiles.bundle */; };
+		0DF7268F226DA31600BC07D4 /* AAPlotBandsElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF72684226DA31600BC07D4 /* AAPlotBandsElement.swift */; };
+		0DF72690226DA31600BC07D4 /* AAPlotLinesElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF72685226DA31600BC07D4 /* AAPlotLinesElement.swift */; };
 		1A7B0D9EADF2E693668434C8 /* Pods_Yima3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C6C2B6E740686C2C02846F /* Pods_Yima3.framework */; };
 /* End PBXBuildFile section */
 
@@ -469,6 +479,16 @@
 		0DC9C55D224CAF69008B0985 /* photoInCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = photoInCellTableViewCell.swift; path = wode/cell/photoInCellTableViewCell.swift; sourceTree = "<group>"; };
 		0DD33CC2222CFEF200D0BDA6 /* SignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
 		0DD33CC4222D0DD900D0BDA6 /* SetMenstruationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMenstruationViewController.swift; sourceTree = "<group>"; };
+		0DF7267B226DA31600BC07D4 /* AAChartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAChartModel.swift; sourceTree = "<group>"; };
+		0DF7267C226DA31600BC07D4 /* AAChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAChartView.swift; sourceTree = "<group>"; };
+		0DF7267D226DA31600BC07D4 /* AAColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAColor.swift; sourceTree = "<group>"; };
+		0DF7267E226DA31600BC07D4 /* AAGradientColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAGradientColor.swift; sourceTree = "<group>"; };
+		0DF7267F226DA31600BC07D4 /* AAOptionsConstructor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAOptionsConstructor.swift; sourceTree = "<group>"; };
+		0DF72680226DA31600BC07D4 /* AASerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AASerializable.swift; sourceTree = "<group>"; };
+		0DF72681226DA31600BC07D4 /* AASeriesElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AASeriesElement.swift; sourceTree = "<group>"; };
+		0DF72682226DA31600BC07D4 /* AAJSFiles.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AAJSFiles.bundle; sourceTree = "<group>"; };
+		0DF72684226DA31600BC07D4 /* AAPlotBandsElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPlotBandsElement.swift; sourceTree = "<group>"; };
+		0DF72685226DA31600BC07D4 /* AAPlotLinesElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPlotLinesElement.swift; sourceTree = "<group>"; };
 		2BCB2B6FEBA53B5C2BDF5D55 /* Pods-Yima3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yima3.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yima3/Pods-Yima3.release.xcconfig"; sourceTree = "<group>"; };
 		81C6C2B6E740686C2C02846F /* Pods_Yima3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yima3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF47C5997E7A6E18EE3D9C74 /* Pods-Yima3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yima3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yima3/Pods-Yima3.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1058,6 +1078,7 @@
 				0DC9C550224CA9EB008B0985 /* SnapKit.xcodeproj */,
 				0D30B081222BC9A300AEA049 /* Yima3 */,
 				0DC9C532224CA348008B0985 /* Wode */,
+				0DF72679226DA31600BC07D4 /* AAInfographics */,
 				0D7C0B84226AC0E700F504C9 /* DNSPageView */,
 				0D284CB42261BD5F00A55464 /* BaseClasses */,
 				0D284C9E2261BD5E00A55464 /* Common */,
@@ -1170,6 +1191,39 @@
 				0DC9C558224CA9EC008B0985 /* SnapKit Tests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0DF72679226DA31600BC07D4 /* AAInfographics */ = {
+			isa = PBXGroup;
+			children = (
+				0DF7267A226DA31600BC07D4 /* AAChartCreator */,
+				0DF72682226DA31600BC07D4 /* AAJSFiles.bundle */,
+				0DF72683226DA31600BC07D4 /* AAOptionsModel */,
+			);
+			path = AAInfographics;
+			sourceTree = "<group>";
+		};
+		0DF7267A226DA31600BC07D4 /* AAChartCreator */ = {
+			isa = PBXGroup;
+			children = (
+				0DF7267B226DA31600BC07D4 /* AAChartModel.swift */,
+				0DF7267C226DA31600BC07D4 /* AAChartView.swift */,
+				0DF7267D226DA31600BC07D4 /* AAColor.swift */,
+				0DF7267E226DA31600BC07D4 /* AAGradientColor.swift */,
+				0DF7267F226DA31600BC07D4 /* AAOptionsConstructor.swift */,
+				0DF72680226DA31600BC07D4 /* AASerializable.swift */,
+				0DF72681226DA31600BC07D4 /* AASeriesElement.swift */,
+			);
+			path = AAChartCreator;
+			sourceTree = "<group>";
+		};
+		0DF72683226DA31600BC07D4 /* AAOptionsModel */ = {
+			isa = PBXGroup;
+			children = (
+				0DF72684226DA31600BC07D4 /* AAPlotBandsElement.swift */,
+				0DF72685226DA31600BC07D4 /* AAPlotLinesElement.swift */,
+			);
+			path = AAOptionsModel;
 			sourceTree = "<group>";
 		};
 		5AE7AA6C70DDBF6022C8A854 /* Frameworks */ = {
@@ -1341,6 +1395,7 @@
 				0D338B3F226AAC0A0075B24E /* icon3.jpg in Resources */,
 				0D284D782261BD6000A55464 /* 21.jpg in Resources */,
 				0D284D882261BD6000A55464 /* Discover.xcassets in Resources */,
+				0DF7268E226DA31600BC07D4 /* AAJSFiles.bundle in Resources */,
 				0D338B3E226AAC0A0075B24E /* icon2.jpg in Resources */,
 				0D284D7B2261BD6000A55464 /* 3.jpg in Resources */,
 				0D338B41226AAC0A0075B24E /* icon4.jpg in Resources */,
@@ -1487,6 +1542,7 @@
 				0D284D502261BD6000A55464 /* SDTimeLineTableHeaderView.m in Sources */,
 				0D284D332261BD6000A55464 /* SDRefreshHeaderView.m in Sources */,
 				0D284D442261BD6000A55464 /* UIImageView+WebCache.m in Sources */,
+				0DF72687226DA31600BC07D4 /* AAChartModel.swift in Sources */,
 				0D284D3C2261BD6000A55464 /* SDWebImageDownloaderOperation.m in Sources */,
 				0D284D542261BD6000A55464 /* SDTimeLineRefreshHeader.m in Sources */,
 				0D284D4D2261BD6000A55464 /* UIScrollView+_MJTouches.m in Sources */,
@@ -1499,6 +1555,7 @@
 				0D284D272261BD6000A55464 /* MLLabel.m in Sources */,
 				0D284D392261BD6000A55464 /* SDWebImageCompat.m in Sources */,
 				0D284D512261BD6000A55464 /* SDTimeLineCellOperationMenu.m in Sources */,
+				0DF72689226DA31600BC07D4 /* AAColor.swift in Sources */,
 				0D284D4E2261BD6000A55464 /* SDTimeLineCell.m in Sources */,
 				0D86749B225A3E4B0072E4AD /* telNumLableTableViewCell.swift in Sources */,
 				0D7C0B92226AC0E700F504C9 /* DNSPageStyle.swift in Sources */,
@@ -1508,6 +1565,7 @@
 				0D284D592261BD6000A55464 /* SDWebViewController.m in Sources */,
 				0D867499225A3E380072E4AD /* ageLableTableViewCell.swift in Sources */,
 				0DD33CB3222CC06700D0BDA6 /* AppDelegate.swift in Sources */,
+				0DF7268A226DA31600BC07D4 /* AAGradientColor.swift in Sources */,
 				0DAE68D92256FA95009BA120 /* SetNameViewController.swift in Sources */,
 				0D284D3A2261BD6000A55464 /* SDWebImageDecoder.m in Sources */,
 				0D284D582261BD6000A55464 /* SDSimpleCell.m in Sources */,
@@ -1516,6 +1574,7 @@
 				0D284D432261BD6000A55464 /* UIImageView+HighlightedWebCache.m in Sources */,
 				0DC9C539224CA45C008B0985 /* addTipsViewController.swift in Sources */,
 				0D867490225A31DA0072E4AD /* SetGenderViewController.swift in Sources */,
+				0DF7268F226DA31600BC07D4 /* AAPlotBandsElement.swift in Sources */,
 				0D284D352261BD6000A55464 /* UIView+SDExtension.m in Sources */,
 				0D284D322261BD6000A55464 /* SDRefreshFooterView.m in Sources */,
 				0D2F62D422574C1100D4ECC8 /* nameLableTableViewCell.swift in Sources */,
@@ -1537,6 +1596,7 @@
 				0D284D552261BD6000A55464 /* SDChatModel.m in Sources */,
 				0D284D5B2261BD6000A55464 /* SDBaseRefreshView.m in Sources */,
 				0D284D3D2261BD6000A55464 /* SDWebImageManager.m in Sources */,
+				0DF72688226DA31600BC07D4 /* AAChartView.swift in Sources */,
 				0D284D1E2261BD6000A55464 /* MLEmojiLabel.m in Sources */,
 				0D284D522261BD6000A55464 /* SDWeiXinPhotoContainerView.m in Sources */,
 				0D51BD4C223CE06A00B1E020 /* BaikeViewController.swift in Sources */,
@@ -1551,10 +1611,12 @@
 				0D7C0B95226AC0E700F504C9 /* DNSPageViewManager.swift in Sources */,
 				0D284D572261BD6000A55464 /* SDChatTableViewCell.m in Sources */,
 				0D284D2D2261BD6000A55464 /* UIView+SDAutoLayout.m in Sources */,
+				0DF7268C226DA31600BC07D4 /* AASerializable.swift in Sources */,
 				0D284D2C2261BD6000A55464 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				0D284D222261BD6000A55464 /* MLExpressionManager.m in Sources */,
 				0D284D5A2261BD6000A55464 /* SDAnalogDataGenerator.m in Sources */,
 				0D284D242261BD6000A55464 /* NSAttributedString+MLExpression.m in Sources */,
+				0DF72690226DA31600BC07D4 /* AAPlotLinesElement.swift in Sources */,
 				0D284D372261BD6000A55464 /* NSData+ImageContentType.m in Sources */,
 				0D7C0B94226AC0E700F504C9 /* DNSPageView.swift in Sources */,
 				0D51BD50223CE09F00B1E020 /* WodeViewController.swift in Sources */,
@@ -1562,6 +1624,7 @@
 				0D7C0B91226AC0E700F504C9 /* DNSPageHelper.swift in Sources */,
 				0D284D4A2261BD6000A55464 /* SDTimeLineCellModel.m in Sources */,
 				0D284D4F2261BD6000A55464 /* SDTimeLineCellCommentView.m in Sources */,
+				0DF7268B226DA31600BC07D4 /* AAOptionsConstructor.swift in Sources */,
 				0D284D3F2261BD6000A55464 /* UIButton+WebCache.m in Sources */,
 				0D284D5C2261BD6000A55464 /* SDBaseNavigationController.m in Sources */,
 				0D284D212261BD6000A55464 /* NSString+MLLabel.m in Sources */,
@@ -1570,6 +1633,7 @@
 				0D284D3B2261BD6000A55464 /* SDWebImageDownloader.m in Sources */,
 				0D284D4C2261BD6000A55464 /* SDTimeLineTableViewController.m in Sources */,
 				0D284D262261BD6000A55464 /* MLLabelLayoutManager.m in Sources */,
+				0DF7268D226DA31600BC07D4 /* AASeriesElement.swift in Sources */,
 				0D284D252261BD6000A55464 /* NSString+MLExpression.m in Sources */,
 				0D78B9782238E74E002C5C35 /* SearchTableView.swift in Sources */,
 				0D284D2B2261BD6000A55464 /* TTTAttributedLabel.m in Sources */,
