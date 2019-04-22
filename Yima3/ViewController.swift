@@ -27,6 +27,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
         //视图背景色
         self.view.backgroundColor = UIColor.white
         tipsView.layer.cornerRadius = 15
+        contentView.layer.cornerRadius = 15
         
         //加阴影
         contentView.layer.shadowColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1).cgColor//shadowColor阴影颜色
@@ -55,29 +56,29 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
         
         
         // 创建每一页对应的controller
-        let childViewControllers: [UIViewController] = titles.map { _ -> UIViewController in
-            
-            
-            if(contentView.currentIndex == 0        ){
-                let controller = UIViewController()
-                controller.view.backgroundColor = UIColor.white
-                controller.view.layer.cornerRadius = 15
-                addChildViewController(controller)
-                return controller
-            }else if(contentView.currentIndex == 1){
-                let controller = UIViewController()
-                controller.view.backgroundColor = UIColor.black
-                controller.view.layer.cornerRadius = 15
-                addChildViewController(controller)
-                return controller
-            }else{
-                let controller = UIViewController()
-                controller.view.backgroundColor = UIColor.blue
-                controller.view.layer.cornerRadius = 15
-                addChildViewController(controller)
-                return controller
-            }
-        }
+        let controller1 = UIViewController()
+        controller1.view.backgroundColor = UIColor.white
+        controller1.view.layer.cornerRadius = 15
+        addChildViewController(controller1)
+        
+        let controller2 = UIViewController()
+        controller2.view.backgroundColor = UIColor.black
+        controller2.view.layer.cornerRadius = 15
+        addChildViewController(controller2)
+        
+        let controller3 = UIViewController()
+        controller3.view.backgroundColor = UIColor.blue
+        controller3.view.layer.cornerRadius = 15
+        addChildViewController(controller3)
+        
+        let childViewControllers: [UIViewController] = [controller1,controller2,controller3]
+        
+//        // 创建每一页对应的controller
+//        let childViewControllers: [UIViewController] = titles.map { _ -> UIViewController in
+//            let controller = UIViewController()
+//            addChildViewController(controller)
+//            return controller
+//        }
         
         // 对contentView进行设置
         contentView.childViewControllers = childViewControllers
