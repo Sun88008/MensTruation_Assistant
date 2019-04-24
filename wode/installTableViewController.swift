@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import LeanCloud
+import AVOSCloud
 
 class installTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -25,6 +27,17 @@ class installTableViewController: UIViewController, UITableViewDelegate, UITable
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //注销用户
+    @IBAction func logOutBtm(_ sender: UIButton) {
+        AVUser.logOut()
+        let currentUser: AVUser
+        //跳转到TabBar处
+        let first = self.storyboard
+        let secondView:UIViewController = first?.instantiateViewController(withIdentifier: "FirstView") as! UIViewController
+        self.present(secondView, animated: true, completion: nil)
+        
     }
 
     // MARK: - Table view data source

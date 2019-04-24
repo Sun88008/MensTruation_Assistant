@@ -23,6 +23,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
     var dateStr: String = ""
     var getCycle: [Double] = []
     var getDays: [Double] = []
+    var getMenstrualArray: [String] = []
+    var showCycle: String = ""
+    var showDays: String = ""
+    var cyc: Int = 0
+    var day: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,17 +81,44 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
             switch result {
             case .success(object: let object):
                 // get value by string key
-                let getMentrual = object.get("Mentrual_Day")?.dateValue
-//                let mentrualDay = getMentrual
-                self.getCycle = object.get("Cycle")?.arrayValue as! [Double]
-                self.getDays = object.get("Days")?.arrayValue as! [Double]
+                if(object.get("Cycle") == nil){
+                    self.getCycle = []
+                }else{
+                    self.getCycle = object.get("Cycle")?.arrayValue as! [Double]
+                    for itemCycle in self.getCycle{
+                        self.cyc = Int(itemCycle)
+                        self.showCycle += " \(self.cyc)天"
+                    }
+                }
+                if(object.get("Days") == nil){
+                    self.getDays = []
+                }else{
+                    self.getDays = object.get("Days")?.arrayValue as! [Double]
+                    for itemDays in self.getDays{
+                        self.day = Int(itemDays)
+                        self.showDays += " \(self.day)天"
+                    }
+                }
                 
-                if(getMentrual != nil){
+                let getMenstrual = object.get("Menstrual_Day")?.arrayValue
+                print(getMenstrual)
+                if(getMenstrual != nil){
                     // 获取当前用户的周期
-                    let formatter = DateFormatter()
-                    let date = getMentrual
-                    formatter.dateFormat = "YYYY年 MM月 dd日"
-                    self.dateStr = formatter.string(from: date!)
+//                    let formatter = DateFormatter()
+//                    formatter.dateFormat = "MM月dd日"
+                    for date in getMenstrual!{
+                        if(getMenstrual?.isEmpty)!{
+                            
+                        }else{
+                            if(self.getMenstrualArray.isEmpty){
+                                self.getMenstrualArray = [date as! String]
+                            }else{
+                                self.getMenstrualArray.append(date as! String)
+                            }
+                        }
+                    }
+//                    let date = getMenstrual
+                    
                 }else{
                     self.dateStr = ""
                 }
@@ -102,13 +134,13 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
                 
                 let chartModel = AAChartModel()
                     .chartType(.column)//图表类型
-                    .title("月经周期：\(self.getCycle)")//图表主标题
-                    .subtitle("月经期：\(self.getDays)")//图表副标题
+                    .title("月经周期：\(self.showCycle)")//图表主标题
+                    .subtitle("月经期：\(self.showDays)")//图表副标题
                     .inverted(false)//是否翻转图形
                     .yAxisTitle("天数")// Y 轴标题
                     .legendEnabled(true)//是否启用图表的图例(图表底部的可点击的小圆点)
                     .tooltipValueSuffix("天")//浮动提示框单位后缀
-                    .categories([self.dateStr])
+                    .categories(self.getMenstrualArray)
                     .colorsTheme(["#fe117c","#ffc069","#06caf4","#7dffc0"])//主题颜色数组
                     .series([
                         AASeriesElement()
@@ -162,6 +194,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
         //启动界面延时
         navigationController?.interactivePopGestureRecognizer?.delegate = self
         Thread.sleep(forTimeInterval: 1)
+    }
+    @IBAction func back(segue: UIStoryboardSegue) {
+        print("closed")
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

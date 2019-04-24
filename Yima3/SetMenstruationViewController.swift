@@ -16,25 +16,77 @@ class SetMenstruationViewController: UIViewController, UIActionSheetDelegate {
 
     var Date = UIDatePicker()
     var SetTime = UITextField()
+    var day:String = ""
     @IBAction func ConfirmValueAndPass(_ sender: Any) {
         //ViewController.text = MentruationTime
-        
-        let date = Date.date
-        let currentUser = LCUser.current!
-        
-        // 修改当前用户的周期
-        currentUser.set("Menstrual_Day", value: date)
-        
-        currentUser.save { result in
-            switch result {
-            case .success:
-                print("Menstrual_Day setted!")
-                break
-            case .failure(let error):
-                print(error)
+        if(self.SetTime.text == ""){
+            
+        }else{
+            let date = Date.date
+            let currentUser = LCUser.current!
+            
+            // 修改当前用户的周期
+            let ID = currentUser.objectId?.stringValue//获取objectId
+            let query = LCQuery(className: "_User")//选择所在类
+            let _ = query.get(ID!) { (result) in
+                switch result {
+                case .success(object: let object):
+                    
+                    // get value by string key
+                    var getMenstrual_Day = object.get("Menstrual_Day")?.arrayValue
+    //                let Menstrual_Day = [date as! String]
+                    print("get succeed!")
+                    
+                    if(getMenstrual_Day == nil){
+                        // 修改当前用户的周期
+                        let Menstrual_Day = [self.day]
+                        currentUser.set("Menstrual_Day", value: Menstrual_Day)
+                        
+                        currentUser.save { result in
+                            switch result {
+                            case .success:
+                                print("menstrual_Day setted!")
+                                break
+                            case .failure(let error):
+                                print(error)
+                            }
+                        }
+                    }else{
+                        getMenstrual_Day?.append(self.day)
+                        currentUser.set("Menstrual_Day", value: getMenstrual_Day)
+                        currentUser.save { result in
+                            switch result {
+                            case .success:
+                                print("menstrual_Day update setted!")
+                                break
+                            case .failure(let error):
+                                print(error)
+                            }
+                        }
+                        
+                    }
+                case .failure(error: let error):
+                    // handle error
+                    print(error)
+                    break
+                }
             }
+        
+        
+//        // 修改当前用户的周期
+//        currentUser.set("Menstrual_Day", value: date)
+//
+//        currentUser.save { result in
+//            switch result {
+//            case .success:
+//                print("Menstrual_Day setted!")
+//                break
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+            self.dismiss(animated: true, completion: nil)
         }
-        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -90,6 +142,11 @@ class SetMenstruationViewController: UIViewController, UIActionSheetDelegate {
         formatter.dateFormat = "YYYY年 MM月 dd日"
         let dateStr = formatter.string(from: date)
         self.SetTime.text = dateStr
+        //按月-日储存到leancloud
+        let formatter2 = DateFormatter()
+        formatter2.dateFormat = "MM月 dd日"
+        let dateStr2 = formatter2.string(from: date)
+        self.day = dateStr2
         
         let MentruationTime = date+1*60*60*24
         

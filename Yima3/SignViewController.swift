@@ -398,10 +398,6 @@ class SignViewController: UIViewController, UITextFieldDelegate, SearchTableView
         self.present(secondView, animated: true, completion: nil)
     }
     
-    @IBAction func back(segue: UIStoryboardSegue) {
-        print("closed")
-    }
-    
     //左手离脑袋的距离
     var offsetLeftHand:CGFloat = 60
     

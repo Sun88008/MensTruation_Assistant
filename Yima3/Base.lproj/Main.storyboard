@@ -555,17 +555,6 @@
                                     <outlet property="delegate" destination="hI7-bh-a9J" id="Vtz-Ru-xMt"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzl-Tr-sgP">
-                                <rect key="frame" x="0.0" y="318" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.75294117650000003" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="退出登录">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="logOutBtm:" destination="hI7-bh-a9J" eventType="touchUpInside" id="jqb-VC-DMV"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="AUp-8K-f0b"/>
@@ -872,6 +861,18 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5w-vR-Yv8">
+                                <rect key="frame" x="0.0" y="346" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.75294117650000003" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="退出登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutBtm:" destination="ZNm-ZB-PaL" eventType="touchUpInside" id="3b7-2c-E2L"/>
+                                    <action selector="logOutBtm:" destination="hI7-bh-a9J" eventType="touchUpInside" id="wIt-ZK-pOe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="fnT-jT-3bl"/>
@@ -1225,7 +1226,7 @@
                                     <navigationItem id="ZK7-an-yw3">
                                         <barButtonItem key="leftBarButtonItem" title="取消" id="v0X-y2-vlf">
                                             <connections>
-                                                <segue destination="Qjf-Kv-IOu" kind="unwind" unwindAction="backWithSegue:" id="2VM-HY-FTe"/>
+                                                <segue destination="Qjf-Kv-IOu" kind="unwind" unwindAction="backWithSegue:" id="wg2-tW-Esn"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="确定" id="iHg-Wp-s3O">
