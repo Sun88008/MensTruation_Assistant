@@ -1,0 +1,20 @@
+//
+//  PrefixHeader.pch
+//  CHLCalendar
+//
+//  Created by luomin on 16/2/29.
+//  Copyright © 2016年 CHL. All rights reserved.
+//
+
+#import<Availability.h>
+//precomplied header
+#ifndef __IPHONE_5_0
+#warning "This project uses features only availability in iOS SDK 5.0 and latter"
+#endif
+
+#ifdef __OBJC__
+#import<UIKit/UIKit.h>
+#import<Foundation/Foundation.h>
+#import"Public.h"
+#import "AlertLabel.h"
+#endif

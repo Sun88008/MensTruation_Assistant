@@ -28,6 +28,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
     var showDays: String = ""
     var cyc: Int = 0
     var day: Int = 0
+    let controller2 = UIViewController()
+    open var chartModel: AAChartModel?
+    open var aaChartView: AAChartView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,17 +72,54 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
         controller1.view.layer.cornerRadius = 15
         addChildViewController(controller1)
         
-        let controller2 = UIViewController()
+        
         controller2.view.backgroundColor = UIColor.white
         controller2.view.layer.cornerRadius = 15
+        
+        
+                self.setUpAAChartView()
+
+                
+        
+        
+        addChildViewController(controller2)
+        
+        let controller3 = UIViewController()
+        controller3.view.backgroundColor = UIColor.white
+        controller3.view.layer.cornerRadius = 15
+        addChildViewController(controller3)
+        
+        let childViewControllers: [UIViewController] = [controller1,controller2,controller3]
+        
+        // 对contentView进行设置
+        contentView.childViewControllers = childViewControllers
+        contentView.currentIndex = startIndex
+        contentView.style = style
+        
+        // 最后要调用setupUI方法
+        contentView.setupUI()
+        
+        // 让titleView和contentView进行联系起来
+        titleView.delegate = contentView
+        contentView.delegate = titleView
+        
+        //启动界面延时
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+        Thread.sleep(forTimeInterval: 1)
+    }
+    
+    func setUpAAChartView() {
         
         //获取横坐标
         let currentUser = LCUser.current!//初始化当前用户信息
         let ID = currentUser.objectId?.stringValue//获取objectId
         let query = LCQuery(className: "_User")//选择所在类
+        
         let _ = query.get(ID!) { (result) in
             switch result {
             case .success(object: let object):
+                self.showCycle = ""
+                self.showDays = ""
                 // get value by string key
                 if(object.get("Cycle") == nil){
                     self.getCycle = []
@@ -99,13 +139,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
                         self.showDays += " \(self.day)天"
                     }
                 }
-                
+                print(self.getCycle)
+                print(self.getDays)
+                self.getMenstrualArray = []
                 let getMenstrual = object.get("Menstrual_Day")?.arrayValue
-                print(getMenstrual)
+                print("fir:\(getMenstrual)")
                 if(getMenstrual != nil){
-                    // 获取当前用户的周期
-//                    let formatter = DateFormatter()
-//                    formatter.dateFormat = "MM月dd日"
                     for date in getMenstrual!{
                         if(getMenstrual?.isEmpty)!{
                             
@@ -117,22 +156,33 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
                             }
                         }
                     }
-//                    let date = getMenstrual
+
                     
                 }else{
-                    self.dateStr = ""
+                    self.getMenstrualArray = []
                 }
-                
+                print("fir:\(self.getMenstrualArray)")
+                print(self.getCycle)
+                print(self.getDays)
                 //初始化标图
                 let chartViewWidth: CGFloat  = 320
                 let chartViewHeight: CGFloat = 340
-                let aaChartView = AAChartView()
-                aaChartView.frame = CGRect(x:10,y:0,width:chartViewWidth,height:chartViewHeight)
+                self.aaChartView = AAChartView()
+                self.aaChartView?.frame = CGRect(x:10,y:0,width:chartViewWidth,height:chartViewHeight)
                 // 设置 aaChartView 的内容高度(content height)
-                aaChartView.contentHeight = 330
-                controller2.view.addSubview(aaChartView)
+                self.aaChartView?.contentHeight = 330
                 
-                let chartModel = AAChartModel()
+                let subLabel = UILabel()
+                subLabel.frame = CGRect(x: 20,
+                                        y:0,
+                                        width: 5,
+                                        height: 5)
+                subLabel.text = "不要将 AAChartView 作为第一个子视图添加到 ViewController 上,否则会有 bug,不信你试试注释掉我"
+                self.controller2.view.addSubview(subLabel)
+                
+                self.controller2.view.addSubview(self.aaChartView!)
+                
+                self.chartModel = AAChartModel()
                     .chartType(.column)//图表类型
                     .title("月经周期：\(self.showCycle)")//图表主标题
                     .subtitle("月经期：\(self.showDays)")//图表副标题
@@ -151,49 +201,21 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
                             .name("月经期")
                             .data(self.getDays)
                             .toDic()!,])
-                aaChartView.aa_drawChartWithChartModel(chartModel)
-                
+                self.aaChartView?.aa_drawChartWithChartModel(self.chartModel!)
                 print("get succeed!")
                 
             case .failure(error: let error):
-            // handle error
-            print(error)
-            break
+                // handle error
+                print(error)
+                break
             }
         }
-        
-        
-        addChildViewController(controller2)
-        
-        let controller3 = UIViewController()
-        controller3.view.backgroundColor = UIColor.white
-        controller3.view.layer.cornerRadius = 15
-        addChildViewController(controller3)
-        
-        let childViewControllers: [UIViewController] = [controller1,controller2,controller3]
-        
-//        // 创建每一页对应的controller
-//        let childViewControllers: [UIViewController] = titles.map { _ -> UIViewController in
-//            let controller = UIViewController()
-//            addChildViewController(controller)
-//            return controller
-//        }
-        
-        // 对contentView进行设置
-        contentView.childViewControllers = childViewControllers
-        contentView.currentIndex = startIndex
-        contentView.style = style
-        
-        // 最后要调用setupUI方法
-        contentView.setupUI()
-        
-        // 让titleView和contentView进行联系起来
-        titleView.delegate = contentView
-        contentView.delegate = titleView
-        
-        //启动界面延时
-        navigationController?.interactivePopGestureRecognizer?.delegate = self
-        Thread.sleep(forTimeInterval: 1)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setUpAAChartView()
+//        self.aaChartView?.aa_refreshChartWholeContentWithChartModel(self.chartModel!)//刷新
     }
     @IBAction func back(segue: UIStoryboardSegue) {
         print("closed")

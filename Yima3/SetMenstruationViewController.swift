@@ -85,6 +85,8 @@ class SetMenstruationViewController: UIViewController, UIActionSheetDelegate {
 //                print(error)
 //            }
 //        }
+            self.navigationController?.viewWillAppear(true)
+            self.navigationController?.popViewController(animated: true)
             self.dismiss(animated: true, completion: nil)
         }
     }

@@ -43,7 +43,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="B08-9O-y0Z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-3310" y="-550"/>
+            <point key="canvasLocation" x="-1558" y="-990"/>
         </scene>
         <!--百科-->
         <scene sceneID="qaj-Bq-l9k">
@@ -1053,6 +1053,22 @@
             </objects>
             <point key="canvasLocation" x="-2487" y="1783"/>
         </scene>
+        <!--姨妈-->
+        <scene sceneID="EuD-4m-Ff5">
+            <objects>
+                <viewController id="YvO-yb-kgv" customClass="RecorderVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CKc-X5-am4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="fAW-U2-60f"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="姨妈" image="duanqun" id="ySb-GX-KTr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DyF-Kb-sHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2487" y="-483"/>
+        </scene>
         <!--ZhuyeView-->
         <scene sceneID="xwa-p6-6GL">
             <objects>
@@ -1201,6 +1217,7 @@
                     <connections>
                         <segue destination="Hnf-af-nrq" kind="relationship" relationship="viewControllers" id="lXP-9v-l8J"/>
                         <segue destination="L1p-mH-UBp" kind="relationship" relationship="viewControllers" id="KrM-ll-EPg"/>
+                        <segue destination="YvO-yb-kgv" kind="relationship" relationship="viewControllers" id="n48-92-pEY"/>
                         <segue destination="rQp-wa-Z74" kind="relationship" relationship="viewControllers" id="dye-GK-Ijk"/>
                         <segue destination="XJ0-Ep-26A" kind="relationship" relationship="viewControllers" id="PpV-jY-akz"/>
                     </connections>
@@ -1271,11 +1288,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3E7-uq-Gta" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2487" y="-550"/>
+            <point key="canvasLocation" x="-736" y="-990"/>
         </scene>
     </scenes>
     <resources>
         <image name="TIME" width="42" height="42"/>
+        <image name="duanqun" width="25" height="25"/>
         <image name="jiemao" width="66" height="66"/>
         <image name="mianmo" width="66" height="66"/>
         <image name="rili" width="42" height="42"/>
