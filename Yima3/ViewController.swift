@@ -76,12 +76,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
         controller2.view.backgroundColor = UIColor.white
         controller2.view.layer.cornerRadius = 15
         
-        
-                self.setUpAAChartView()
+        self.setUpAAChartView()
 
-                
-        
-        
         addChildViewController(controller2)
         
         let controller3 = UIViewController()

@@ -20,18 +20,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AVOSCloud.setApplicationId("QzGVOBAXDFKAlvtkFdkPOCQc-gzGzoHsz", clientKey: "LFflr8QCngaMJQiYtpj6AsiE")
         LeanCloud.initialize(applicationID: "QzGVOBAXDFKAlvtkFdkPOCQc-gzGzoHsz", applicationKey: "LFflr8QCngaMJQiYtpj6AsiE")
         
-//        let currentUser: AVUser = AVUser.current()!
-//        if (currentUser != nil) {
-//            // 跳转到首页
-//            let storyboard = UIStoryboard(name: "TarBar", bundle: nil)
-//            let loginView = storyboard.instantiateViewController(withIdentifier: "TarBar")
-//            window?.rootViewController = loginView
-//        } else {
-//            //缓存用户对象为空时，可打开用户注册界面…
-//            let storyboard = UIStoryboard(name: "FirstView", bundle: nil)
-//            let loginView = storyboard.instantiateViewController(withIdentifier: "FirstView")
-//            window?.rootViewController = loginView
-//        }
+//        self.window = UIWindow.init(frame: UIScreen.main.bounds)
+//        self.window?.backgroundColor = UIColor.white
+//        self.window?.makeKeyAndVisible()
+        
+//        let nav = UINavigationController.init(rootViewController: ())
+//        self.window?.rootViewController = nav
+        
+//        self.window =[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]
+//        self.window.backgroundColor = [UIColor whiteColor]
+//        [self.window makeKeyAndVisible]
+//
+//        RootViewController *root = [[RootViewController alloc]init]
+//        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:root]
+//        self.window.rootViewController = nav
+        
         
         // Override point for customization after application launch.
         return true

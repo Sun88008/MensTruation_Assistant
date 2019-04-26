@@ -67,6 +67,14 @@
 
 - (void)viewDidLoad
 {
+//    UIViewController *root = [[UIViewController alloc]init];
+//    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:root];
+//    self.window.rootViewController = nav;
+    
+    RecorderVC *root = [[RecorderVC alloc]init];
+    UINavigationController* navi = [[UINavigationController alloc] initWithRootViewController:root];
+    [self.navigationController presentViewController:navi animated:YES completion:nil];
+    
     [super viewDidLoad];
     
     _dataArray1 = [[NSMutableArray alloc]init];
@@ -124,14 +132,14 @@
     [navView addSubview:dateLabel];
     self.labelDate = dateLabel;
     
-    //按钮 返回
-    UIButton *backbtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    backbtn.frame = CGRectMake(10, 32, 40, 20);
-    [backbtn setTitle:@"返回" forState:UIControlStateNormal];
-    backbtn.titleLabel.font = [UIFont systemFontOfSize:15];
-    [backbtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [backbtn addTarget:self action:@selector(backback) forControlEvents:UIControlEventTouchUpInside];
-    [navView addSubview:backbtn];
+//    //按钮 返回
+//    UIButton *backbtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    backbtn.frame = CGRectMake(10, 32, 40, 20);
+//    [backbtn setTitle:@"返回" forState:UIControlStateNormal];
+//    backbtn.titleLabel.font = [UIFont systemFontOfSize:15];
+//    [backbtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    [backbtn addTarget:self action:@selector(backback) forControlEvents:UIControlEventTouchUpInside];
+//    [navView addSubview:backbtn];
     
     //按钮 当前月
     UIButton *buttonCurrent = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -169,11 +177,11 @@
     }
 }
 
-//返回
-- (void)backback
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
+////返回
+//- (void)backback
+//{
+//    [self.navigationController popViewControllerAnimated:YES];
+//}
 
 - (void)createWeek
 {
@@ -249,7 +257,7 @@
     //tableView
     CGFloat tableViewY = 85+(__kScreenWidth-22)/7.0*6.0+14;
     CGFloat tableViewH = self.view.frame.size.height - self.tabBarController.tabBar.frame.size.height - tableViewY;
-    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 85+(__kScreenWidth-22)/7.0*6.0+14, __kScreenWidth, 1200) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 85+(__kScreenWidth-22)/7.0*6.0+14, __kScreenWidth, 640) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.bounces = NO;
@@ -644,9 +652,9 @@
         //大姨妈来了
         _monthComing = YES;
         if (_isUp) {
-            _tableView.frame = CGRectMake(0, 85+(__kScreenWidth-22)/7.0+4, __kScreenWidth, 630);
+            _tableView.frame = CGRectMake(0, 85+(__kScreenWidth-22)/7.0*6.0+14, __kScreenWidth, 700);
         }else{
-            _tableView.frame = CGRectMake(0, 85+(__kScreenWidth-22)/7.0*6.0+14, __kScreenWidth, 630);
+            _tableView.frame = CGRectMake(0, 85+(__kScreenWidth-22)/7.0+4, __kScreenWidth, 700);
         }
     }else{
         //大姨妈走了
@@ -759,7 +767,9 @@
             //白带
             LeukorrheaVC *leukorrhea = [[LeukorrheaVC alloc]init];
             leukorrhea.delegate = self;
+            printf("白带");
             [self.navigationController pushViewController:leukorrhea animated:YES];
+            printf("白带2");
         }else if (sender.tag == 403){
             //症状
             SymptomVC *symptom = [[SymptomVC alloc]init];
