@@ -47,6 +47,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
     var imageY = Double()
     var yImage = [UIImageView]()
     
+    var num1 = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -56,7 +58,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
         contentView.layer.cornerRadius = 15
         
         //加阴影
-        contentView.layer.shadowColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1).cgColor//shadowColor阴影颜色
+        contentView.layer.shadowColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1).cgColor
+        //shadowColor阴影颜色
         contentView.layer.shadowOffset = CGSize.init(width: 0, height: 3)//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使用
         contentView.layer.shadowOpacity = 0.8//阴影透明度，默认0
 
@@ -175,15 +178,14 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
                     let yyImage = UIImageView()
                     if(i>=0 && i<Int(self.yimaqi)){
                         if(i==0){
-                            //提取数字
-                            let scanner = Scanner(string: self.menstrualDay)
-                            scanner.scanUpToCharacters(from: CharacterSet.decimalDigits, into: nil)
-                            var number :Int = 0
-                            scanner.scanInt(&number)
-                            
+                            let xiangshang = UIImageView.init(image: #imageLiteral(resourceName: "向上箭头"))
+                            xiangshang.frame = CGRect(x:self.imageX,y:self.imageY+14,width:15,height:13)
+                            self.controller1.view.addSubview(xiangshang)
                             let firstDay = UILabel()
-                            firstDay.text = String(number)
-                            firstDay.frame = CGRect(x:self.imageX-3,y:self.imageY+15,width:15,height:15)
+                            firstDay.text = self.menstrualDay
+                            firstDay.textColor = UIColor(red: 251/255, green: 109/255, blue: 157/255,alpha: 1)
+//                            UIColor(red: 113/255, green: 220/255, blue: 112/255,alpha: 1)
+                            firstDay.frame = CGRect(x:self.imageX-3,y:self.imageY+25,width:50,height:8)
                             firstDay.adjustsFontSizeToFitWidth = true
                             self.controller1.view.addSubview(firstDay)
                         }
@@ -193,6 +195,21 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
                     }else if(i == Int(self.cycle-14)){
                         yyImage.image = #imageLiteral(resourceName: "排卵日")
                     }else{
+                        if(i==Int(self.yimaqi)){
+//                            let scanner1 = Scanner(string: self.menstrualDay)
+//                            scanner1.scanUpToCharacters(from: CharacterSet.decimalDigits, into: nil)
+//                            scanner1.scanInt(&self.num1)
+//                            print(self.num1)
+                            let xiangyou = UIImageView.init(image: #imageLiteral(resourceName: "向右箭头"))
+                            xiangyou.frame = CGRect(x:self.imageX-15,y:self.imageY+5,width:10,height:8)
+                            self.controller1.view.addSubview(xiangyou)
+                            let firstDay = UILabel()
+                            firstDay.text = self.menstrualDay
+                            firstDay.textColor = UIColor(red: 113/255, green: 220/255, blue: 112/255,alpha: 1)
+                            firstDay.frame = CGRect(x:self.imageX-68,y:self.imageY+3,width:50,height:8)
+                            firstDay.adjustsFontSizeToFitWidth = true
+                            self.controller1.view.addSubview(firstDay)
+                        }
                         yyImage.image = #imageLiteral(resourceName: "安全期")
                     }
                     yyImage.frame = CGRect(x:self.imageX,y:self.imageY,width:15,height:15)
