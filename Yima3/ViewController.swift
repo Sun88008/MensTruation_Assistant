@@ -16,9 +16,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
     
     @IBOutlet weak var tipsView: UIView!
     @IBOutlet weak var titleView: DNSPageTitleView!
-    
     @IBOutlet weak var contentView: DNSPageContentView!
-    
+    //图表数据
     var text : String?
     var dateStr: String = ""
     var getCycle: [Double] = []
@@ -28,10 +27,26 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
     var showDays: String = ""
     var cyc: Int = 0
     var day: Int = 0
+    let controller1 = UIViewController()
     let controller2 = UIViewController()
+    let controller3 = UIViewController()
     open var chartModel: AAChartModel?
     open var aaChartView: AAChartView?
-
+    //获得时间
+    let locolDate = NSDate()
+    let txtView = UIView()
+    let txtlocolDate = UILabel()
+    //绘图
+    let centerX = 168.0
+    let centerY = 145.0
+    let R = 100.0
+    var menstrualDay = String()
+    var cycle = 30.0
+    var yimaqi = Double()
+    var imageX = Double()
+    var imageY = Double()
+    var yImage = [UIImageView]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -55,7 +70,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
         let titles = ["状态", "图表", "数据"]
         
         // 设置默认的起始位置
-        let startIndex = 1
+        let startIndex = 0
         
         // 对titleView进行设置
         titleView.titles = titles
@@ -67,20 +82,16 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
         
         
         // 创建每一页对应的controller
-        let controller1 = UIViewController()
         controller1.view.backgroundColor = UIColor.white
         controller1.view.layer.cornerRadius = 15
+        self.setUpFirstView()
         addChildViewController(controller1)
-        
         
         controller2.view.backgroundColor = UIColor.white
         controller2.view.layer.cornerRadius = 15
-        
         self.setUpAAChartView()
-
         addChildViewController(controller2)
         
-        let controller3 = UIViewController()
         controller3.view.backgroundColor = UIColor.white
         controller3.view.layer.cornerRadius = 15
         addChildViewController(controller3)
@@ -102,6 +113,121 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
         //启动界面延时
         navigationController?.interactivePopGestureRecognizer?.delegate = self
         Thread.sleep(forTimeInterval: 1)
+    }
+    
+    func setUpFirstView(){
+        
+        //获取信息
+        let currentUser = LCUser.current!//初始化当前用户信息
+        let ID = currentUser.objectId?.stringValue//获取objectId
+        let query = LCQuery(className: "_User")//选择所在类
+        
+        let _ = query.get(ID!) { (result) in
+            switch result {
+            case .success(object: let object):
+                self.showCycle = ""
+                self.showDays = ""
+                // get value by string key
+                if(object.get("Cycle") == nil){
+                    self.getCycle = []
+                }else{
+                    self.getCycle = object.get("Cycle")?.arrayValue as! [Double]
+                    for itemCycle in self.getCycle{
+                        self.cyc = Int(itemCycle)
+                        self.showCycle += " \(self.cyc)天"
+                    }
+                }
+                if(object.get("Days") == nil){
+                    self.getDays = []
+                }else{
+                    self.getDays = object.get("Days")?.arrayValue as! [Double]
+                    for itemDays in self.getDays{
+                        self.day = Int(itemDays)
+                        self.showDays += " \(self.day)天"
+                    }
+                }
+                print(self.getCycle)
+                print(self.getDays)
+                self.getMenstrualArray = []
+                let getMenstrual = object.get("Menstrual_Day")?.arrayValue
+                print("fir:\(String(describing: getMenstrual))")
+                if(getMenstrual != nil){
+                    for date in getMenstrual!{
+                        if(getMenstrual?.isEmpty)!{
+                            
+                        }else{
+                            if(self.getMenstrualArray.isEmpty){
+                                self.getMenstrualArray = [date as! String]
+                            }else{
+                                self.getMenstrualArray.append(date as! String)
+                            }
+                        }
+                    }
+                }else{
+                    self.getMenstrualArray = []
+                }
+                self.menstrualDay = self.getMenstrualArray[self.getMenstrualArray.endIndex-1]
+                self.cycle = self.getCycle[self.getCycle.endIndex-1]
+                self.yimaqi = self.getDays[self.getDays.endIndex-1]
+                
+                for i in 0...Int(self.cycle-1){
+                    self.getXY1(i: Double(i))
+                    let yyImage = UIImageView()
+                    if(i>=0 && i<Int(self.yimaqi)){
+                        if(i==0){
+                            //提取数字
+                            let scanner = Scanner(string: self.menstrualDay)
+                            scanner.scanUpToCharacters(from: CharacterSet.decimalDigits, into: nil)
+                            var number :Int = 0
+                            scanner.scanInt(&number)
+                            
+                            let firstDay = UILabel()
+                            firstDay.text = String(number)
+                            firstDay.frame = CGRect(x:self.imageX-3,y:self.imageY+15,width:15,height:15)
+                            firstDay.adjustsFontSizeToFitWidth = true
+                            self.controller1.view.addSubview(firstDay)
+                        }
+                        yyImage.image = #imageLiteral(resourceName: "姨妈期")
+                    }else if(i>Int(self.cycle-14)-6 && i<Int(self.cycle-14)+5 && i != Int(self.cycle-14)){
+                        yyImage.image = #imageLiteral(resourceName: "排卵期")
+                    }else if(i == Int(self.cycle-14)){
+                        yyImage.image = #imageLiteral(resourceName: "排卵日")
+                    }else{
+                        yyImage.image = #imageLiteral(resourceName: "安全期")
+                    }
+                    yyImage.frame = CGRect(x:self.imageX,y:self.imageY,width:15,height:15)
+                    self.yImage.append(yyImage)
+                    self.controller1.view.addSubview(self.yImage[i])
+                }
+                
+                print(self.menstrualDay)
+                print(self.yimaqi)
+            case .failure(error: let error):
+                // handle error
+                print(error)
+                break
+            }
+        }
+        
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "MM月dd日"
+        let strNowTime = timeFormatter.string(from: locolDate as Date) as String
+        txtView.frame = CGRect(x:130,y:10,width:90,height:20)
+        txtView.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1)
+        txtView.layer.cornerRadius = 10
+        txtlocolDate.text = strNowTime
+        txtlocolDate.textColor = UIColor.white
+        txtlocolDate.endEditing(true)
+        txtlocolDate.frame = CGRect(x:8,y:5,width:80,height:10)
+        txtView.addSubview(txtlocolDate)
+        
+        
+        let shiyitu = UIImageView.init(image: #imageLiteral(resourceName: "示意图"))
+        shiyitu.frame = CGRect(x:50,y:280,width:250,height:28)
+        controller1.view.addSubview(shiyitu)
+        
+        controller1.view.addSubview(txtView)
     }
     
     func setUpAAChartView() {
@@ -139,7 +265,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
                 print(self.getDays)
                 self.getMenstrualArray = []
                 let getMenstrual = object.get("Menstrual_Day")?.arrayValue
-                print("fir:\(getMenstrual)")
+                print("fir:\(String(describing: getMenstrual))")
                 if(getMenstrual != nil){
                     for date in getMenstrual!{
                         if(getMenstrual?.isEmpty)!{
@@ -206,6 +332,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
                 break
             }
         }
+    }
+    //获得下一个小圆圈的xy
+    func getXY1(i:Double){
+        imageX = centerX + sin(((360.0/cycle)*Double.pi/180)*i)*R
+        imageY = centerY - cos(((360.0/cycle)*Double.pi/180)*i)*R
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -73,7 +73,7 @@
     
     RecorderVC *root = [[RecorderVC alloc]init];
     UINavigationController* navi = [[UINavigationController alloc] initWithRootViewController:root];
-    [self.navigationController presentViewController:navi animated:YES completion:nil];
+//    [self.navigationController presentViewController:navi animated:YES completion:nil];
     
     [super viewDidLoad];
     

@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import LeanCloud
 import AVOSCloud
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
