@@ -1229,7 +1229,7 @@
         <!--SetMenstruationView-->
         <scene sceneID="Ha0-h9-pYg">
             <objects>
-                <viewController title="SetMenstruationView" id="3gQ-sH-rSS" customClass="SetMenstruationViewController" customModule="Yima3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="yimalaileView" title="SetMenstruationView" id="3gQ-sH-rSS" customClass="SetMenstruationViewController" customModule="Yima3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w04-Xl-9tW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1242,11 +1242,13 @@
                                 <items>
                                     <navigationItem id="ZK7-an-yw3">
                                         <barButtonItem key="leftBarButtonItem" title="取消" id="v0X-y2-vlf">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="Qjf-Kv-IOu" kind="unwind" unwindAction="backWithSegue:" id="wg2-tW-Esn"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="确定" id="iHg-Wp-s3O">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="ConfirmValueAndPass:" destination="3gQ-sH-rSS" id="tNV-Mr-djA"/>
                                             </connections>

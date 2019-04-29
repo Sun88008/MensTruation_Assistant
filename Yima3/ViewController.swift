@@ -191,9 +191,22 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
                 }else{
                     self.getMenstrualArray = []
                 }
-                self.cycle = self.getCycle[self.getCycle.endIndex-1]
-                self.yimaqi = self.getDays[self.getDays.endIndex-1]
-                self.menstrualDay = self.getMenstrualArray[self.getMenstrualArray.endIndex-1]
+                if(self.getCycle.count == 0){
+                    self.cycle = 0.0
+                }else{
+                    self.cycle = self.getCycle[self.getCycle.endIndex-1]
+                }
+                if(self.getDays.count == 0){
+                    self.yimaqi = 0.0
+                }else{
+                    self.yimaqi = self.getDays[self.getDays.endIndex-1]
+                }
+                if(self.getMenstrualArray.count == 0){
+                    self.menstrualDay = ""
+                }else{
+                    self.menstrualDay = self.getMenstrualArray[self.getMenstrualArray.endIndex-1]
+                }
+                
                 var numMenstrualDay = self.menstrualDay.replacingOccurrences(of: "月", with: "")
                 numMenstrualDay = numMenstrualDay.replacingOccurrences(of: "日", with: "")
                 numMenstrualDay = numMenstrualDay.replacingOccurrences(of: " ", with: "")
@@ -476,7 +489,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
                 for itemCycle in self.getDays{
                     avDays += Int(itemCycle)/self.getDays.count
                 }
-                self.cellCount = (getMenstrual?.count)!
+                if(getMenstrual == nil){
+                    self.cellCount = 0
+                }else{
+                    self.cellCount = (getMenstrual?.count)!
+                }
                 self.avCycleLable.text = "平均周期："+String(avCycle)
                 self.avDaysLable.text = "平均天数："+String(avDays)
                 self.avCycleLable.frame = CGRect(x:50,y:20,width:150,height:30)

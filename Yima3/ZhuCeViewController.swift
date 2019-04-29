@@ -262,9 +262,20 @@ class ZhuCeViewController: UIViewController, UITextFieldDelegate,SearchTableView
                             print("Login succeed")
                             //成功则跳转到TabBar处
                             let first = self.storyboard
-                            let secondView:UIViewController = (first?.instantiateViewController(withIdentifier: "TarBar"))!
-                            self.alertSucceed.present(secondView, animated: true, completion: nil)
-                            secondView.presentedViewController?.dismiss(animated: false, completion: nil)
+                            let secondView:UIViewController = (first?.instantiateViewController(withIdentifier: "yimalaileView"))!
+                            let thirdView:UIViewController = (first?.instantiateViewController(withIdentifier: "myMenstrualStatusView"))!
+                            let fourthView:UIViewController = (first?.instantiateViewController(withIdentifier: "TarBar"))!
+                            self.alertSucceed.present(fourthView, animated: true, completion: nil)
+                            self.alertSucceed.presentedViewController?.dismiss(animated: false, completion: nil)
+                            
+//                            self.alertSucceed.present(thirdView, animated: true, completion: nil)
+//                            thirdView.present(secondView, animated: true, completion: nil)
+////                            print(secondView.isBeingDismissed)
+////                            print(thirdView.isBeingDismissed)
+//                            if(secondView.isBeingDismissed){
+//                                self.alertSucceed.present(fourthView, animated: true, completion: nil)
+//                                self.alertSucceed.presentedViewController?.dismiss(animated: false, completion: nil)
+//                            }
                             break
                         case .failure(let error):
                             self.present(self.alert, animated: true, completion: nil)//登录失败弹出提示框
@@ -299,6 +310,9 @@ class ZhuCeViewController: UIViewController, UITextFieldDelegate,SearchTableView
         case NONE
         case USER
         case PASS
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
     }
 
     override func didReceiveMemoryWarning() {
