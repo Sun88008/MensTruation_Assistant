@@ -12,7 +12,7 @@ import AVOSCloud
 import SnapKit
 
 
-class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDelegate, UITextFieldDelegate{
+class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var tipsView: UIView!
     @IBOutlet weak var titleView: DNSPageTitleView!
@@ -49,6 +49,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
     let nowDayView = UIView()
     var nowDay = UILabel()
     
+    //第三个图
+    let avCycleLable = UILabel()
+    let avDaysLable = UILabel()
+    let excTable = UITableView()
+    let excTableCell = UITableViewCell()
+    
     var num1 = 0
     
     override func viewDidLoad() {
@@ -75,7 +81,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
         let titles = ["状态", "图表", "数据"]
         
         // 设置默认的起始位置
-        let startIndex = 0
+        let startIndex = 2
         
         // 对titleView进行设置
         titleView.titles = titles
@@ -99,6 +105,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
         
         controller3.view.backgroundColor = UIColor.white
         controller3.view.layer.cornerRadius = 15
+        self.setUpThirdView()
         addChildViewController(controller3)
         
         let childViewControllers: [UIViewController] = [controller1,controller2,controller3]
@@ -408,6 +415,139 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
             }
         }
     }
+    
+    func setUpThirdView(){
+        //获取横坐标
+        let currentUser = LCUser.current!//初始化当前用户信息
+        let ID = currentUser.objectId?.stringValue//获取objectId
+        let query = LCQuery(className: "_User")//选择所在类
+        
+        let _ = query.get(ID!) { (result) in
+            switch result {
+            case .success(object: let object):
+                self.showCycle = ""
+                self.showDays = ""
+                // get value by string key
+                if(object.get("Cycle") == nil){
+                    self.getCycle = []
+                }else{
+                    self.getCycle = object.get("Cycle")?.arrayValue as! [Double]
+                    for itemCycle in self.getCycle{
+                        self.cyc = Int(itemCycle)
+                        self.showCycle += " \(self.cyc)天"
+                    }
+                }
+                if(object.get("Days") == nil){
+                    self.getDays = []
+                }else{
+                    self.getDays = object.get("Days")?.arrayValue as! [Double]
+                    for itemDays in self.getDays{
+                        self.day = Int(itemDays)
+                        self.showDays += " \(self.day)天"
+                    }
+                }
+                print(self.getCycle)
+                print(self.getDays)
+                self.getMenstrualArray = []
+                let getMenstrual = object.get("Menstrual_Day")?.arrayValue
+                print("fir:\(String(describing: getMenstrual))")
+                if(getMenstrual != nil){
+                    for date in getMenstrual!{
+                        if(getMenstrual?.isEmpty)!{
+                            
+                        }else{
+                            if(self.getMenstrualArray.isEmpty){
+                                self.getMenstrualArray = [date as! String]
+                            }else{
+                                self.getMenstrualArray.append(date as! String)
+                            }
+                        }
+                    }
+                }else{
+                    self.getMenstrualArray = []
+                }
+                
+                var avCycle = Int()
+                var avDays = Int()
+                for itemCycle in self.getCycle{
+                    avCycle += Int(itemCycle)/self.getCycle.count
+                }
+                for itemCycle in self.getDays{
+                    avDays += Int(itemCycle)/self.getDays.count
+                }
+                self.avCycleLable.text = "平均周期："+String(avCycle)
+                self.avDaysLable.text = "平均天数："+String(avDays)
+                self.avCycleLable.frame = CGRect(x:50,y:20,width:150,height:30)
+                self.avDaysLable.frame = CGRect(x:190,y:20,width:150,height:30)
+                self.avCycleLable.font = UIFont.systemFont(ofSize: 15)
+                self.avDaysLable.font = UIFont.systemFont(ofSize: 15)
+                self.controller3.view.addSubview(self.avCycleLable)
+                self.controller3.view.addSubview(self.avDaysLable)
+                
+                
+                self.excTable.frame = CGRect(x:5,y:70,width:320,height:180)
+                self.excTableCell.frame = CGRect(x:0,y:0,width:320,height:30)
+                self.controller3.view.addSubview(self.excTable)
+//                self.excTable.addSubview(self.excTableCell)
+//                self.excTable.dataSource = self
+//                self.excTable.delegate = self
+
+            case .failure(error: let error):
+                // handle error
+                print(error)
+                break
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //        return part1.count//数组的长度
+        return 6
+    }
+    
+    //添加一个代理方法，用来初始化或复用表格视图中的单元格
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "excTableCell")
+        return cell!//返回设置好的单元格对象
+//        if(indexPath.row == 0){
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "excTableCell", for: indexPath)
+//            cell.textLabel?.text = "头像"
+//            //初始化imageview
+//            let itemSize = CGSize(width:40,height:40)
+//            UIGraphicsBeginImageContextWithOptions(itemSize, false, UIScreen.main.scale)
+//            let imageRect = CGRect(x:0,y:0,width:itemSize.width,height:itemSize.height)
+//            cell.imageView?.image?.draw(in: imageRect)
+//            cell.imageView?.image = UIGraphicsGetImageFromCurrentImageContext()
+//            UIGraphicsGetCurrentContext()
+//            //设置圆角
+//            let cellImageLayer = cell.imageView?.layer
+//            cellImageLayer?.cornerRadius = 23.0
+//            cellImageLayer?.masksToBounds = true
+//            cell.imageView?.image = #imageLiteral(resourceName: "touxiang")
+//            return cell
+//        }else if(indexPath.row == 1){
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "excTableCell", for: indexPath)
+//            cell.textLabel?.text = "昵称"
+//            return cell
+//        }else if(indexPath.row == 2){
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "excTableCell", for: indexPath)
+//            cell.textLabel?.text = "性别"
+//            return cell
+//        }else if(indexPath.row == 3){
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "excTableCell", for: indexPath)
+//            cell.textLabel?.text = "年龄"
+//            return cell
+//        }else{
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "excTableCell", for: indexPath)
+//            cell.textLabel?.text = "手机号码"
+//            return cell
+//        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)//点击cell后消除选中效果
+    }
+    
     //获得下一个小圆圈的xy
     func getXY1(i:Double){
         imageX = centerX + sin(((360.0/cycle)*Double.pi/180)*i)*R
@@ -434,6 +574,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setUpAAChartView()
+        setUpFirstView()
+        setUpThirdView()
 //        self.aaChartView?.aa_refreshChartWholeContentWithChartModel(self.chartModel!)//刷新
     }
     @IBAction func back(segue: UIStoryboardSegue) {
