@@ -38,14 +38,16 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
     let txtlocolDate = UILabel()
     //绘图
     let centerX = 168.0
-    let centerY = 145.0
-    let R = 100.0
+    let centerY = 155.0
+    let R = 110.0
     var menstrualDay = String()
     var cycle = 30.0
     var yimaqi = Double()
     var imageX = Double()
     var imageY = Double()
     var yImage = [UIImageView]()
+    let nowDayView = UIView()
+    var nowDay = UILabel()
     
     var num1 = 0
     
@@ -120,6 +122,18 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
     
     func setUpFirstView(){
         
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "MM月dd日"
+        let strNowTime = timeFormatter.string(from: locolDate as Date) as String
+        txtView.frame = CGRect(x:130,y:10,width:90,height:20)
+        txtView.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1)
+        txtView.layer.cornerRadius = 10
+        txtlocolDate.text = strNowTime
+        txtlocolDate.textColor = UIColor.white
+        txtlocolDate.endEditing(true)
+        txtlocolDate.frame = CGRect(x:8,y:5,width:80,height:10)
+        txtView.addSubview(txtlocolDate)
+        
         //获取信息
         let currentUser = LCUser.current!//初始化当前用户信息
         let ID = currentUser.objectId?.stringValue//获取objectId
@@ -169,9 +183,52 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
                 }else{
                     self.getMenstrualArray = []
                 }
-                self.menstrualDay = self.getMenstrualArray[self.getMenstrualArray.endIndex-1]
                 self.cycle = self.getCycle[self.getCycle.endIndex-1]
                 self.yimaqi = self.getDays[self.getDays.endIndex-1]
+                self.menstrualDay = self.getMenstrualArray[self.getMenstrualArray.endIndex-1]
+                var numMenstrualDay = self.menstrualDay.replacingOccurrences(of: "月", with: "")
+                numMenstrualDay = numMenstrualDay.replacingOccurrences(of: "日", with: "")
+                numMenstrualDay = numMenstrualDay.replacingOccurrences(of: " ", with: "")
+                print(numMenstrualDay)
+                let date = self.string2Date(numMenstrualDay)
+                let date1 = date + self.yimaqi*24*60*60
+                let strdate1 = self.date2String(date1, dateFormat: "MM月 dd日")
+                let date2 = date + self.cycle*24*60*60 - 14*24*60*60
+                let strdate2 = self.date2String(date2, dateFormat: "MM月 dd日")
+                let date3 = date2 + 5*24*60*60
+                let strdate3 = self.date2String(date3, dateFormat: "MM月 dd日")
+                //比较当前日期和各个阶段日期
+                if(self.locolDate.compare(date) == .orderedDescending && self.locolDate.compare(date1) == .orderedAscending){
+                    self.nowDayView.frame = CGRect(x:self.centerX-30,y:self.centerY-5,width:80,height:35)
+                    self.nowDayView.layer.cornerRadius = 10
+                    self.nowDayView.backgroundColor = UIColor(red: 251/255, green: 109/255, blue: 157/255,alpha: 1)//粉
+                    self.nowDay.text = "姨妈期"
+                    self.nowDay.font = UIFont.italicSystemFont(ofSize: 20)
+                    self.nowDay.frame = CGRect(x:9,y:-8,width:150,height:50)
+                    self.nowDay.textColor = UIColor.white
+                    self.nowDayView.addSubview(self.nowDay)
+                    self.controller1.view.addSubview(self.nowDayView)
+                }else if(self.locolDate.compare(date3-10*24*60*60) == .orderedDescending && self.locolDate.compare(date3) == .orderedAscending){
+                    self.nowDayView.frame = CGRect(x:self.centerX-30,y:self.centerY-5,width:80,height:35)
+                    self.nowDayView.layer.cornerRadius = 10
+                    self.nowDayView.backgroundColor = UIColor(red: 255/255, green: 0/255, blue: 48/255,alpha: 1)//红
+                    self.nowDay.text = "危险期"
+                    self.nowDay.font = UIFont.italicSystemFont(ofSize: 20)
+                    self.nowDay.frame = CGRect(x:9,y:-8,width:150,height:50)
+                    self.nowDay.textColor = UIColor.white
+                    self.nowDayView.addSubview(self.nowDay)
+                    self.controller1.view.addSubview(self.nowDayView)
+                }else{
+                    self.nowDayView.frame = CGRect(x:self.centerX-30,y:self.centerY-5,width:80,height:35)
+                    self.nowDayView.layer.cornerRadius = 10
+                    self.nowDayView.backgroundColor = UIColor(red: 113/255, green: 220/255, blue: 112/255,alpha: 1)//绿
+                    self.nowDay.text = "安全期"
+                    self.nowDay.font = UIFont.italicSystemFont(ofSize: 20)
+                    self.nowDay.frame = CGRect(x:9,y:-8,width:150,height:50)
+                    self.nowDay.textColor = UIColor.white
+                    self.nowDayView.addSubview(self.nowDay)
+                    self.controller1.view.addSubview(self.nowDayView)
+                }
                 
                 for i in 0...Int(self.cycle-1){
                     self.getXY1(i: Double(i))
@@ -183,8 +240,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
                             self.controller1.view.addSubview(xiangshang)
                             let firstDay = UILabel()
                             firstDay.text = self.menstrualDay
-                            firstDay.textColor = UIColor(red: 251/255, green: 109/255, blue: 157/255,alpha: 1)
-//                            UIColor(red: 113/255, green: 220/255, blue: 112/255,alpha: 1)
+                            firstDay.textColor = UIColor(red: 251/255, green: 109/255, blue: 157/255,alpha: 1)//粉
                             firstDay.frame = CGRect(x:self.imageX-3,y:self.imageY+25,width:50,height:8)
                             firstDay.adjustsFontSizeToFitWidth = true
                             self.controller1.view.addSubview(firstDay)
@@ -193,20 +249,35 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
                     }else if(i>Int(self.cycle-14)-6 && i<Int(self.cycle-14)+5 && i != Int(self.cycle-14)){
                         yyImage.image = #imageLiteral(resourceName: "排卵期")
                     }else if(i == Int(self.cycle-14)){
+                        let xiangshang = UIImageView.init(image: #imageLiteral(resourceName: "向下箭头"))
+                        xiangshang.frame = CGRect(x:self.imageX+5,y:self.imageY-9,width:8,height:8)
+                        self.controller1.view.addSubview(xiangshang)
+                        let firstDay = UILabel()
+                        firstDay.text = strdate2
+                        firstDay.textColor = UIColor(red: 251/255, green: 109/255, blue: 157/255,alpha: 1)//粉
+                        firstDay.frame = CGRect(x:self.imageX-3,y:self.imageY-22,width:50,height:8)
+                        firstDay.adjustsFontSizeToFitWidth = true
+                        self.controller1.view.addSubview(firstDay)
                         yyImage.image = #imageLiteral(resourceName: "排卵日")
                     }else{
                         if(i==Int(self.yimaqi)){
-//                            let scanner1 = Scanner(string: self.menstrualDay)
-//                            scanner1.scanUpToCharacters(from: CharacterSet.decimalDigits, into: nil)
-//                            scanner1.scanInt(&self.num1)
-//                            print(self.num1)
                             let xiangyou = UIImageView.init(image: #imageLiteral(resourceName: "向右箭头"))
-                            xiangyou.frame = CGRect(x:self.imageX-15,y:self.imageY+5,width:10,height:8)
+                            xiangyou.frame = CGRect(x:self.imageX-10,y:self.imageY+5,width:10,height:8)
                             self.controller1.view.addSubview(xiangyou)
                             let firstDay = UILabel()
-                            firstDay.text = self.menstrualDay
-                            firstDay.textColor = UIColor(red: 113/255, green: 220/255, blue: 112/255,alpha: 1)
-                            firstDay.frame = CGRect(x:self.imageX-68,y:self.imageY+3,width:50,height:8)
+                            firstDay.text = strdate1
+                            firstDay.textColor = UIColor(red: 113/255, green: 220/255, blue: 112/255,alpha: 1)//绿
+                            firstDay.frame = CGRect(x:self.imageX-60,y:self.imageY+3,width:50,height:8)
+                            firstDay.adjustsFontSizeToFitWidth = true
+                            self.controller1.view.addSubview(firstDay)
+                        }else if(i == Int(self.cycle-9)){
+                            let xiangyou = UIImageView.init(image: #imageLiteral(resourceName: "向左箭头"))
+                            xiangyou.frame = CGRect(x:self.imageX+15,y:self.imageY+5,width:10,height:8)
+                            self.controller1.view.addSubview(xiangyou)
+                            let firstDay = UILabel()
+                            firstDay.text = strdate3
+                            firstDay.textColor = UIColor(red: 113/255, green: 220/255, blue: 112/255,alpha: 1)//绿
+                            firstDay.frame = CGRect(x:self.imageX+28,y:self.imageY+3,width:50,height:8)
                             firstDay.adjustsFontSizeToFitWidth = true
                             self.controller1.view.addSubview(firstDay)
                         }
@@ -226,22 +297,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
             }
         }
         
-        
-        let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = "MM月dd日"
-        let strNowTime = timeFormatter.string(from: locolDate as Date) as String
-        txtView.frame = CGRect(x:130,y:10,width:90,height:20)
-        txtView.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1)
-        txtView.layer.cornerRadius = 10
-        txtlocolDate.text = strNowTime
-        txtlocolDate.textColor = UIColor.white
-        txtlocolDate.endEditing(true)
-        txtlocolDate.frame = CGRect(x:8,y:5,width:80,height:10)
-        txtView.addSubview(txtlocolDate)
-        
-        
+ 
         let shiyitu = UIImageView.init(image: #imageLiteral(resourceName: "示意图"))
-        shiyitu.frame = CGRect(x:50,y:280,width:250,height:28)
+        shiyitu.frame = CGRect(x:50,y:290,width:250,height:30)
         controller1.view.addSubview(shiyitu)
         
         controller1.view.addSubview(txtView)
@@ -354,6 +412,23 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
     func getXY1(i:Double){
         imageX = centerX + sin(((360.0/cycle)*Double.pi/180)*i)*R
         imageY = centerY - cos(((360.0/cycle)*Double.pi/180)*i)*R
+    }
+    //日期转字符串
+    func date2String(_ date:Date, dateFormat:String = "yyyy-MM-dd HH:mm:ss") -> String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale.init(identifier: "zh_CN")
+        formatter.dateFormat = dateFormat
+        let date = formatter.string(from: date)
+        return date
+    }
+    
+    //字符串转日期
+    func string2Date(_ string:String, dateFormat:String = "MMdd") -> Date {
+        let formatter = DateFormatter()
+        formatter.locale = Locale.init(identifier: "zh_CN")
+        formatter.dateFormat = dateFormat
+        let date = formatter.date(from: string)
+        return date!
     }
     
     override func viewWillAppear(_ animated: Bool) {
