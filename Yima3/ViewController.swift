@@ -56,6 +56,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
     let excTableCell = UITableViewCell()
     
     var num1 = 0
+    var cellCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +82,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
         let titles = ["状态", "图表", "数据"]
         
         // 设置默认的起始位置
-        let startIndex = 2
+        let startIndex = 0
         
         // 对titleView进行设置
         titleView.titles = titles
@@ -121,7 +122,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
         // 让titleView和contentView进行联系起来
         titleView.delegate = contentView
         contentView.delegate = titleView
-        
+
         //启动界面延时
         navigationController?.interactivePopGestureRecognizer?.delegate = self
         Thread.sleep(forTimeInterval: 1)
@@ -475,6 +476,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
                 for itemCycle in self.getDays{
                     avDays += Int(itemCycle)/self.getDays.count
                 }
+                self.cellCount = (getMenstrual?.count)!
                 self.avCycleLable.text = "平均周期："+String(avCycle)
                 self.avDaysLable.text = "平均天数："+String(avDays)
                 self.avCycleLable.frame = CGRect(x:50,y:20,width:150,height:30)
@@ -485,12 +487,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
                 self.controller3.view.addSubview(self.avDaysLable)
                 
                 
-                self.excTable.frame = CGRect(x:5,y:70,width:320,height:180)
+                self.excTable.frame = CGRect(x:10,y:70,width:320,height:250)
                 self.excTableCell.frame = CGRect(x:0,y:0,width:320,height:30)
                 self.controller3.view.addSubview(self.excTable)
-//                self.excTable.addSubview(self.excTableCell)
-//                self.excTable.dataSource = self
-//                self.excTable.delegate = self
+                self.excTable.register(UITableViewCell.self, forCellReuseIdentifier: "excTableCell")
+                self.excTable.dataSource = self
+                self.excTable.delegate = self
 
             case .failure(error: let error):
                 // handle error
@@ -502,46 +504,95 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDe
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //        return part1.count//数组的长度
-        return 6
+        return self.cellCount+1
     }
     
     //添加一个代理方法，用来初始化或复用表格视图中的单元格
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "excTableCell")
-        return cell!//返回设置好的单元格对象
-//        if(indexPath.row == 0){
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "excTableCell", for: indexPath)
-//            cell.textLabel?.text = "头像"
-//            //初始化imageview
-//            let itemSize = CGSize(width:40,height:40)
-//            UIGraphicsBeginImageContextWithOptions(itemSize, false, UIScreen.main.scale)
-//            let imageRect = CGRect(x:0,y:0,width:itemSize.width,height:itemSize.height)
-//            cell.imageView?.image?.draw(in: imageRect)
-//            cell.imageView?.image = UIGraphicsGetImageFromCurrentImageContext()
-//            UIGraphicsGetCurrentContext()
-//            //设置圆角
-//            let cellImageLayer = cell.imageView?.layer
-//            cellImageLayer?.cornerRadius = 23.0
-//            cellImageLayer?.masksToBounds = true
-//            cell.imageView?.image = #imageLiteral(resourceName: "touxiang")
-//            return cell
-//        }else if(indexPath.row == 1){
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "excTableCell", for: indexPath)
-//            cell.textLabel?.text = "昵称"
-//            return cell
-//        }else if(indexPath.row == 2){
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "excTableCell", for: indexPath)
-//            cell.textLabel?.text = "性别"
-//            return cell
-//        }else if(indexPath.row == 3){
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "excTableCell", for: indexPath)
-//            cell.textLabel?.text = "年龄"
-//            return cell
-//        }else{
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "excTableCell", for: indexPath)
-//            cell.textLabel?.text = "手机号码"
-//            return cell
-//        }
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "excTableCell")
+//        return cell!//返回设置好的单元格对象
+        if(indexPath.row == 0){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "excTableCell", for: indexPath)
+            cell.textLabel?.text = "月经开始日期"
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
+            let textLabel2 = UILabel()
+            textLabel2.text = "行经天数"
+            textLabel2.font = UIFont.systemFont(ofSize: 15)
+            let textLabel3 = UILabel()
+            textLabel3.text = "周期天数"
+            textLabel3.font = UIFont.systemFont(ofSize: 15)
+            textLabel2.frame = CGRect(x:140,y:12,width:80,height:20)
+            textLabel3.frame = CGRect(x:230,y:12,width:80,height:20)
+            cell.addSubview(textLabel2)
+            cell.addSubview(textLabel3)
+            cell.backgroundColor = UIColor(red: 255/255, green: 192/255, blue: 203/255,alpha: 1)
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            return cell
+        }else if(indexPath.row == 1){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "excTableCell", for: indexPath)
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
+            cell.textLabel?.text = self.getMenstrualArray[0]
+            let textLabel2 = UILabel()
+            textLabel2.text = String(Int(self.getDays[0]))
+            textLabel2.font = UIFont.systemFont(ofSize: 15)
+            let textLabel3 = UILabel()
+            textLabel3.text = String(Int(self.getCycle[0]))
+            textLabel3.font = UIFont.systemFont(ofSize: 15)
+            textLabel2.frame = CGRect(x:150,y:12,width:80,height:20)
+            textLabel3.frame = CGRect(x:240,y:12,width:80,height:20)
+            cell.addSubview(textLabel2)
+            cell.addSubview(textLabel3)
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            return cell
+        }else if(indexPath.row == 2){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "excTableCell", for: indexPath)
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
+            cell.textLabel?.text = self.getMenstrualArray[1]
+            let textLabel2 = UILabel()
+            textLabel2.text = String(Int(self.getDays[0]))
+            textLabel2.font = UIFont.systemFont(ofSize: 15)
+            let textLabel3 = UILabel()
+            textLabel3.text = String(Int(self.getCycle[1]))
+            textLabel3.font = UIFont.systemFont(ofSize: 15)
+            textLabel2.frame = CGRect(x:150,y:12,width:80,height:20)
+            textLabel3.frame = CGRect(x:240,y:12,width:80,height:20)
+            cell.addSubview(textLabel2)
+            cell.addSubview(textLabel3)
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            return cell
+        }else if(indexPath.row == 3){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "excTableCell", for: indexPath)
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
+            cell.textLabel?.text = self.getMenstrualArray[2]
+            let textLabel2 = UILabel()
+            textLabel2.text = String(Int(self.getDays[2]))
+            textLabel2.font = UIFont.systemFont(ofSize: 15)
+            let textLabel3 = UILabel()
+            textLabel3.text = String(Int(self.getCycle[0]))
+            textLabel3.font = UIFont.systemFont(ofSize: 15)
+            textLabel2.frame = CGRect(x:150,y:12,width:80,height:20)
+            textLabel3.frame = CGRect(x:240,y:12,width:80,height:20)
+            cell.addSubview(textLabel2)
+            cell.addSubview(textLabel3)
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "excTableCell", for: indexPath)
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
+            cell.textLabel?.text = self.getMenstrualArray[3]
+            let textLabel2 = UILabel()
+            textLabel2.text = String(Int(self.getDays[3]))
+            textLabel2.font = UIFont.systemFont(ofSize: 15)
+            let textLabel3 = UILabel()
+            textLabel3.text = String(Int(self.getCycle[0]))
+            textLabel3.font = UIFont.systemFont(ofSize: 15)
+            textLabel2.frame = CGRect(x:150,y:12,width:80,height:20)
+            textLabel3.frame = CGRect(x:240,y:12,width:80,height:20)
+            cell.addSubview(textLabel2)
+            cell.addSubview(textLabel3)
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
