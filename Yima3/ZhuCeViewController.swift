@@ -266,7 +266,7 @@ class ZhuCeViewController: UIViewController, UITextFieldDelegate,SearchTableView
                             let thirdView:UIViewController = (first?.instantiateViewController(withIdentifier: "myMenstrualStatusView"))!
                             let fourthView:UIViewController = (first?.instantiateViewController(withIdentifier: "TarBar"))!
                             self.alertSucceed.present(fourthView, animated: true, completion: nil)
-                            self.alertSucceed.presentedViewController?.dismiss(animated: false, completion: nil)
+                            fourthView.presentedViewController?.dismiss(animated: false, completion: nil)
                             
 //                            self.alertSucceed.present(thirdView, animated: true, completion: nil)
 //                            thirdView.present(secondView, animated: true, completion: nil)
